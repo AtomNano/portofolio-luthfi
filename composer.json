@@ -1,11 +1,14 @@
 {
     "$schema": "https://getcomposer.org/schema.json",
-    "name": "laravel/react-starter-kit",
+    "name": "luthfi/portofolio",
     "type": "project",
-    "description": "The skeleton application for the Laravel framework.",
+    "description": "Personal portfolio website built with Laravel 11 + React 19 + Inertia.js",
     "keywords": [
         "laravel",
-        "framework"
+        "react",
+        "inertia",
+        "portfolio",
+        "tailwindcss"
     ],
     "license": "MIT",
     "require": {

@@ -6,19 +6,13 @@ import { Label } from '@/components/ui/label'
 import { Textarea } from '@/components/ui/textarea'
 import InputError from '@/components/input-error'
 import portfolios from '@/routes/dashboard/portfolios'
-
-const categories = [
-    'Web Development',
-    'Mobile Development',
-    'UI/UX Design',
-    'Graphic Design',
-    'IT Support',
-]
+import { PORTFOLIO_CATEGORIES } from '@/constants/portfolio'
+import { parseCommaSeparated } from '@/utils/format'
 
 export default function PortfolioCreate() {
     const { data, setData, post, processing, errors, transform } = useForm({
         title: '',
-        category: categories[0],
+        category: PORTFOLIO_CATEGORIES[0] as string,
         description: '',
         project_url: '',
         development_time: '',
@@ -30,7 +24,7 @@ export default function PortfolioCreate() {
 
     transform((data) => ({
         ...data,
-        tools: data.tools.split(',').map((tool) => tool.trim()).filter((tool) => tool !== ''),
+        tools: parseCommaSeparated(data.tools),
     }))
 
     function handleSubmit(e: React.FormEvent) {
@@ -65,10 +59,10 @@ export default function PortfolioCreate() {
                             name="category"
                             value={data.category}
                             onChange={(e) => setData('category', e.target.value)}
-                            className="mt-1 block w-full rounded-md border-gray-300 py-2 pl-3 pr-10 text-base focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 dark:border-gray-600 dark:bg-gray-700 sm:text-sm"
+                            className="mt-1 block w-full rounded-md border border-gray-700 bg-gray-800 py-2 pl-3 pr-10 text-base text-white focus:border-cyan-500 focus:outline-none focus:ring-1 focus:ring-cyan-500 sm:text-sm"
                         >
-                            {categories.map((category) => (
-                                <option key={category}>{category}</option>
+                            {PORTFOLIO_CATEGORIES.map((category) => (
+                                <option key={category} className="bg-gray-800">{category}</option>
                             ))}
                         </select>
                         <InputError message={errors.category} className="mt-2" />
@@ -153,12 +147,19 @@ export default function PortfolioCreate() {
 
                     <div>
                         <Label htmlFor="image">Gambar Proyek</Label>
-                        <Input
+                        <input
                             id="image"
                             name="image"
                             type="file"
                             accept="image/*"
                             onChange={(e) => setData('image', e.target.files ? e.target.files[0] : null)}
+                            className="mt-1 block w-full text-sm text-gray-400
+                                file:mr-4 file:py-2 file:px-4
+                                file:rounded-md file:border-0
+                                file:text-sm file:font-semibold
+                                file:bg-cyan-600 file:text-white
+                                hover:file:bg-cyan-500
+                                cursor-pointer"
                         />
                         <InputError message={errors.image} className="mt-2" />
                     </div>

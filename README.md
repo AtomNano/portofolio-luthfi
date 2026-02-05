@@ -1,84 +1,155 @@
 # Portofolio Luthfi
 
-Welcome to the **Portofolio Luthfi** project! This is a modern, responsive personal portfolio website built to showcase skills, services, and projects. It is designed with a focus on aesthetics, user experience, and performance.
+> 🚀 Personal portfolio website built with Laravel + React + Inertia.js
 
-## 🚀 Features
+![Laravel](https://img.shields.io/badge/Laravel-11-FF2D20?style=flat&logo=laravel&logoColor=white)
+![React](https://img.shields.io/badge/React-19-61DAFB?style=flat&logo=react&logoColor=black)
+![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-4-06B6D4?style=flat&logo=tailwindcss&logoColor=white)
+![Inertia.js](https://img.shields.io/badge/Inertia.js-2-9553E9?style=flat&logo=inertia&logoColor=white)
 
--   **Dynamic Portfolio**: Showcase your projects with images, descriptions, and links.
--   **Services Section**: Highlight the services you offer (Web Dev, Mobile Dev, UI/UX, IT Support).
--   **Animated UI**: Smooth transitions and animations using `framer-motion` and `react-type-animation`.
--   **Responsive Design**: Fully responsive layout optimized for all devices.
--   **Admin Dashboard**: Manage your portfolio items securely (authentication required).
--   **Modern Tech Stack**: Built with the latest technologies for speed and scalability.
+---
 
-## 🛠️ Technology Stack
+## 📋 Table of Contents
 
-This project leverages the power of the TALL stack (Tailwind, Alpine - *replaced by React here*, Laravel, Livewire - *replaced by Inertia here*) ecosystem, specifically:
+- [Features](#-features)
+- [Tech Stack](#-tech-stack)
+- [Project Structure](#-project-structure)
+- [Installation](#-installation)
+- [Development](#-development)
+- [Deployment](#-deployment)
+- [License](#-license)
 
--   **Backend**: [Laravel 11](https://laravel.com) - A robust PHP framework.
--   **Frontend**: [React 19](https://react.dev) - A JavaScript library for building user interfaces.
--   **Adapter**: [Inertia.js](https://inertiajs.com) - The glue between Laravel and React.
--   **Styling**: [Tailwind CSS 4](https://tailwindcss.com) - A utility-first CSS framework.
--   **Icons**: [Lucide React](https://lucide.dev) - Beautiful & consistent icons.
--   **Database**: SQLite (default) or MySQL.
+---
 
-## ⚙️ Installation & Setup
+## ✨ Features
 
-Follow these steps to get the project running on your local machine.
+| Feature | Description |
+|---------|-------------|
+| 🎨 **Modern UI** | Dark theme with cyan accents, smooth animations |
+| 📱 **Responsive** | Mobile-first design with hamburger menu |
+| 🖼️ **Multi-Image Portfolio** | Carousel, lightbox, and image management |
+| 📊 **Visitor Statistics** | Track page views and portfolio clicks |
+| 🔐 **Admin Dashboard** | Secure content management |
+| ⚡ **Fast** | Inertia.js SPA-like navigation |
+
+---
+
+## 🛠️ Tech Stack
+
+### Backend
+- **[Laravel 11](https://laravel.com)** - PHP Framework
+- **[Inertia.js](https://inertiajs.com)** - Modern monolith
+
+### Frontend
+- **[React 19](https://react.dev)** - UI Library
+- **[Tailwind CSS 4](https://tailwindcss.com)** - Styling
+- **[Framer Motion](https://www.framer.com/motion/)** - Animations
+- **[Lucide React](https://lucide.dev)** - Icons
+- **[Shadcn UI](https://ui.shadcn.com)** - Component library
+
+### Database
+- **SQLite** (default) or **MySQL**
+
+---
+
+## 📁 Project Structure
+
+```
+portofolio-luthfi/
+├── app/
+│   ├── Http/Controllers/    # API & page controllers
+│   └── Models/              # Eloquent models
+├── database/
+│   └── migrations/          # Database schemas
+├── resources/
+│   ├── js/
+│   │   ├── components/      # Reusable React components
+│   │   ├── layouts/         # App layouts (auth, dashboard)
+│   │   └── pages/           # Inertia pages
+│   └── views/               # Blade templates (app.blade.php)
+├── routes/
+│   └── web.php              # Web routes
+├── public/                  # Static assets
+└── storage/                 # Uploads & cache
+```
+
+---
+
+## ⚙️ Installation
 
 ### Prerequisites
 
--   PHP >= 8.2
--   Composer
--   Node.js & npm
+- PHP >= 8.2
+- Composer
+- Node.js >= 18 & npm
+- SQLite or MySQL
 
-### Steps
-
-1.  **Clone the repository**
-    ```bash
-    git clone https://github.com/yourusername/portofolio-luthfi.git
-    cd portofolio-luthfi
-    ```
-
-2.  **Install PHP dependencies**
-    ```bash
-    composer install
-    ```
-
-3.  **Install Node.js dependencies**
-    ```bash
-    npm install
-    ```
-
-4.  **Environment Setup**
-    Copy the `.env.example` file to `.env` and configure it (a default SQLite setup is provided).
-    ```bash
-    cp .env.example .env
-    ```
-    *Note: If you are using Windows, you can just manually copy and rename or use `copy .env.example .env`.*
-
-5.  **Generate Application Key**
-    ```bash
-    php artisan key:generate
-    ```
-
-6.  **Run Database Migrations**
-    ```bash
-    php artisan migrate
-    ```
-
-## 🏃‍♂️ Running the Project
-
-To start the development server, simply run:
+### Quick Start
 
 ```bash
-npm run dev
+# 1. Clone repository
+git clone https://github.com/yourusername/portofolio-luthfi.git
+cd portofolio-luthfi
+
+# 2. Install dependencies
+composer install
+npm install
+
+# 3. Environment setup
+cp .env.example .env
+php artisan key:generate
+
+# 4. Database setup
+php artisan migrate
+
+# 5. Storage link (for image uploads)
+php artisan storage:link
 ```
 
-This command uses `concurrently` to run the Laravel server, queue listener, logs, and Vite development server simultaneously.
+---
 
-Access the application at: `http://localhost:8000`
+## 🏃 Development
+
+Start the development server:
+
+```bash
+composer run dev
+```
+
+This runs Laravel + Vite + Queue concurrently.
+
+**Access:** http://localhost:8000
+
+### Available Scripts
+
+| Command | Description |
+|---------|-------------|
+| `composer run dev` | Start dev server (all services) |
+| `npm run build` | Build for production |
+| `php artisan migrate` | Run migrations |
+| `php artisan queue:work` | Process queued jobs |
+
+---
+
+## 🚀 Deployment
+
+```bash
+# Build production assets
+npm run build
+
+# Optimize Laravel
+php artisan optimize
+php artisan config:cache
+php artisan route:cache
+php artisan view:cache
+```
+
+---
 
 ## 📝 License
 
-This project is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Open-sourced under the [MIT License](https://opensource.org/licenses/MIT).
+
+---
+
+**Made with ❤️ by Muhammad Luthfi Naldi**

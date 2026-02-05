@@ -52,7 +52,7 @@ export default function Dashboard() {
                         </CardDescription>
                     </CardHeader>
                     <CardContent>
-                        <p>Mulai kelola konten Anda menggunakan tautan di bawah ini.</p>
+                        <p>Mulai kelola Portofolio Anda.</p>
                         <div className="mt-4 flex gap-3">
                             <Button asChild className="bg-cyan-600 hover:bg-cyan-500 text-white border-0">
                                 <Link href={dashboard.portfolios.index.url()}>

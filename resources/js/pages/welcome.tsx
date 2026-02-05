@@ -2,10 +2,12 @@ import { login } from '@/routes'
 import dashboard from '@/routes/dashboard'
 import type { Portfolio, SharedData, User } from '@/types'
 import { Head, Link, usePage } from '@inertiajs/react'
-import { motion } from 'framer-motion'
-import { Code, Github, Linkedin, PenTool, Smartphone, Twitter, Terminal, Cpu, Globe, ArrowRight, Instagram, Phone } from 'lucide-react'
+import { motion, AnimatePresence } from 'framer-motion'
+import { Code, Github, Linkedin, PenTool, Smartphone, Twitter, Terminal, Cpu, Globe, ArrowRight, Instagram, Phone, Menu, X, ArrowUp } from 'lucide-react'
 import React, { useEffect, useState } from 'react'
 import { TypeAnimation } from 'react-type-animation'
+import { SERVICES } from '@/constants/services'
+import { getAvatarUrl, getPortfolioImageUrl } from '@/utils/image'
 
 // Helper component for animating sections on scroll
 const AnimatedSection = ({ children, className = "" }: { children: React.ReactNode, className?: string }) => (
@@ -24,6 +26,7 @@ const AnimatedSection = ({ children, className = "" }: { children: React.ReactNo
 const Header = () => {
     const { auth } = usePage<SharedData>().props
     const [isScrolled, setIsScrolled] = useState(false)
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
     useEffect(() => {
         const handleScroll = () => {
@@ -32,6 +35,11 @@ const Header = () => {
         window.addEventListener('scroll', handleScroll)
         return () => window.removeEventListener('scroll', handleScroll)
     }, [])
+
+    // Close mobile menu on navigation
+    const handleNavClick = () => {
+        setIsMobileMenuOpen(false)
+    }
 
     const navLinkClasses = 'text-gray-400 transition-colors hover:text-cyan-400 hover:underline decoration-cyan-500/50 underline-offset-4'
 
@@ -45,6 +53,8 @@ const Header = () => {
                     <Terminal className="h-6 w-6" />
                     <span>~/{auth.user ? 'admin' : 'visitor'}</span>
                 </a>
+
+                {/* Desktop Navigation */}
                 <nav className="hidden items-center gap-8 md:flex text-sm">
                     <a href="#about" className={navLinkClasses}>
                         ./about
@@ -56,6 +66,7 @@ const Header = () => {
                         ./portfolio
                     </a>
                 </nav>
+
                 <div className="flex items-center gap-4">
                     {auth.user ? (
                         <Link
@@ -65,12 +76,73 @@ const Header = () => {
                             Dashboard
                         </Link>
                     ) : (
-                        <Link href={login.url()} className="text-sm font-medium text-gray-500 hover:text-gray-300">
+                        <Link href={login.url()} className="hidden md:block text-sm font-medium text-gray-500 hover:text-gray-300">
                             Login
                         </Link>
                     )}
+
+                    {/* Mobile Menu Button */}
+                    <button
+                        onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                        className="md:hidden rounded-md p-2 text-gray-400 hover:bg-gray-800 hover:text-white transition-colors"
+                        aria-label="Toggle menu"
+                    >
+                        {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+                    </button>
                 </div>
             </div>
+
+            {/* Mobile Menu */}
+            <AnimatePresence>
+                {isMobileMenuOpen && (
+                    <motion.div
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: 'auto' }}
+                        exit={{ opacity: 0, height: 0 }}
+                        transition={{ duration: 0.2 }}
+                        className="md:hidden border-t border-gray-800 bg-gray-950/95 backdrop-blur-sm"
+                    >
+                        <nav className="container mx-auto flex flex-col px-4 py-4 space-y-4">
+                            <a
+                                href="#about"
+                                onClick={handleNavClick}
+                                className="text-lg text-gray-300 hover:text-cyan-400 transition-colors py-2 border-b border-gray-800"
+                            >
+                                ./about
+                            </a>
+                            <a
+                                href="#services"
+                                onClick={handleNavClick}
+                                className="text-lg text-gray-300 hover:text-cyan-400 transition-colors py-2 border-b border-gray-800"
+                            >
+                                ./services
+                            </a>
+                            <a
+                                href="#portfolio"
+                                onClick={handleNavClick}
+                                className="text-lg text-gray-300 hover:text-cyan-400 transition-colors py-2 border-b border-gray-800"
+                            >
+                                ./portfolio
+                            </a>
+                            <a
+                                href="#contact"
+                                onClick={handleNavClick}
+                                className="text-lg text-gray-300 hover:text-cyan-400 transition-colors py-2"
+                            >
+                                ./contact
+                            </a>
+                            {!auth.user && (
+                                <Link
+                                    href={login.url()}
+                                    className="text-lg text-gray-500 hover:text-gray-300 transition-colors py-2"
+                                >
+                                    Login
+                                </Link>
+                            )}
+                        </nav>
+                    </motion.div>
+                )}
+            </AnimatePresence>
         </header>
     )
 }
@@ -230,29 +302,6 @@ const AboutSection = ({ owner }: { owner?: User }) => (
 )
 
 // Services Section
-const services = [
-    {
-        icon: Code,
-        title: 'Full Stack Dev',
-        description: 'Building end-to-end web solutions using Laravel, React, and modern tech stacks.',
-    },
-    {
-        icon: Smartphone,
-        title: 'Mobile Apps',
-        description: 'Native and cross-platform mobile application development for iOS and Android.',
-    },
-    {
-        icon: PenTool,
-        title: 'UI/UX Design',
-        description: 'Creating intuitive and visually stunning interfaces that users love.',
-    },
-    {
-        icon: Terminal,
-        title: 'SysAdmin & Support',
-        description: 'Server management, deployment automation, and technical infrastructure support.',
-    },
-]
-
 const ServicesSection = () => (
     <AnimatedSection className="bg-gray-950 !pt-10 lg:!pt-20">
         <div id="services" className="container mx-auto">
@@ -262,7 +311,7 @@ const ServicesSection = () => (
             </div>
 
             <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
-                {services.map((service, index) => (
+                {SERVICES.map((service, index) => (
                     <div
                         key={index}
                         className="group relative overflow-hidden rounded-xl border border-gray-800 bg-gray-900/50 p-8 transition-all hover:border-cyan-500/50 hover:bg-gray-900"
@@ -399,10 +448,25 @@ export default function Welcome({
     portfolios: Portfolio[]
     owner?: User
 }) {
+    const [showScrollTop, setShowScrollTop] = useState(false)
+
+    useEffect(() => {
+        const handleScroll = () => {
+            setShowScrollTop(window.scrollY > 400)
+        }
+        window.addEventListener('scroll', handleScroll)
+        return () => window.removeEventListener('scroll', handleScroll)
+    }, [])
+
+    const scrollToTop = () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' })
+    }
+
     return (
         <>
             <Head>
                 <title>{`${owner?.name || 'Luthfi Naldi'} - ${owner?.job_title || 'Full Stack Developer'}`}</title>
+                <meta name="description" content={`Portfolio website of ${owner?.name || 'Luthfi Naldi'} - ${owner?.job_title || 'Full Stack Developer'}. View my projects and get in touch.`} />
                 <style>{`
                     html { scroll-behavior: smooth; }
                     ::selection { background-color: rgba(34, 211, 238, 0.3); color: #fff; }
@@ -418,6 +482,22 @@ export default function Welcome({
                     <PortfolioSection portfolios={portfolios} />
                 </main>
                 <Footer owner={owner} />
+
+                {/* Scroll to Top Button */}
+                <AnimatePresence>
+                    {showScrollTop && (
+                        <motion.button
+                            initial={{ opacity: 0, scale: 0.8 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            exit={{ opacity: 0, scale: 0.8 }}
+                            onClick={scrollToTop}
+                            className="fixed bottom-6 right-6 z-40 rounded-full bg-cyan-600/80 p-3 text-white shadow-lg backdrop-blur-sm transition-all hover:bg-cyan-500 hover:scale-110"
+                            aria-label="Scroll to top"
+                        >
+                            <ArrowUp className="h-5 w-5" />
+                        </motion.button>
+                    )}
+                </AnimatePresence>
             </div>
         </>
     )

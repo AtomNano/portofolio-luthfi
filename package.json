@@ -1,5 +1,10 @@
 {
     "$schema": "https://www.schemastore.org/package.json",
+    "name": "portofolio-luthfi",
+    "version": "1.0.0",
+    "description": "Personal portfolio website built with Laravel + React + Inertia.js",
+    "author": "Muhammad Luthfi Naldi",
+    "license": "MIT",
     "private": true,
     "type": "module",
     "scripts": {

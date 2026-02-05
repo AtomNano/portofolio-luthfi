@@ -1,28 +1,58 @@
-/.phpunit.cache
-/bootstrap/ssr
+#=============================================================================
+# DEPENDENCIES
+# Package managers and build outputs
+#=============================================================================
 /node_modules
+/vendor
+/bootstrap/ssr
 /public/build
 /public/hot
-/public/storage
-/resources/js/actions
-/resources/js/routes
-/resources/js/wayfinder
-/storage/*.key
-/storage/pail
-/vendor
-.DS_Store
+
+#=============================================================================
+# ENVIRONMENT & SECRETS
+# Sensitive configuration files
+#=============================================================================
 .env
 .env.backup
 .env.production
-.phpactor.json
-.phpunit.result.cache
-Homestead.json
-Homestead.yaml
-npm-debug.log
-yarn-error.log
+/storage/*.key
 /auth.json
+
+#=============================================================================
+# LARAVEL GENERATED
+# Auto-generated files (do not commit)
+#=============================================================================
+/resources/js/actions
+/resources/js/routes
+/resources/js/wayfinder
+/public/storage
+/storage/pail
+
+#=============================================================================
+# TESTING & CACHE
+# Test results and cache files
+#=============================================================================
+/.phpunit.cache
+.phpunit.result.cache
+
+#=============================================================================
+# IDE & EDITOR CONFIGS
+# Personal editor settings
+#=============================================================================
 /.fleet
 /.idea
 /.nova
 /.vscode
 /.zed
+.phpactor.json
+
+#=============================================================================
+# OS & MISC
+# Operating system files and logs
+#=============================================================================
+.DS_Store
+Thumbs.db
+npm-debug.log
+yarn-error.log
+Homestead.json
+Homestead.yaml
