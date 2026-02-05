@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Textarea } from '@/components/ui/textarea'
-import { InputError } from '@/components/input-error'
+import InputError from '@/components/input-error'
 import portfolios from '@/routes/dashboard/portfolios';
 
 type Portfolio = {
@@ -14,6 +14,10 @@ type Portfolio = {
     description: string;
     project_url: string;
     image_path: string;
+    development_time: string | null;
+    tools: string[] | null;
+    github_url: string | null;
+    video_url: string | null;
 };
 
 type Props = {
@@ -29,14 +33,23 @@ const categories = [
 ];
 
 export default function PortfolioEdit({ portfolio }: Props) {
-    const { data, setData, post, processing, errors } = useForm({
+    const { data, setData, post, processing, errors, transform } = useForm({
         _method: 'put',
         title: portfolio.title,
         category: portfolio.category,
         description: portfolio.description,
         project_url: portfolio.project_url || '',
+        development_time: portfolio.development_time || '',
+        tools: portfolio.tools ? portfolio.tools.join(', ') : '',
+        github_url: portfolio.github_url || '',
+        video_url: portfolio.video_url || '',
         image: null as File | null,
     });
+
+    transform((data) => ({
+        ...data,
+        tools: data.tools.split(',').map((tool) => tool.trim()).filter((tool) => tool !== ''),
+    }))
 
     function handleSubmit(e: React.FormEvent) {
         e.preventDefault();
@@ -47,7 +60,7 @@ export default function PortfolioEdit({ portfolio }: Props) {
         <AppLayout>
             <Head title={`Edit Portofolio: ${portfolio.title}`} />
 
-            <div className="container max-w-2xl py-10">
+            <div className="container max-w-2xl mx-auto py-10">
                 <h1 className="text-2xl font-bold">Edit Portofolio</h1>
 
                 <form onSubmit={handleSubmit} className="mt-8 space-y-6">
@@ -92,16 +105,68 @@ export default function PortfolioEdit({ portfolio }: Props) {
                         <InputError message={errors.description} className="mt-2" />
                     </div>
 
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <Label htmlFor="development_time">Waktu Pengerjaan</Label>
+                            <Input
+                                id="development_time"
+                                name="development_time"
+                                placeholder="Contoh: 2 Minggu"
+                                value={data.development_time}
+                                onChange={(e) => setData('development_time', e.target.value)}
+                            />
+                            <InputError message={errors.development_time} className="mt-2" />
+                        </div>
+
+                        <div>
+                            <Label htmlFor="tools">Tools (Pisahkan dengan koma)</Label>
+                            <Input
+                                id="tools"
+                                name="tools"
+                                placeholder="React, Laravel, Tailwind"
+                                value={data.tools}
+                                onChange={(e) => setData('tools', e.target.value)}
+                            />
+                            <InputError message={errors.tools} className="mt-2" />
+                        </div>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <Label htmlFor="project_url">URL Domain (Opsional)</Label>
+                            <Input
+                                id="project_url"
+                                name="project_url"
+                                type="url"
+                                value={data.project_url}
+                                onChange={(e) => setData('project_url', e.target.value)}
+                            />
+                            <InputError message={errors.project_url} className="mt-2" />
+                        </div>
+
+                        <div>
+                            <Label htmlFor="github_url">URL GitHub (Opsional)</Label>
+                            <Input
+                                id="github_url"
+                                name="github_url"
+                                type="url"
+                                value={data.github_url}
+                                onChange={(e) => setData('github_url', e.target.value)}
+                            />
+                            <InputError message={errors.github_url} className="mt-2" />
+                        </div>
+                    </div>
+
                     <div>
-                        <Label htmlFor="project_url">URL Proyek (Opsional)</Label>
+                        <Label htmlFor="video_url">URL Video (Opsional)</Label>
                         <Input
-                            id="project_url"
-                            name="project_url"
-                            type="url"
-                            value={data.project_url}
-                            onChange={(e) => setData('project_url', e.target.value)}
+                            id="video_url"
+                            name="video_url"
+                            placeholder="Contoh: https://youtube.com/watch?v=..."
+                            value={data.video_url}
+                            onChange={(e) => setData('video_url', e.target.value)}
                         />
-                        <InputError message={errors.project_url} className="mt-2" />
+                        <InputError message={errors.video_url} className="mt-2" />
                     </div>
 
                     <div>

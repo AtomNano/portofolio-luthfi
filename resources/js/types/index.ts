@@ -10,3 +10,18 @@ export type SharedData = {
     sidebarOpen: boolean;
     [key: string]: unknown;
 };
+
+export type Portfolio = {
+    id: number;
+    title: string;
+    category: string;
+    description: string;
+    project_url: string | null;
+    image_path: string | null;
+    development_time: string | null;
+    tools: string[] | null;
+    github_url: string | null;
+    video_url: string | null;
+    created_at: string;
+    updated_at: string;
+};

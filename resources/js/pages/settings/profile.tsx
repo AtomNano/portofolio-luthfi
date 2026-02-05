@@ -5,6 +5,7 @@ import InputError from '@/components/input-error';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
+import { Textarea } from '@/components/ui/textarea';
 import AppLayout from '@/layouts/app-layout';
 import SettingsLayout from '@/layouts/settings/layout';
 import { edit } from '@/routes/profile';
@@ -52,6 +53,28 @@ export default function Profile({
                     >
                         {({ processing, recentlySuccessful, errors }) => (
                             <>
+                                {/* Avatar */}
+                                <div className="grid gap-2">
+                                    <Label htmlFor="avatar">Profile Picture</Label>
+                                    {auth.user.avatar && (
+                                        <div className="mb-2">
+                                            <img
+                                                src={`/storage/${auth.user.avatar}`}
+                                                alt="Current Avatar"
+                                                className="h-20 w-20 rounded-full object-cover border border-gray-200"
+                                            />
+                                        </div>
+                                    )}
+                                    <Input
+                                        id="avatar"
+                                        type="file"
+                                        className="mt-1 block w-full cursor-pointer"
+                                        name="avatar"
+                                        accept="image/*"
+                                    />
+                                    <InputError className="mt-2" message={errors.avatar} />
+                                </div>
+
                                 <div className="grid gap-2">
                                     <Label htmlFor="name">Name</Label>
 
@@ -69,6 +92,78 @@ export default function Profile({
                                         className="mt-2"
                                         message={errors.name}
                                     />
+                                </div>
+
+                                <div className="grid gap-2">
+                                    <Label htmlFor="job_title">Job Title</Label>
+                                    <Input
+                                        id="job_title"
+                                        className="mt-1 block w-full"
+                                        defaultValue={auth.user.job_title || ''}
+                                        name="job_title"
+                                        placeholder="e.g. Full Stack Developer"
+                                    />
+                                    <InputError className="mt-2" message={errors.job_title} />
+                                </div>
+
+                                <div className="grid gap-2">
+                                    <Label htmlFor="about_me">About Me</Label>
+                                    <Textarea
+                                        id="about_me"
+                                        className="mt-1 block w-full"
+                                        defaultValue={auth.user.about_me || ''}
+                                        name="about_me"
+                                        placeholder="Brief description about yourself..."
+                                    />
+                                    <InputError className="mt-2" message={errors.about_me} />
+                                </div>
+
+                                <div className="grid gap-2">
+                                    <Label htmlFor="phone">Phone</Label>
+                                    <Input
+                                        id="phone"
+                                        className="mt-1 block w-full"
+                                        defaultValue={auth.user.phone || ''}
+                                        name="phone"
+                                        placeholder="+62 812 3456 7890"
+                                    />
+                                    <InputError className="mt-2" message={errors.phone} />
+                                </div>
+
+                                <div className="grid gap-2">
+                                    <Label htmlFor="instagram">Instagram</Label>
+                                    <Input
+                                        id="instagram"
+                                        className="mt-1 block w-full"
+                                        defaultValue={auth.user.instagram || ''}
+                                        name="instagram"
+                                        placeholder="Instagram username or URL"
+                                    />
+                                    <InputError className="mt-2" message={errors.instagram} />
+                                </div>
+
+                                <div className="grid gap-2">
+                                    <Label htmlFor="linkedin">LinkedIn</Label>
+                                    <Input
+                                        id="linkedin"
+                                        className="mt-1 block w-full"
+                                        defaultValue={auth.user.linkedin || ''}
+                                        name="linkedin"
+                                        placeholder="LinkedIn URL"
+                                    />
+                                    <InputError className="mt-2" message={errors.linkedin} />
+                                </div>
+
+                                <div className="grid gap-2">
+                                    <Label htmlFor="github">GitHub</Label>
+                                    <Input
+                                        id="github"
+                                        className="mt-1 block w-full"
+                                        defaultValue={auth.user.github || ''}
+                                        name="github"
+                                        placeholder="GitHub URL"
+                                    />
+                                    <InputError className="mt-2" message={errors.github} />
                                 </div>
 
                                 <div className="grid gap-2">
@@ -109,12 +204,12 @@ export default function Profile({
 
                                             {status ===
                                                 'verification-link-sent' && (
-                                                <div className="mt-2 text-sm font-medium text-green-600">
-                                                    A new verification link has
-                                                    been sent to your email
-                                                    address.
-                                                </div>
-                                            )}
+                                                    <div className="mt-2 text-sm font-medium text-green-600">
+                                                        A new verification link has
+                                                        been sent to your email
+                                                        address.
+                                                    </div>
+                                                )}
                                         </div>
                                     )}
 

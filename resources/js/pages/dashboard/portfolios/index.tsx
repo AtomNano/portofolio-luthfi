@@ -1,7 +1,14 @@
 import AppLayout from '@/layouts/app-layout';
-import portfolios from '@/routes/dashboard/portfolios'; // Corrected import
-import { Button } from '@/components/ui/button';
+import portfolios from '@/routes/dashboard/portfolios';
+import { Button, buttonVariants } from '@/components/ui/button';
 import { Head, Link, useForm } from '@inertiajs/react';
+import { Eye } from 'lucide-react';
+
+type PortfolioImage = {
+    id: number;
+    image_path: string;
+    order: number;
+};
 
 type Portfolio = {
     id: number;
@@ -10,6 +17,7 @@ type Portfolio = {
     description: string;
     project_url: string;
     image_path: string;
+    images: PortfolioImage[];
 };
 
 type Props = {
@@ -29,12 +37,12 @@ export default function PortfolioIndex({ portfolios: portfolioData }: Props) {
         <AppLayout>
             <Head title="Manajemen Portofolio" />
 
-            <div className="container py-10">
+            <div className="container max-w-4xl mx-auto py-10">
                 <div className="flex items-center justify-between">
                     <h1 className="text-2xl font-bold">Manajemen Portofolio</h1>
-                    <Button asChild>
-                        <Link href={portfolios.create.url()}>Tambah Baru</Link>
-                    </Button>
+                    <Link href={portfolios.create.url()} className={buttonVariants()}>
+                        Tambah Baru
+                    </Link>
                 </div>
 
                 <div className="mt-8">
@@ -45,16 +53,43 @@ export default function PortfolioIndex({ portfolios: portfolioData }: Props) {
                                     key={portfolio.id}
                                     className="flex items-center justify-between rounded-lg border p-4"
                                 >
-                                    <div>
-                                        <h2 className="font-semibold">{portfolio.title}</h2>
-                                        <p className="text-sm text-muted-foreground">
-                                            {portfolio.category}
-                                        </p>
+                                    <div className="flex items-center gap-4">
+                                        {/* Thumbnail */}
+                                        {(portfolio.image_path || portfolio.images?.length > 0) && (
+                                            <div className="h-16 w-16 flex-shrink-0 overflow-hidden rounded-md bg-gray-800">
+                                                <img
+                                                    src={`/storage/${portfolio.image_path || portfolio.images[0]?.image_path}`}
+                                                    alt={portfolio.title}
+                                                    className="h-full w-full object-cover"
+                                                />
+                                            </div>
+                                        )}
+                                        <div>
+                                            <h2 className="font-semibold">{portfolio.title}</h2>
+                                            <p className="text-sm text-muted-foreground">
+                                                {portfolio.category}
+                                            </p>
+                                            {portfolio.images?.length > 0 && (
+                                                <p className="text-xs text-cyan-400">
+                                                    {portfolio.images.length} gambar tambahan
+                                                </p>
+                                            )}
+                                        </div>
                                     </div>
                                     <div className="flex items-center gap-2">
-                                        <Button variant="outline" size="sm" asChild>
-                                            <Link href={portfolios.edit.url({ portfolio: portfolio.id })}>Edit</Link>
-                                        </Button>
+                                        <Link
+                                            href={portfolios.show.url({ portfolio: portfolio.id })}
+                                            className={buttonVariants({ variant: 'outline', size: 'sm' })}
+                                        >
+                                            <Eye className="h-4 w-4 mr-1" />
+                                            Detail
+                                        </Link>
+                                        <Link
+                                            href={portfolios.edit.url({ portfolio: portfolio.id })}
+                                            className={buttonVariants({ variant: 'outline', size: 'sm' })}
+                                        >
+                                            Edit
+                                        </Link>
                                         <Button variant="destructive" size="sm" onClick={() => handleDelete(portfolio.id)}>
                                             Hapus
                                         </Button>
@@ -72,3 +107,4 @@ export default function PortfolioIndex({ portfolios: portfolioData }: Props) {
         </AppLayout>
     );
 }
+
