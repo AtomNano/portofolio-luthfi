@@ -20,7 +20,7 @@ class PortfolioController extends Controller
     public function index()
     {
         return Inertia::render('dashboard/portfolios/index', [
-            'portfolios' => Portfolio::with('images')->latest()->get(),
+            'portfolios' => Portfolio::with('images')->orderBy('order')->get(),
         ]);
     }
 
@@ -196,6 +196,24 @@ class PortfolioController extends Controller
         $portfolio->delete();
 
         return Redirect::route('dashboard.portfolios.index');
+    }
+
+    /**
+     * Reorder portfolios.
+     */
+    public function reorder(Request $request)
+    {
+        $validated = $request->validate([
+            'portfolios' => 'required|array',
+            'portfolios.*.id' => 'required|exists:portfolios,id',
+            'portfolios.*.order' => 'required|integer',
+        ]);
+
+        foreach ($validated['portfolios'] as $portfolioData) {
+            Portfolio::where('id', $portfolioData['id'])->update(['order' => $portfolioData['order']]);
+        }
+
+        return Redirect::back();
     }
 
     /**

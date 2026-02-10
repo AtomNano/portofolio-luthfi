@@ -1,10 +1,10 @@
-import AppLayout from '@/layouts/app-layout';
-import portfolios from '@/routes/dashboard/portfolios';
-import { Button, buttonVariants } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Head, Link, useForm, router } from '@inertiajs/react';
 import { ArrowLeft, Upload, Trash2, ChevronLeft, ChevronRight, Images } from 'lucide-react';
 import { useState, useEffect, useRef, useCallback } from 'react';
+import { Button, buttonVariants } from '@/components/ui/button';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import AppLayout from '@/layouts/app-layout';
+import { index, edit } from '@/routes/dashboard/portfolios';
 
 type PortfolioImage = {
     id: number;
@@ -101,7 +101,7 @@ export default function PortfolioShow({ portfolio }: Props) {
                 <div className="flex items-center justify-between mb-8">
                     <div className="flex items-center gap-4">
                         <Link
-                            href={portfolios.index.url()}
+                            href={index.url()}
                             className={buttonVariants({ variant: 'outline', size: 'sm' })}
                         >
                             <ArrowLeft className="h-4 w-4 mr-2" />
@@ -113,7 +113,7 @@ export default function PortfolioShow({ portfolio }: Props) {
                         </div>
                     </div>
                     <Link
-                        href={portfolios.edit.url({ portfolio: portfolio.id })}
+                        href={edit.url({ portfolio: portfolio.id })}
                         className={buttonVariants()}
                     >
                         Edit Portofolio
@@ -176,8 +176,8 @@ export default function PortfolioShow({ portfolio }: Props) {
                                                     key={index}
                                                     onClick={() => setCurrentSlide(index)}
                                                     className={`h-2 w-2 rounded-full transition-all ${index === currentSlide
-                                                            ? 'bg-cyan-500 w-4'
-                                                            : 'bg-gray-600 hover:bg-gray-500'
+                                                        ? 'bg-cyan-500 w-4'
+                                                        : 'bg-gray-600 hover:bg-gray-500'
                                                         }`}
                                                 />
                                             ))}
@@ -264,8 +264,8 @@ export default function PortfolioShow({ portfolio }: Props) {
                                     <div
                                         key={image.id}
                                         className={`group relative aspect-square overflow-hidden rounded-lg bg-gray-800 cursor-pointer border-2 transition-all ${index === currentSlide
-                                                ? 'border-cyan-500'
-                                                : 'border-transparent hover:border-gray-600'
+                                            ? 'border-cyan-500'
+                                            : 'border-transparent hover:border-gray-600'
                                             }`}
                                         onClick={() => setCurrentSlide(index)}
                                     >

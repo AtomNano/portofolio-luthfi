@@ -1,12 +1,12 @@
-import AppLayout from '@/layouts/app-layout'
 import { Head, useForm } from '@inertiajs/react'
+import InputError from '@/components/input-error'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Textarea } from '@/components/ui/textarea'
-import InputError from '@/components/input-error'
-import portfolios from '@/routes/dashboard/portfolios';
 import { PORTFOLIO_CATEGORIES } from '@/constants/portfolio'
+import AppLayout from '@/layouts/app-layout'
+import { update } from '@/routes/dashboard/portfolios';
 import { parseCommaSeparated, joinWithComma } from '@/utils/format'
 
 type Portfolio = {
@@ -47,7 +47,7 @@ export default function PortfolioEdit({ portfolio }: Props) {
 
     function handleSubmit(e: React.FormEvent) {
         e.preventDefault();
-        post(portfolios.update.url({ portfolio: portfolio.id }));
+        post(update.url({ portfolio: portfolio.id }));
     }
 
     return (

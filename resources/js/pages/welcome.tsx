@@ -1,12 +1,12 @@
-import { login } from '@/routes'
-import dashboard from '@/routes/dashboard'
-import type { Portfolio, SharedData, User } from '@/types'
 import { Head, Link, usePage } from '@inertiajs/react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Code, Github, Linkedin, PenTool, Smartphone, Twitter, Terminal, Cpu, Globe, ArrowRight, Instagram, Phone, Menu, X, ArrowUp } from 'lucide-react'
 import React, { useEffect, useState } from 'react'
 import { TypeAnimation } from 'react-type-animation'
 import { SERVICES } from '@/constants/services'
+import { login } from '@/routes'
+import dashboard from '@/routes/dashboard'
+import type { Portfolio, SharedData, User } from '@/types'
 import { getAvatarUrl, getPortfolioImageUrl } from '@/utils/image'
 
 // Helper component for animating sections on scroll
@@ -56,14 +56,14 @@ const Header = () => {
 
                 {/* Desktop Navigation */}
                 <nav className="hidden items-center gap-8 md:flex text-sm">
-                    <a href="#about" className={navLinkClasses}>
-                        ./about
-                    </a>
                     <a href="#services" className={navLinkClasses}>
                         ./services
                     </a>
                     <a href="#portfolio" className={navLinkClasses}>
                         ./portfolio
+                    </a>
+                    <a href="#about" className={navLinkClasses}>
+                        ./about
                     </a>
                 </nav>
 
@@ -104,13 +104,6 @@ const Header = () => {
                     >
                         <nav className="container mx-auto flex flex-col px-4 py-4 space-y-4">
                             <a
-                                href="#about"
-                                onClick={handleNavClick}
-                                className="text-lg text-gray-300 hover:text-cyan-400 transition-colors py-2 border-b border-gray-800"
-                            >
-                                ./about
-                            </a>
-                            <a
                                 href="#services"
                                 onClick={handleNavClick}
                                 className="text-lg text-gray-300 hover:text-cyan-400 transition-colors py-2 border-b border-gray-800"
@@ -130,6 +123,13 @@ const Header = () => {
                                 className="text-lg text-gray-300 hover:text-cyan-400 transition-colors py-2"
                             >
                                 ./contact
+                            </a>
+                            <a
+                                href="#about"
+                                onClick={handleNavClick}
+                                className="text-lg text-gray-300 hover:text-cyan-400 transition-colors py-2 border-b border-gray-800"
+                            >
+                                ./about
                             </a>
                             {!auth.user && (
                                 <Link
@@ -187,7 +187,9 @@ const HeroSection = ({ owner }: { owner?: User }) => (
                             2000,
                             'UI/UX Enthusiast',
                             2000,
-                            'System Administrator',
+                            'IT Support',
+                            2000,
+                            '3D Artist',
                             2000,
                         ]}
                         wrapper="span"
@@ -263,43 +265,6 @@ const HeroSection = ({ owner }: { owner?: User }) => (
     </section>
 )
 
-// About Section
-const AboutSection = ({ owner }: { owner?: User }) => (
-    <AnimatedSection className="bg-gray-900">
-        <div id="about" className="container mx-auto grid max-w-6xl gap-12 lg:grid-cols-2 lg:gap-20">
-            <div className="order-2 lg:order-1 relative">
-                <div className="absolute -left-4 -top-4 text-9xl font-bold text-gray-800/20 pointer-events-none select-none">
-                    01
-                </div>
-                <h2 className="text-3xl font-bold text-cyan-400 sm:text-4xl font-mono">// About_Me</h2>
-                <h3 className="mt-4 text-2xl font-bold text-white">Coding with passion, Designing with purpose.</h3>
-                <p className="mt-6 text-lg leading-relaxed text-gray-400">
-                    {owner?.about_me || "I am a multi-talented professional navigating the intersection of technology and creativity. From architecting complex backend systems with modern frameworks to crafting pixel-perfect interfaces, I view every project as an opportunity to solve problems elegantly."}
-                </p>
-                <div className="mt-8 grid grid-cols-2 gap-4">
-                    <div className="rounded border border-gray-800 bg-gray-950 p-4">
-                        <span className="block text-3xl font-bold text-white">3+</span>
-                        <span className="text-sm text-gray-500">Years Experience</span>
-                    </div>
-                    <div className="rounded border border-gray-800 bg-gray-950 p-4">
-                        <span className="block text-3xl font-bold text-white">20+</span>
-                        <span className="text-sm text-gray-500">Projects Completed</span>
-                    </div>
-                </div>
-            </div>
-            <div className="order-1 lg:order-2 grid grid-cols-2 gap-4">
-                <div className="space-y-4 pt-8">
-                    <div className="aspect-square rounded-2xl bg-gray-800 flex items-center justify-center p-6 border border-gray-700"> <Code className="w-12 h-12 text-cyan-500" /> </div>
-                    <div className="aspect-square rounded-2xl bg-gray-800 flex items-center justify-center p-6 border border-gray-700"> <Globe className="w-12 h-12 text-blue-500" /> </div>
-                </div>
-                <div className="space-y-4">
-                    <div className="aspect-square rounded-2xl bg-gray-800 flex items-center justify-center p-6 border border-gray-700"> <Cpu className="w-12 h-12 text-purple-500" /> </div>
-                    <div className="aspect-square rounded-2xl bg-gray-800 flex items-center justify-center p-6 border border-gray-700"> <Smartphone className="w-12 h-12 text-green-500" /> </div>
-                </div>
-            </div>
-        </div>
-    </AnimatedSection>
-)
 
 // Services Section
 const ServicesSection = () => (
@@ -329,7 +294,7 @@ const ServicesSection = () => (
 
 // Portfolio Section
 const PortfolioSection = ({ portfolios }: { portfolios: Portfolio[] }) => (
-    <AnimatedSection className="bg-gray-900">
+    <AnimatedSection className="bg-gray-900 !py-6">
         <div id="portfolio" className="container mx-auto">
             <div className="flex items-center justify-between mb-12">
                 <div>
@@ -396,6 +361,45 @@ const PortfolioSection = ({ portfolios }: { portfolios: Portfolio[] }) => (
                 <a href="#" className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors">
                     View All <ArrowRight className="h-4 w-4" />
                 </a>
+            </div>
+        </div>
+    </AnimatedSection>
+)
+
+
+// About Section
+const AboutSection = ({ owner }: { owner?: User }) => (
+    <AnimatedSection className="bg-gray-900">
+        <div id="about" className="container mx-auto grid max-w-6xl gap-12 lg:grid-cols-2 lg:gap-20">
+            <div className="order-2 lg:order-1 relative">
+                <div className="absolute -left-4 -top-4 text-9xl font-bold text-gray-800/20 pointer-events-none select-none">
+                    01
+                </div>
+                <h2 className="text-3xl font-bold text-cyan-400 sm:text-4xl font-mono">// About_Me</h2>
+                <h3 className="mt-4 text-2xl font-bold text-white">Coding with passion, Designing with purpose.</h3>
+                <p className="mt-6 text-lg leading-relaxed text-gray-400">
+                    {owner?.about_me || "I am a multi-talented professional navigating the intersection of technology and creativity. From architecting complex backend systems with modern frameworks to crafting pixel-perfect interfaces, I view every project as an opportunity to solve problems elegantly."}
+                </p>
+                <div className="mt-8 grid grid-cols-2 gap-4">
+                    <div className="rounded border border-gray-800 bg-gray-950 p-4">
+                        <span className="block text-3xl font-bold text-white">{owner?.years_experience || 3}+</span>
+                        <span className="text-sm text-gray-500">Years Experience</span>
+                    </div>
+                    <div className="rounded border border-gray-800 bg-gray-950 p-4">
+                        <span className="block text-3xl font-bold text-white">{owner?.projects_completed || 20}+</span>
+                        <span className="text-sm text-gray-500">Projects Completed</span>
+                    </div>
+                </div>
+            </div>
+            <div className="order-1 lg:order-2 grid grid-cols-2 gap-4">
+                <div className="space-y-4 pt-8">
+                    <div className="aspect-square rounded-2xl bg-gray-800 flex items-center justify-center p-6 border border-gray-700"> <Code className="w-12 h-12 text-cyan-500" /> </div>
+                    <div className="aspect-square rounded-2xl bg-gray-800 flex items-center justify-center p-6 border border-gray-700"> <Globe className="w-12 h-12 text-blue-500" /> </div>
+                </div>
+                <div className="space-y-4">
+                    <div className="aspect-square rounded-2xl bg-gray-800 flex items-center justify-center p-6 border border-gray-700"> <Cpu className="w-12 h-12 text-purple-500" /> </div>
+                    <div className="aspect-square rounded-2xl bg-gray-800 flex items-center justify-center p-6 border border-gray-700"> <Smartphone className="w-12 h-12 text-green-500" /> </div>
+                </div>
             </div>
         </div>
     </AnimatedSection>
@@ -477,9 +481,9 @@ export default function Welcome({
                 <Header />
                 <main>
                     <HeroSection owner={owner} />
-                    <AboutSection owner={owner} />
-                    <ServicesSection />
                     <PortfolioSection portfolios={portfolios} />
+                    <ServicesSection />
+                    <AboutSection owner={owner} />
                 </main>
                 <Footer owner={owner} />
 

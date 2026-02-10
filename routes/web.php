@@ -34,6 +34,10 @@ Route::middleware(['auth', 'verified'])
         Route::post('portfolios/{portfolio}/images/reorder', [PortfolioImageController::class, 'reorder'])
             ->name('portfolios.images.reorder');
 
+        // Portfolio reordering
+        Route::post('portfolios/reorder', [PortfolioController::class, 'reorder'])
+            ->name('portfolios.reorder');
+
         // Statistics API
         Route::get('api/statistics', [PortfolioController::class, 'statistics'])
             ->name('api.statistics');
@@ -41,6 +45,10 @@ Route::middleware(['auth', 'verified'])
 
 // Public portfolio route
 Route::get('/portfolios/{portfolio}', [PortfolioController::class, 'show'])->name('portfolios.show');
+
+// Google OAuth routes
+Route::get('auth/google', [\App\Http\Controllers\SocialAuthController::class, 'redirectToGoogle'])->name('auth.google');
+Route::get('auth/google/callback', [\App\Http\Controllers\SocialAuthController::class, 'handleGoogleCallback']);
 
 // Include additional settings routes
 require __DIR__ . '/settings.php';
