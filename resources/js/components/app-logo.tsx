@@ -1,5 +1,5 @@
-import { SharedData } from '@/types';
 import { usePage } from '@inertiajs/react';
+import type { SharedData } from '@/types';
 import AppLogoIcon from './app-logo-icon';
 
 export default function AppLogo() {

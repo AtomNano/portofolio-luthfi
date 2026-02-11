@@ -24,6 +24,8 @@ trait ProfileValidationRules
             'linkedin' => ['nullable', 'string', 'max:255'],
             'github' => ['nullable', 'string', 'max:255'],
             'about_me' => ['nullable', 'string'],
+            'years_experience' => ['nullable', 'integer', 'min:0', 'max:100'],
+            'projects_completed' => ['nullable', 'integer', 'min:0', 'max:10000'],
         ];
     }
 

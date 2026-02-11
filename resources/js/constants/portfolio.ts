@@ -11,6 +11,7 @@ export const PORTFOLIO_CATEGORIES = [
     'UI/UX Design',
     'Graphic Design',
     'IT Support',
+    '3D Design',
 ] as const;
 
 export type PortfolioCategory = typeof PORTFOLIO_CATEGORIES[number];

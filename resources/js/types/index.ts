@@ -25,3 +25,14 @@ export type Portfolio = {
     created_at: string;
     updated_at: string;
 };
+
+export type Experience = {
+    id: number;
+    role: string;
+    company: string;
+    period: string;
+    description: string;
+    order: number;
+    created_at: string;
+    updated_at: string;
+};

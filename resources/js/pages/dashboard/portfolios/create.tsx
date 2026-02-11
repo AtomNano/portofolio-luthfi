@@ -1,12 +1,14 @@
-import AppLayout from '@/layouts/app-layout'
 import { Head, useForm } from '@inertiajs/react'
+import { X } from 'lucide-react'
+import { useState } from 'react'
+import InputError from '@/components/input-error'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Textarea } from '@/components/ui/textarea'
-import InputError from '@/components/input-error'
-import portfolios from '@/routes/dashboard/portfolios'
 import { PORTFOLIO_CATEGORIES } from '@/constants/portfolio'
+import AppLayout from '@/layouts/app-layout'
+import { store } from '@/routes/dashboard/portfolios'
 import { parseCommaSeparated } from '@/utils/format'
 
 export default function PortfolioCreate() {
@@ -20,7 +22,10 @@ export default function PortfolioCreate() {
         github_url: '',
         video_url: '',
         image: null as File | null,
+        images: [] as File[],
     })
+
+    const [imagePreviews, setImagePreviews] = useState<string[]>([])
 
     transform((data) => ({
         ...data,
@@ -29,7 +34,23 @@ export default function PortfolioCreate() {
 
     function handleSubmit(e: React.FormEvent) {
         e.preventDefault()
-        post(portfolios.store.url())
+        post(store.url())
+    }
+
+    function handleImagesChange(e: React.ChangeEvent<HTMLInputElement>) {
+        const files = Array.from(e.target.files || [])
+        setData('images', files)
+
+        // Create previews
+        const previews = files.map(file => URL.createObjectURL(file))
+        setImagePreviews(previews)
+    }
+
+    function removeImage(index: number) {
+        const newImages = data.images.filter((_, i) => i !== index)
+        const newPreviews = imagePreviews.filter((_, i) => i !== index)
+        setData('images', newImages)
+        setImagePreviews(newPreviews)
     }
 
     return (
@@ -146,7 +167,7 @@ export default function PortfolioCreate() {
                     </div>
 
                     <div>
-                        <Label htmlFor="image">Gambar Proyek</Label>
+                        <Label htmlFor="image">Gambar Utama Proyek</Label>
                         <input
                             id="image"
                             name="image"
@@ -162,6 +183,48 @@ export default function PortfolioCreate() {
                                 cursor-pointer"
                         />
                         <InputError message={errors.image} className="mt-2" />
+                    </div>
+
+                    <div>
+                        <Label htmlFor="images">Gambar Tambahan (Multiple)</Label>
+                        <input
+                            id="images"
+                            name="images"
+                            type="file"
+                            accept="image/*"
+                            multiple
+                            onChange={handleImagesChange}
+                            className="mt-1 block w-full text-sm text-gray-400
+                                file:mr-4 file:py-2 file:px-4
+                                file:rounded-md file:border-0
+                                file:text-sm file:font-semibold
+                                file:bg-cyan-600 file:text-white
+                                hover:file:bg-cyan-500
+                                cursor-pointer"
+                        />
+                        <InputError message={errors.images} className="mt-2" />
+
+                        {/* Image Previews */}
+                        {imagePreviews.length > 0 && (
+                            <div className="mt-4 grid grid-cols-2 md:grid-cols-4 gap-4">
+                                {imagePreviews.map((preview, index) => (
+                                    <div key={index} className="relative group">
+                                        <img
+                                            src={preview}
+                                            alt={`Preview ${index + 1}`}
+                                            className="w-full h-24 object-cover rounded-lg border border-gray-700"
+                                        />
+                                        <button
+                                            type="button"
+                                            onClick={() => removeImage(index)}
+                                            className="absolute top-1 right-1 bg-red-500 text-white rounded-full p-1 opacity-0 group-hover:opacity-100 transition-opacity"
+                                        >
+                                            <X className="h-4 w-4" />
+                                        </button>
+                                    </div>
+                                ))}
+                            </div>
+                        )}
                     </div>
 
                     <div className="flex items-center justify-end">

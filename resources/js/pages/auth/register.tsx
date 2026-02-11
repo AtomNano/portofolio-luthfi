@@ -6,7 +6,8 @@ import { Label } from '@/components/ui/label';
 import { Spinner } from '@/components/ui/spinner';
 import AuthLayout from '@/layouts/auth-layout';
 import { login } from '@/routes';
-import { store } from '@/routes/register';
+// import { store } from '@/routes/register';
+const store = { form: () => ({ action: '/register', method: 'post' as const }) };
 import { Form, Head } from '@inertiajs/react';
 
 export default function Register() {
