@@ -296,9 +296,9 @@ const PortfolioSection = ({ portfolios }: { portfolios: Portfolio[] }) => {
                                 {/* Scrollable Content */}
                                 <div className="flex-1 overflow-y-auto p-6 md:p-8 space-y-8">
                                     <div className="prose prose-invert prose-sm max-w-none">
-                                        <p className="text-muted-foreground leading-relaxed whitespace-pre-line text-sm md:text-base font-light">
+                                        <DialogDescription className="text-muted-foreground leading-relaxed whitespace-pre-line text-sm md:text-base font-light">
                                             {selectedPortfolio.description}
-                                        </p>
+                                        </DialogDescription>
                                     </div>
 
                                     {/* Tech Stack */}

@@ -285,6 +285,9 @@ export default function ExperienceIndex({ experiences }: { experiences: Experien
                 <DialogContent className="bg-card border-border text-foreground sm:max-w-[500px]">
                     <DialogHeader>
                         <DialogTitle className="text-foreground">{editingExperience ? 'Edit Experience' : 'Add New Experience'}</DialogTitle>
+                        <DialogDescription className="sr-only">
+                            {editingExperience ? 'Edit the details of your professional experience.' : 'Add a new professional experience to your portfolio.'}
+                        </DialogDescription>
                     </DialogHeader>
                     <form onSubmit={handleSubmit} className="space-y-4 mt-4">
                         <div className="space-y-2">
