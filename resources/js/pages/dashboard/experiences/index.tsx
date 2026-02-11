@@ -49,40 +49,47 @@ const SortableExperienceItem = ({ experience, openEditDialog, handleDelete }: { 
             style={style}
             {...attributes}
             {...listeners}
-            className="bg-gray-900 border border-gray-800 rounded-xl p-6 flex flex-col hover:border-cyan-500/30 transition-colors group touch-none"
+            className="bg-card border border-border rounded-xl p-6 flex flex-col hover:border-cyan-500/30 transition-colors group touch-none"
         >
             <div className="flex items-start justify-between mb-4">
-                <div className="p-3 bg-gray-800 rounded-lg group-hover:bg-cyan-900/20 transition-colors cursor-grab active:cursor-grabbing">
+                <div className="p-3 bg-secondary rounded-lg group-hover:bg-cyan-900/20 transition-colors cursor-grab active:cursor-grabbing">
                     <Briefcase className="w-6 h-6 text-cyan-400" />
                 </div>
                 <div className="flex gap-2">
                     <Button variant="ghost" size="icon" onClick={() => openEditDialog(experience)} className="cursor-pointer" onPointerDown={(e) => e.stopPropagation()}>
-                        <Pencil className="w-4 h-4 text-gray-400 hover:text-cyan-400" />
+                        <Pencil className="w-4 h-4 text-muted-foreground hover:text-cyan-400" />
                     </Button>
                     <Button variant="ghost" size="icon" onClick={() => handleDelete(experience.id)} className="cursor-pointer" onPointerDown={(e) => e.stopPropagation()}>
-                        <Trash2 className="w-4 h-4 text-gray-400 hover:text-red-400" />
+                        <Trash2 className="w-4 h-4 text-muted-foreground hover:text-red-400" />
                     </Button>
                 </div>
             </div>
 
-            <h3 className="text-xl font-bold text-white mb-1 line-clamp-1">{experience.role}</h3>
+            <h3 className="text-xl font-bold text-foreground mb-1 line-clamp-1">{experience.role}</h3>
 
-            <div className="flex items-center gap-2 text-gray-400 text-sm mb-4">
+            <div className="flex items-center gap-2 text-muted-foreground text-sm mb-4">
                 <Building2 className="w-4 h-4" />
                 <span className="line-clamp-1">{experience.company}</span>
             </div>
 
-            <div className="flex items-center gap-2 text-cyan-400 text-xs font-mono mb-4 bg-cyan-950/30 py-1 px-2 rounded w-fit border border-cyan-500/20">
+            <div className="flex items-center gap-2 text-cyan-500 text-xs font-mono mb-4 bg-cyan-950/20 py-1 px-2 rounded w-fit border border-cyan-500/20">
                 <Calendar className="w-3 h-3" />
                 <span>{experience.period}</span>
             </div>
 
-            <p className="text-gray-400 text-sm line-clamp-3 mt-auto">
+            <p className="text-muted-foreground text-sm line-clamp-3 mt-auto">
                 {experience.description}
             </p>
         </div>
     );
 };
+
+const breadcrumbs = [
+    {
+        title: 'Experiences',
+        href: '/dashboard/experiences',
+    },
+];
 
 export default function ExperienceIndex({ experiences }: { experiences: Experience[] }) {
     const [isDialogOpen, setIsDialogOpen] = useState(false);
@@ -226,16 +233,16 @@ export default function ExperienceIndex({ experiences }: { experiences: Experien
     };
 
     return (
-        <AppLayout>
+        <AppLayout breadcrumbs={breadcrumbs}>
             <Head title="Manage Experiences" />
 
-            <div className="container max-w-7xl mx-auto py-10">
-                <div className="flex items-center justify-between mb-8">
+            <div className="flex h-full flex-1 flex-col gap-4 p-4">
+                <div className="flex items-center justify-between mb-4">
                     <div>
-                        <h1 className="text-3xl font-bold text-white">Manage Experiences</h1>
-                        <p className="text-gray-400 mt-1">Add, edit, or remove your professional experiences.</p>
+                        <h1 className="text-2xl font-bold text-foreground">Manage Experiences</h1>
+                        <p className="text-muted-foreground mt-1">Add, edit, or remove your professional experiences.</p>
                     </div>
-                    <Button onClick={openCreateDialog} className="bg-cyan-600 hover:bg-cyan-700 text-white">
+                    <Button onClick={openCreateDialog} className="bg-primary hover:bg-primary/90 text-primary-foreground">
                         <Plus className="w-4 h-4 mr-2" />
                         Add New
                     </Button>
@@ -264,78 +271,78 @@ export default function ExperienceIndex({ experiences }: { experiences: Experien
                 </DndContext>
 
                 {experiences.length === 0 && (
-                    <div className="text-center py-20 border border-dashed border-gray-800 rounded-xl">
-                        <Briefcase className="h-12 w-12 text-gray-700 mx-auto mb-4" />
-                        <h3 className="text-xl font-bold text-white mb-2">No experiences yet</h3>
-                        <p className="text-gray-500">Get started by adding your first professional experience.</p>
+                    <div className="text-center py-20 border border-dashed border-border rounded-xl">
+                        <Briefcase className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
+                        <h3 className="text-xl font-bold text-foreground mb-2">No experiences yet</h3>
+                        <p className="text-muted-foreground">Get started by adding your first professional experience.</p>
                     </div>
                 )}
             </div>
 
             {/* Create/Edit Dialog */}
             <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
-                <DialogContent className="bg-gray-900 border-gray-800 text-white sm:max-w-[500px]">
+                <DialogContent className="bg-card border-border text-foreground sm:max-w-[500px]">
                     <DialogHeader>
-                        <DialogTitle>{editingExperience ? 'Edit Experience' : 'Add New Experience'}</DialogTitle>
+                        <DialogTitle className="text-foreground">{editingExperience ? 'Edit Experience' : 'Add New Experience'}</DialogTitle>
                     </DialogHeader>
                     <form onSubmit={handleSubmit} className="space-y-4 mt-4">
                         <div className="space-y-2">
-                            <Label htmlFor="role">Role / Job Title</Label>
+                            <Label htmlFor="role" className="text-foreground">Role / Job Title</Label>
                             <Input
                                 id="role"
                                 value={data.role}
                                 onChange={(e) => setData('role', e.target.value)}
                                 placeholder="e.g. Senior Frontend Developer"
-                                className="bg-gray-800 border-gray-700 focus:border-cyan-500"
+                                className="bg-background border-input focus:border-cyan-500 text-foreground"
                                 required
                             />
                             {errors.role && <p className="text-red-500 text-xs">{errors.role}</p>}
                         </div>
 
                         <div className="space-y-2">
-                            <Label htmlFor="company">Company Name</Label>
+                            <Label htmlFor="company" className="text-foreground">Company Name</Label>
                             <Input
                                 id="company"
                                 value={data.company}
                                 onChange={(e) => setData('company', e.target.value)}
                                 placeholder="e.g. Google Inc."
-                                className="bg-gray-800 border-gray-700 focus:border-cyan-500"
+                                className="bg-background border-input focus:border-cyan-500 text-foreground"
                                 required
                             />
                             {errors.company && <p className="text-red-500 text-xs">{errors.company}</p>}
                         </div>
 
                         <div className="space-y-2">
-                            <Label htmlFor="period">Period</Label>
+                            <Label htmlFor="period" className="text-foreground">Period</Label>
                             <Input
                                 id="period"
                                 value={data.period}
                                 onChange={(e) => setData('period', e.target.value)}
                                 placeholder="e.g. Jan 2023 - Present"
-                                className="bg-gray-800 border-gray-700 focus:border-cyan-500"
+                                className="bg-background border-input focus:border-cyan-500 text-foreground"
                                 required
                             />
                             {errors.period && <p className="text-red-500 text-xs">{errors.period}</p>}
                         </div>
 
                         <div className="space-y-2">
-                            <Label htmlFor="description">Description</Label>
+                            <Label htmlFor="description" className="text-foreground">Description</Label>
                             <Textarea
                                 id="description"
                                 value={data.description}
                                 onChange={(e) => setData('description', e.target.value)}
                                 placeholder="Describe your responsibilities and achievements..."
-                                className="bg-gray-800 border-gray-700 focus:border-cyan-500 min-h-[100px]"
+                                className="bg-background border-input focus:border-cyan-500 min-h-[100px] text-foreground"
                                 required
                             />
                             {errors.description && <p className="text-red-500 text-xs">{errors.description}</p>}
                         </div>
 
                         <DialogFooter className="mt-6">
-                            <Button type="button" variant="ghost" onClick={() => setIsDialogOpen(false)} className="mr-2">
+                            <Button type="button" variant="ghost" onClick={() => setIsDialogOpen(false)} className="mr-2 text-muted-foreground hover:text-foreground">
                                 Cancel
                             </Button>
-                            <Button type="submit" className="bg-cyan-600 hover:bg-cyan-700 text-white" disabled={processing}>
+                            <Button type="submit" className="bg-primary hover:bg-primary/90 text-primary-foreground" disabled={processing}>
                                 {processing ? 'Saving...' : (editingExperience ? 'Update Experience' : 'Create Experience')}
                             </Button>
                         </DialogFooter>

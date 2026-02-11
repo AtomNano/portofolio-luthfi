@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react';
 import { SharedData } from '@/types';
 import dashboard from '@/routes/dashboard';
 import { login } from '@/routes';
+import { ModeToggle } from './mode-toggle';
 
 export default function FrontNavbar() {
     const { props, url } = usePage<SharedData>()
@@ -106,6 +107,8 @@ export default function FrontNavbar() {
                             Login
                         </Link>
                     )}
+
+                    <ModeToggle />
 
                     {/* Mobile Menu Button */}
                     <button
