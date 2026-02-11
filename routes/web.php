@@ -9,6 +9,9 @@ use Inertia\Inertia;
 // Route for the public-facing welcome page
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
+// Redirect /dashboard to /dashboard/
+Route::redirect('/dashboard', '/dashboard/', 301)->name('dashboard');
+
 // Authenticated and verified routes for the dashboard
 Route::middleware(['auth', 'verified'])
     ->prefix('dashboard')

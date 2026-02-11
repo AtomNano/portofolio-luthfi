@@ -2,9 +2,9 @@ import { Link, usePage } from '@inertiajs/react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Menu, Terminal, X } from 'lucide-react';
 import { useEffect, useState } from 'react';
-import { SharedData } from '@/types';
-import dashboard from '@/routes/dashboard';
 import { login } from '@/routes';
+import dashboard from '@/routes/dashboard';
+import type { SharedData } from '@/types';
 import { ModeToggle } from './mode-toggle';
 
 export default function FrontNavbar() {

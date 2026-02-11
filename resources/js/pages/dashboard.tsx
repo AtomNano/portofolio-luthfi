@@ -3,10 +3,10 @@ import { PlusCircle, Eye, MousePointer, TrendingUp, ExternalLink } from 'lucide-
 import { useEffect, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { usePageEffects } from '@/hooks/use-page-effects';
 import AppLayout from '@/layouts/app-layout';
 import dashboard from '@/routes/dashboard';
 import type { BreadcrumbItem, SharedData } from '@/types';
-import { usePageEffects } from '@/hooks/use-page-effects';
 
 const breadcrumbs: BreadcrumbItem[] = [
     {

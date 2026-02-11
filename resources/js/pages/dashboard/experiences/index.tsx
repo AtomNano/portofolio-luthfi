@@ -1,16 +1,12 @@
+import type { DragEndEvent } from '@dnd-kit/core';
+import { DndContext, closestCenter, KeyboardSensor, PointerSensor, useSensor, useSensors } from '@dnd-kit/core';
+import { arrayMove, SortableContext, sortableKeyboardCoordinates, useSortable, rectSortingStrategy } from '@dnd-kit/sortable';
+import { CSS } from '@dnd-kit/utilities';
 import { Head, useForm, router } from '@inertiajs/react';
 import { Pencil, Trash2, Plus, Calendar, Building2, Briefcase } from 'lucide-react';
 import { useState } from 'react';
 import Swal from 'sweetalert2';
-import { DndContext, closestCenter, KeyboardSensor, PointerSensor, useSensor, useSensors, DragEndEvent } from '@dnd-kit/core';
-import { arrayMove, SortableContext, sortableKeyboardCoordinates, useSortable, rectSortingStrategy } from '@dnd-kit/sortable';
-import { CSS } from '@dnd-kit/utilities';
 import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
-import { Textarea } from '@/components/ui/textarea';
-import AppLayout from '@/layouts/app-layout';
-import { Experience } from '@/types';
 import {
     Dialog,
     DialogContent,
@@ -19,6 +15,11 @@ import {
     DialogTrigger,
     DialogFooter,
 } from "@/components/ui/dialog"
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
+import { Textarea } from '@/components/ui/textarea';
+import AppLayout from '@/layouts/app-layout';
+import type { Experience } from '@/types';
 
 // Routes helper (assuming these exist or will use manual paths)
 const routes = {

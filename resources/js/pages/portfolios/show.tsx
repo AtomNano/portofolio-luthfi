@@ -95,7 +95,7 @@ export default function PortfolioShow({ portfolio, related_portfolios }: { portf
         };
         window.addEventListener('keydown', handleKeyDown);
         return () => window.removeEventListener('keydown', handleKeyDown);
-    }, [lightboxOpen]);
+    }, [lightboxOpen, closeLightbox, nextLightbox, prevLightbox]);
 
     // Helper to extract YouTube ID
     const getYoutubeId = (url: string) => {

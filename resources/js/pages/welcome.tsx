@@ -1,17 +1,17 @@
 import { Head, Link, usePage } from '@inertiajs/react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Code, Github, Linkedin, PenTool, Smartphone, Twitter, Terminal, Cpu, Globe, ArrowRight, Instagram, Phone, Menu, X, ArrowUp } from 'lucide-react'
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog'
+import React, { useEffect, useState } from 'react'
 import { DiAndroid, DiCode, DiCss3, DiDatabase, DiDocker, DiGithubBadge, DiHtml5, DiLaravel, DiLinux, DiPhp, DiUbuntu } from 'react-icons/di'
 import { SiFlutter } from 'react-icons/si'
-import React, { useEffect, useState } from 'react'
 import { TypeAnimation } from 'react-type-animation'
+import FrontNavbar from '@/components/front-navbar'
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog'
 import { SERVICES } from '@/constants/services'
 import { login } from '@/routes'
 import dashboard from '@/routes/dashboard'
 import type { Portfolio, SharedData, User } from '@/types'
 import { getAvatarUrl, getPortfolioImageUrl } from '@/utils/image'
-import FrontNavbar from '@/components/front-navbar'
 
 // Helper component for animating sections on scroll
 const AnimatedSection = ({ children, className = "" }: { children: React.ReactNode, className?: string }) => (
@@ -455,11 +455,9 @@ const Footer = ({ owner }: { owner?: User }) => {
 
 // Main Welcome Component
 export default function Welcome({
-    canRegister,
     portfolios,
     owner,
 }: {
-    canRegister?: boolean
     portfolios: Portfolio[]
     owner?: User
 }) {

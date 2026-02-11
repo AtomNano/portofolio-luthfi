@@ -2,7 +2,8 @@ import { Head, Link } from '@inertiajs/react';
 import { motion } from 'framer-motion';
 import { ArrowLeft, Terminal } from 'lucide-react';
 import React from 'react';
-import { Experience } from '@/types';
+import FrontNavbar from '@/components/front-navbar';
+import type { Experience } from '@/types';
 
 // Animated Section
 const AnimatedSection = ({ children, className = "" }: { children: React.ReactNode, className?: string }) => (
@@ -15,8 +16,6 @@ const AnimatedSection = ({ children, className = "" }: { children: React.ReactNo
         {children}
     </motion.div>
 )
-
-import FrontNavbar from '@/components/front-navbar';
 
 // ...
 

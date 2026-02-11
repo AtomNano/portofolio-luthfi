@@ -62,7 +62,7 @@ export default function PortfolioShow({ portfolio }: Props) {
     }, [allImages.length]);
 
     // Upload form
-    const { post, processing } = useForm({});
+    const { processing } = useForm({});
 
     const handleUpload = () => {
         if (!selectedFiles || selectedFiles.length === 0) return;
