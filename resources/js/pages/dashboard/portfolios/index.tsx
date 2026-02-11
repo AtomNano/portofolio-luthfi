@@ -61,7 +61,7 @@ function SortablePortfolioCard({ portfolio, onDelete }: { portfolio: Portfolio; 
         <div
             ref={setNodeRef}
             style={style}
-            className="group relative flex flex-col rounded-lg border border-gray-800 bg-gray-900/50 overflow-hidden transition-all hover:border-cyan-500/50 hover:shadow-lg cursor-pointer"
+            className="group relative flex flex-col rounded-lg border border-white/10 bg-white/5 backdrop-blur-md overflow-hidden transition-all hover:border-cyan-500/50 hover:shadow-lg cursor-pointer"
             onClick={handleCardClick}
         >
             {/* Drag Handle */}
@@ -206,7 +206,7 @@ export default function PortfolioIndex({ portfolios: initialPortfolios }: Props)
         <AppLayout>
             <Head title="Manajemen Portofolio" />
 
-            <div className="container max-w-7xl mx-auto py-10">
+            <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-10">
                 <div className="flex items-center justify-between mb-8">
                     <div>
                         <h1 className="text-3xl font-bold text-white">Manajemen Portofolio</h1>

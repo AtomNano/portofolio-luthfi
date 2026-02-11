@@ -6,6 +6,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import AppLayout from '@/layouts/app-layout';
 import dashboard from '@/routes/dashboard';
 import type { BreadcrumbItem, SharedData } from '@/types';
+import { usePageEffects } from '@/hooks/use-page-effects';
 
 const breadcrumbs: BreadcrumbItem[] = [
     {
@@ -25,6 +26,7 @@ type Statistics = {
 };
 
 export default function Dashboard() {
+    usePageEffects('Dashboard');
     const { auth } = usePage<SharedData>().props;
     const [stats, setStats] = useState<Statistics | null>(null);
     const [loading, setLoading] = useState(true);
@@ -44,7 +46,7 @@ export default function Dashboard() {
             <Head title="Dashboard" />
             <div className="flex h-full flex-1 flex-col gap-4 overflow-x-auto rounded-xl p-4">
                 {/* Welcome Card */}
-                <Card className="border-gray-800 bg-gray-900 text-gray-200">
+                <Card className="glass text-gray-200 hover:scale-[1.02] transition-all duration-300">
                     <CardHeader>
                         <CardTitle className="text-white">Selamat Datang, {auth.user.name}!</CardTitle>
                         <CardDescription className="text-gray-400">
@@ -73,7 +75,7 @@ export default function Dashboard() {
                 {/* Statistics Section */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                     {/* Total Website Visitors */}
-                    <Card className="border-gray-800 bg-gray-900 text-gray-200">
+                    <Card className="glass text-gray-200 hover:scale-105 transition-all duration-300">
                         <CardHeader className="flex flex-row items-center justify-between pb-2">
                             <CardTitle className="text-sm font-medium text-gray-400">
                                 Pengunjung Website
@@ -91,7 +93,7 @@ export default function Dashboard() {
                     </Card>
 
                     {/* Total Portfolio Clicks */}
-                    <Card className="border-gray-800 bg-gray-900 text-gray-200">
+                    <Card className="glass text-gray-200 hover:scale-105 transition-all duration-300">
                         <CardHeader className="flex flex-row items-center justify-between pb-2">
                             <CardTitle className="text-sm font-medium text-gray-400">
                                 Klik Portofolio
@@ -109,7 +111,7 @@ export default function Dashboard() {
                     </Card>
 
                     {/* Engagement Rate */}
-                    <Card className="border-gray-800 bg-gray-900 text-gray-200">
+                    <Card className="glass text-gray-200 hover:scale-105 transition-all duration-300">
                         <CardHeader className="flex flex-row items-center justify-between pb-2">
                             <CardTitle className="text-sm font-medium text-gray-400">
                                 Tingkat Interaksi
@@ -133,7 +135,7 @@ export default function Dashboard() {
 
                 {/* Portfolio Stats */}
                 {stats && stats.portfolio_stats.length > 0 && (
-                    <Card className="border-gray-800 bg-gray-900 text-gray-200">
+                    <Card className="glass text-gray-200 hover:scale-[1.02] transition-all duration-300">
                         <CardHeader>
                             <CardTitle className="text-white">Statistik Per Portofolio</CardTitle>
                             <CardDescription className="text-gray-400">

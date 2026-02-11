@@ -38,6 +38,10 @@ class PortfolioController extends Controller
 
         return Inertia::render('portfolios/show', [
             'portfolio' => $portfolio->load('images'),
+            'related_portfolios' => Portfolio::where('id', '!=', $portfolio->id)
+                ->inRandomOrder()
+                ->take(5)
+                ->get(),
         ]);
     }
 
@@ -240,4 +244,3 @@ class PortfolioController extends Controller
         ]);
     }
 }
-

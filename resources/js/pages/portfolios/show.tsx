@@ -1,6 +1,6 @@
 import { Head, Link } from '@inertiajs/react';
 import { motion } from 'framer-motion';
-import { ArrowLeft, ExternalLink, Github, Calendar, Grid, Terminal, ChevronLeft, ChevronRight, X, ArrowUp } from 'lucide-react';
+import { ArrowLeft, ExternalLink, Github, Calendar, Grid, Terminal, ChevronLeft, ChevronRight, X, ArrowUp, Layers } from 'lucide-react';
 import React, { useState, useEffect, useCallback } from 'react';
 
 type PortfolioImage = {
@@ -23,7 +23,7 @@ type Portfolio = {
     images: PortfolioImage[];
 };
 
-export default function PortfolioShow({ portfolio }: { portfolio: Portfolio }) {
+export default function PortfolioShow({ portfolio, related_portfolios }: { portfolio: Portfolio, related_portfolios: Portfolio[] }) {
     const [currentSlide, setCurrentSlide] = useState(0);
     const [isPaused, setIsPaused] = useState(false);
     const [lightboxOpen, setLightboxOpen] = useState(false);
@@ -110,7 +110,7 @@ export default function PortfolioShow({ portfolio }: { portfolio: Portfolio }) {
         <div className="min-h-screen bg-gray-950 font-mono text-gray-200 selection:bg-cyan-500/30">
             <Head title={`${portfolio.title} - Portfolio`} />
 
-            <div className="container mx-auto max-w-5xl px-4 py-12 md:py-20">
+            <div className="container mx-auto max-w-7xl px-4 py-12 md:py-20">
                 {/* Back Button */}
                 <Link
                     href="/"
@@ -201,25 +201,28 @@ export default function PortfolioShow({ portfolio }: { portfolio: Portfolio }) {
                         </div>
                     </div>
 
-                    <div className="grid grid-cols-1 gap-12 p-6 md:p-10 lg:grid-cols-3">
-                        {/* Main Content */}
-                        <div className="lg:col-span-2">
-                            <h2 className="mb-4 flex items-center gap-2 text-xl font-bold text-white">
-                                <Terminal className="h-5 w-5 text-cyan-400" />
-                                Project Description
-                            </h2>
-                            <div className="prose prose-invert max-w-none text-gray-300 leading-relaxed whitespace-pre-line text-lg">
-                                {portfolio.description}
+                    <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 p-6 md:p-10">
+                        {/* Main Content (80%) represented by 9/12 columns */}
+                        <div className="md:col-span-9 space-y-12">
+                            {/* Project Description */}
+                            <div>
+                                <h2 className="mb-4 flex items-center gap-2 text-xl font-bold text-white">
+                                    <Terminal className="h-5 w-5 text-cyan-400" />
+                                    Project Description
+                                </h2>
+                                <div className="prose prose-invert max-w-none text-gray-300 leading-relaxed whitespace-pre-line text-lg">
+                                    {portfolio.description}
+                                </div>
                             </div>
 
                             {/* Image Grid */}
                             {allImages.length > 1 && (
-                                <div className="mt-12">
+                                <div>
                                     <h2 className="mb-4 flex items-center gap-2 text-xl font-bold text-white">
                                         <Grid className="h-5 w-5 text-cyan-400" />
-                                        Gallery ({allImages.length} gambar)
+                                        Gallery ({allImages.length} images)
                                     </h2>
-                                    <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+                                    <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
                                         {allImages.map((image, index) => (
                                             <div
                                                 key={image.id}
@@ -243,7 +246,7 @@ export default function PortfolioShow({ portfolio }: { portfolio: Portfolio }) {
 
                             {/* Video Section */}
                             {youtubeId && (
-                                <div className="mt-12">
+                                <div>
                                     <h2 className="mb-4 flex items-center gap-2 text-xl font-bold text-white">
                                         <div className="h-2 w-2 rounded-full bg-red-500 animate-pulse" />
                                         Demo Preview
@@ -261,8 +264,8 @@ export default function PortfolioShow({ portfolio }: { portfolio: Portfolio }) {
                             )}
                         </div>
 
-                        {/* Sidebar Details */}
-                        <div className="space-y-8 lg:border-l lg:border-gray-800 lg:pl-10">
+                        {/* Sidebar Details (20%) represented by 3/12 columns */}
+                        <div className="md:col-span-3 space-y-8 md:border-l md:border-gray-800 md:pl-8">
                             {/* Actions */}
                             <div className="flex flex-col gap-4">
                                 {portfolio.project_url && (
@@ -322,6 +325,50 @@ export default function PortfolioShow({ portfolio }: { portfolio: Portfolio }) {
                                     </div>
                                 </div>
                             </div>
+
+                            {/* Related Portfolios */}
+                            <div>
+                                <h3 className="mb-4 flex items-center gap-2 text-sm font-semibold text-gray-400 uppercase tracking-wider">
+                                    <Layers className="h-4 w-4" />
+                                    Other Portfolios
+                                </h3>
+                                <div className="space-y-4">
+                                    {related_portfolios.length > 0 ? (
+                                        related_portfolios.map((related) => (
+                                            <Link
+                                                key={related.id}
+                                                href={`/portfolios/${related.id}`} // Using direct URL for simplicity, ideally use route helper
+                                                className="block group rounded-lg border border-gray-800 bg-gray-900/50 p-3 transition-colors hover:border-cyan-500/50 hover:bg-gray-800"
+                                            >
+                                                <div className="flex gap-3">
+                                                    <div className="h-16 w-24 flex-shrink-0 overflow-hidden rounded bg-gray-800">
+                                                        {related.image_path ? (
+                                                            <img
+                                                                src={`/storage/${related.image_path}`}
+                                                                alt={related.title}
+                                                                className="h-full w-full object-cover transition-transform group-hover:scale-110"
+                                                            />
+                                                        ) : (
+                                                            <div className="h-full w-full bg-gray-800 flex items-center justify-center text-xs text-gray-500">No Image</div>
+                                                        )}
+                                                    </div>
+                                                    <div>
+                                                        <h4 className="font-semibold text-white line-clamp-2 group-hover:text-cyan-400 transition-colors">
+                                                            {related.title}
+                                                        </h4>
+                                                        <span className="text-xs text-cyan-500/80">
+                                                            {related.category}
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </Link>
+                                        ))
+                                    ) : (
+                                        <p className="text-sm text-gray-500 italic">No other portfolios found.</p>
+                                    )}
+                                </div>
+                            </div>
+
                         </div>
                     </div>
                 </motion.div>
@@ -333,14 +380,14 @@ export default function PortfolioShow({ portfolio }: { portfolio: Portfolio }) {
                         className="group inline-flex items-center gap-2 rounded-md border border-gray-700 bg-gray-800/50 px-4 py-2 text-cyan-400 transition-all hover:bg-gray-800 hover:border-gray-600"
                     >
                         <ArrowLeft className="h-4 w-4 transition-transform group-hover:-translate-x-1" />
-                        <span>Kembali ke Beranda</span>
+                        <span>Back to Home</span>
                     </Link>
                     <button
                         onClick={scrollToTop}
                         className="inline-flex items-center gap-2 rounded-md border border-gray-700 bg-gray-800/50 px-4 py-2 text-gray-300 transition-all hover:bg-gray-800 hover:border-gray-600"
                     >
                         <ArrowUp className="h-4 w-4" />
-                        <span>Ke Atas</span>
+                        <span>Up Top</span>
                     </button>
                 </div>
             </div>
@@ -403,4 +450,3 @@ export default function PortfolioShow({ portfolio }: { portfolio: Portfolio }) {
         </div>
     );
 }
-

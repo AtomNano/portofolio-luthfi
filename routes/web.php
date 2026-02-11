@@ -38,13 +38,22 @@ Route::middleware(['auth', 'verified'])
         Route::post('portfolios/reorder', [PortfolioController::class, 'reorder'])
             ->name('portfolios.reorder');
 
-        // Statistics API
+        // Statistic API
         Route::get('api/statistics', [PortfolioController::class, 'statistics'])
             ->name('api.statistics');
+
+        // Experience Resource
+        Route::put('experiences/reorder', [\App\Http\Controllers\ExperienceController::class, 'reorder'])
+            ->name('experiences.reorder');
+        Route::resource('experiences', \App\Http\Controllers\ExperienceController::class)
+            ->only(['store', 'update', 'destroy']);
+        Route::get('experiences', [\App\Http\Controllers\ExperienceController::class, 'dashboardIndex'])
+            ->name('experiences.index');
     });
 
 // Public portfolio route
 Route::get('/portfolios/{portfolio}', [PortfolioController::class, 'show'])->name('portfolios.show');
+Route::get('/experience', [\App\Http\Controllers\ExperienceController::class, 'index'])->name('experience.index');
 
 // Google OAuth routes
 Route::get('auth/google', [\App\Http\Controllers\SocialAuthController::class, 'redirectToGoogle'])->name('auth.google');
