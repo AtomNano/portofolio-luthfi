@@ -11,6 +11,8 @@ export type SharedData = {
     [key: string]: unknown;
 };
 
+export type PageProps<T = Record<string, unknown>> = T & SharedData;
+
 export type Portfolio = {
     id: number;
     title: string;
@@ -22,6 +24,7 @@ export type Portfolio = {
     tools: string[] | null;
     github_url: string | null;
     video_url: string | null;
+    images: { id: number; image_path: string }[];
     created_at: string;
     updated_at: string;
 };

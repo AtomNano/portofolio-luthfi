@@ -108,7 +108,23 @@ export default function PortfolioShow({ portfolio, related_portfolios }: { portf
 
     return (
         <div className="min-h-screen bg-gray-950 font-mono text-gray-200 selection:bg-cyan-500/30">
-            <Head title={`${portfolio.title} - Portfolio`} />
+            <Head>
+                <title>{`${portfolio.title} - Portfolio`}</title>
+                <meta name="description" content={portfolio.description} />
+
+                {/* Open Graph */}
+                <meta property="og:title" content={`${portfolio.title} - Portfolio`} />
+                <meta property="og:description" content={portfolio.description} />
+                <meta property="og:image" content={portfolio.image_path ? `/storage/${portfolio.image_path}` : '/default-og.jpg'} />
+                <meta property="og:url" content={window.location.href} />
+                <meta property="og:type" content="article" />
+
+                {/* Twitter */}
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta name="twitter:title" content={`${portfolio.title} - Portfolio`} />
+                <meta name="twitter:description" content={portfolio.description} />
+                <meta name="twitter:image" content={portfolio.image_path ? `/storage/${portfolio.image_path}` : '/default-og.jpg'} />
+            </Head>
 
             <div className="container mx-auto max-w-7xl px-4 py-12 md:py-20">
                 {/* Back Button */}

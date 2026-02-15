@@ -2,30 +2,28 @@
 
 namespace App\Http\Controllers;
 
+use App\Actions\OptimizeImageAction;
+use App\Http\Requests\ReorderPortfolioImagesRequest;
+use App\Http\Requests\StorePortfolioImagesRequest;
 use App\Models\Portfolio;
 use App\Models\PortfolioImage;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Storage;
 
 class PortfolioImageController extends Controller
 {
     /**
      * Store new images for a portfolio.
      */
-    public function store(Request $request, Portfolio $portfolio)
+    public function store(StorePortfolioImagesRequest $request, Portfolio $portfolio, OptimizeImageAction $optimizeImage)
     {
-        $request->validate([
-            'images' => 'required|array',
-            'images.*' => 'image|max:2048',
-        ]);
-
         $maxOrder = $portfolio->images()->max('order') ?? -1;
 
         foreach ($request->file('images') as $index => $image) {
-            $path = $image->store('portfolios', 'public');
+            $optimized = $optimizeImage->handle($image);
             $portfolio->images()->create([
-                'image_path' => $path,
+                'image_path' => $optimized['path'],
+                'thumbnail_path' => $optimized['thumbnail_path'],
                 'order' => $maxOrder + $index + 1,
             ]);
         }
@@ -38,14 +36,16 @@ class PortfolioImageController extends Controller
      */
     public function destroy(Portfolio $portfolio, PortfolioImage $image)
     {
-        // Ensure the image belongs to the portfolio
         if ($image->portfolio_id !== $portfolio->id) {
             abort(404);
         }
 
-        // Delete the file
         if ($image->image_path) {
             Storage::disk('public')->delete($image->image_path);
+        }
+
+        if ($image->thumbnail_path) {
+            Storage::disk('public')->delete($image->thumbnail_path);
         }
 
         $image->delete();
@@ -56,15 +56,9 @@ class PortfolioImageController extends Controller
     /**
      * Reorder images.
      */
-    public function reorder(Request $request, Portfolio $portfolio)
+    public function reorder(ReorderPortfolioImagesRequest $request, Portfolio $portfolio)
     {
-        $request->validate([
-            'images' => 'required|array',
-            'images.*.id' => 'required|integer|exists:portfolio_images,id',
-            'images.*.order' => 'required|integer|min:0',
-        ]);
-
-        foreach ($request->images as $imageData) {
+        foreach ($request->validated()['images'] as $imageData) {
             PortfolioImage::where('id', $imageData['id'])
                 ->where('portfolio_id', $portfolio->id)
                 ->update(['order' => $imageData['order']]);

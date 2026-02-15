@@ -1,6 +1,5 @@
-import { Head, Link, usePage } from '@inertiajs/react';
+import { Deferred, Head, Link, usePage } from '@inertiajs/react';
 import { PlusCircle, Eye, MousePointer, TrendingUp, ExternalLink } from 'lucide-react';
-import { useEffect, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { usePageEffects } from '@/hooks/use-page-effects';
@@ -25,21 +24,13 @@ type Statistics = {
     }[];
 };
 
-export default function Dashboard() {
+interface DashboardProps extends SharedData {
+    statistics?: Statistics;
+}
+
+export default function Dashboard({ statistics }: DashboardProps) {
     usePageEffects('Dashboard');
     const { auth } = usePage<SharedData>().props;
-    const [stats, setStats] = useState<Statistics | null>(null);
-    const [loading, setLoading] = useState(true);
-
-    useEffect(() => {
-        fetch('/dashboard/api/statistics')
-            .then((res) => res.json())
-            .then((data) => {
-                setStats(data);
-                setLoading(false);
-            })
-            .catch(() => setLoading(false));
-    }, []);
 
     return (
         <AppLayout breadcrumbs={breadcrumbs}>
@@ -72,108 +63,118 @@ export default function Dashboard() {
                     </CardContent>
                 </Card>
 
-                {/* Statistics Section */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                    {/* Total Website Visitors */}
-                    <Card className="glass text-foreground hover:scale-105 transition-all duration-300">
-                        <CardHeader className="flex flex-row items-center justify-between pb-2">
-                            <CardTitle className="text-sm font-medium text-gray-400">
-                                Pengunjung Website
-                            </CardTitle>
-                            <Eye className="h-4 w-4 text-cyan-500" />
-                        </CardHeader>
-                        <CardContent>
-                            <div className="text-3xl font-bold text-foreground">
-                                {loading ? '...' : stats?.total_home_views ?? 0}
-                            </div>
-                            <p className="text-xs text-muted-foreground mt-1">
-                                Total kunjungan ke halaman utama
-                            </p>
-                        </CardContent>
-                    </Card>
-
-                    {/* Total Portfolio Clicks */}
-                    <Card className="glass text-gray-200 hover:scale-105 transition-all duration-300">
-                        <CardHeader className="flex flex-row items-center justify-between pb-2">
-                            <CardTitle className="text-sm font-medium text-gray-400">
-                                Klik Portofolio
-                            </CardTitle>
-                            <MousePointer className="h-4 w-4 text-green-500" />
-                        </CardHeader>
-                        <CardContent>
-                            <div className="text-3xl font-bold text-foreground">
-                                {loading ? '...' : stats?.total_portfolio_views ?? 0}
-                            </div>
-                            <p className="text-xs text-muted-foreground mt-1">
-                                Total klik pada portofolio Anda
-                            </p>
-                        </CardContent>
-                    </Card>
-
-                    {/* Engagement Rate */}
-                    <Card className="glass text-gray-200 hover:scale-105 transition-all duration-300">
-                        <CardHeader className="flex flex-row items-center justify-between pb-2">
-                            <CardTitle className="text-sm font-medium text-gray-400">
-                                Tingkat Interaksi
-                            </CardTitle>
-                            <TrendingUp className="h-4 w-4 text-purple-500" />
-                        </CardHeader>
-                        <CardContent>
-                            <div className="text-3xl font-bold text-foreground">
-                                {loading
-                                    ? '...'
-                                    : stats && stats.total_home_views > 0
-                                        ? `${Math.round((stats.total_portfolio_views / stats.total_home_views) * 100)}%`
-                                        : '0%'}
-                            </div>
-                            <p className="text-xs text-muted-foreground mt-1">
-                                Pengunjung yang melihat portofolio
-                            </p>
-                        </CardContent>
-                    </Card>
-                </div>
-
-                {/* Portfolio Stats */}
-                {stats && stats.portfolio_stats.length > 0 && (
-                    <Card className="glass text-foreground hover:scale-[1.02] transition-all duration-300">
-                        <CardHeader>
-                            <CardTitle className="text-foreground">Statistik Per Portofolio</CardTitle>
-                            <CardDescription className="text-muted-foreground">
-                                Portofolio yang paling sering dilihat
-                            </CardDescription>
-                        </CardHeader>
-                        <CardContent>
-                            <div className="space-y-4">
-                                {stats.portfolio_stats.slice(0, 5).map((item, index) => (
-                                    <div key={item.id} className="flex items-center justify-between">
-                                        <div className="flex items-center gap-3">
-                                            <span className="flex h-8 w-8 items-center justify-center rounded-full bg-secondary text-sm font-medium text-cyan-500">
-                                                {index + 1}
-                                            </span>
-                                            <span className="text-foreground">{item.title}</span>
+                {/* Statistics Section using Deferred Props */}
+                <Deferred data="statistics" fallback={
+                   <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        {[1, 2, 3].map((i) => (
+                             <Card key={i} className="glass animate-pulse h-32" />
+                        ))}
+                   </div>
+                }>
+                    {statistics && (
+                        <>
+                            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                                {/* Total Website Visitors */}
+                                <Card className="glass text-foreground hover:scale-105 transition-all duration-300">
+                                    <CardHeader className="flex flex-row items-center justify-between pb-2">
+                                        <CardTitle className="text-sm font-medium text-gray-400">
+                                            Pengunjung Website
+                                        </CardTitle>
+                                        <Eye className="h-4 w-4 text-cyan-500" />
+                                    </CardHeader>
+                                    <CardContent>
+                                        <div className="text-3xl font-bold text-foreground">
+                                            {statistics.total_home_views}
                                         </div>
-                                        <div className="flex items-center gap-2">
-                                            <div className="w-24 h-2 rounded-full bg-secondary overflow-hidden">
-                                                <div
-                                                    className="h-full bg-cyan-500 rounded-full"
-                                                    style={{
-                                                        width: `${stats.portfolio_stats[0].views > 0
-                                                            ? (item.views / stats.portfolio_stats[0].views) * 100
-                                                            : 0
-                                                            }%`,
-                                                    }}
-                                                />
-                                            </div>
-                                            <span className="text-sm text-muted-foreground w-12 text-right">
-                                                {item.views}
-                                            </span>
+                                        <p className="text-xs text-muted-foreground mt-1">
+                                            Total kunjungan ke halaman utama
+                                        </p>
+                                    </CardContent>
+                                </Card>
+
+                                {/* Total Portfolio Clicks */}
+                                <Card className="glass text-gray-200 hover:scale-105 transition-all duration-300">
+                                    <CardHeader className="flex flex-row items-center justify-between pb-2">
+                                        <CardTitle className="text-sm font-medium text-gray-400">
+                                            Klik Portofolio
+                                        </CardTitle>
+                                        <MousePointer className="h-4 w-4 text-green-500" />
+                                    </CardHeader>
+                                    <CardContent>
+                                        <div className="text-3xl font-bold text-foreground">
+                                            {statistics.total_portfolio_views}
                                         </div>
-                                    </div>
-                                ))}
+                                        <p className="text-xs text-muted-foreground mt-1">
+                                            Total klik pada portofolio Anda
+                                        </p>
+                                    </CardContent>
+                                </Card>
+
+                                {/* Engagement Rate */}
+                                <Card className="glass text-gray-200 hover:scale-105 transition-all duration-300">
+                                    <CardHeader className="flex flex-row items-center justify-between pb-2">
+                                        <CardTitle className="text-sm font-medium text-gray-400">
+                                            Tingkat Interaksi
+                                        </CardTitle>
+                                        <TrendingUp className="h-4 w-4 text-purple-500" />
+                                    </CardHeader>
+                                    <CardContent>
+                                        <div className="text-3xl font-bold text-foreground">
+                                            {statistics.total_home_views > 0
+                                                    ? `${Math.round((statistics.total_portfolio_views / statistics.total_home_views) * 100)}%`
+                                                    : '0%'}
+                                        </div>
+                                        <p className="text-xs text-muted-foreground mt-1">
+                                            Pengunjung yang melihat portofolio
+                                        </p>
+                                    </CardContent>
+                                </Card>
                             </div>
-                        </CardContent>
-                    </Card>
-                )}
+
+                            {/* Portfolio Stats */}
+                            {statistics.portfolio_stats.length > 0 && (
+                                <Card className="glass text-foreground hover:scale-[1.02] transition-all duration-300">
+                                    <CardHeader>
+                                        <CardTitle className="text-foreground">Statistik Per Portofolio</CardTitle>
+                                        <CardDescription className="text-muted-foreground">
+                                            Portofolio yang paling sering dilihat
+                                        </CardDescription>
+                                    </CardHeader>
+                                    <CardContent>
+                                        <div className="space-y-4">
+                                            {statistics.portfolio_stats.slice(0, 5).map((item, index) => (
+                                                <div key={item.id} className="flex items-center justify-between">
+                                                    <div className="flex items-center gap-3">
+                                                        <span className="flex h-8 w-8 items-center justify-center rounded-full bg-secondary text-sm font-medium text-cyan-500">
+                                                            {index + 1}
+                                                        </span>
+                                                        <span className="text-foreground">{item.title}</span>
+                                                    </div>
+                                                    <div className="flex items-center gap-2">
+                                                        <div className="w-24 h-2 rounded-full bg-secondary overflow-hidden">
+                                                            <div
+                                                                className="h-full bg-cyan-500 rounded-full"
+                                                                style={{
+                                                                    width: `${statistics.portfolio_stats[0].views > 0
+                                                                        ? (item.views / statistics.portfolio_stats[0].views) * 100
+                                                                        : 0
+                                                                        }%`,
+                                                                }}
+                                                            />
+                                                        </div>
+                                                        <span className="text-sm text-muted-foreground w-12 text-right">
+                                                            {item.views}
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            ))}
+                                        </div>
+                                    </CardContent>
+                                </Card>
+                            )}
+                        </>
+                    )}
+                </Deferred>
             </div>
         </AppLayout>
     );

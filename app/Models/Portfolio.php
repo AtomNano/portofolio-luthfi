@@ -13,6 +13,7 @@ class Portfolio extends Model
         'description',
         'project_url',
         'image_path',
+        'thumbnail_path',
         'development_time',
         'tools',
         'github_url',
