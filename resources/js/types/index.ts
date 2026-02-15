@@ -22,6 +22,7 @@ export type Portfolio = {
     tools: string[] | null;
     github_url: string | null;
     video_url: string | null;
+    images: { id: number; image_path: string }[];
     created_at: string;
     updated_at: string;
 };

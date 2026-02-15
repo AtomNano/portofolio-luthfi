@@ -7,7 +7,10 @@ use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
 // Route for the public-facing welcome page
-Route::get('/', [HomeController::class, 'index'])->name('home');
+// Route for the public-facing welcome page
+Route::middleware(['throttle:page-views'])->group(function () {
+    Route::get('/', [HomeController::class, 'index'])->name('home');
+});
 
 // Redirect /dashboard to /dashboard/
 Route::redirect('/dashboard', '/dashboard/', 301)->name('dashboard');
@@ -18,8 +21,10 @@ Route::middleware(['auth', 'verified'])
     ->name('dashboard.')
     ->group(function () {
         // Main dashboard view
-        Route::get('/', function () {
-            return Inertia::render('dashboard');
+        Route::get('/', function (\App\Actions\GetDashboardStatisticsAction $action) {
+            return Inertia::render('dashboard', [
+                'statistics' => Inertia::defer(fn() => $action->handle()),
+            ]);
         })->name('index');
 
         // Portfolio management resource routes (excluding 'show')
@@ -55,7 +60,10 @@ Route::middleware(['auth', 'verified'])
     });
 
 // Public portfolio route
-Route::get('/portfolios/{portfolio}', [PortfolioController::class, 'show'])->name('portfolios.show');
+// Public portfolio route
+Route::middleware(['throttle:page-views'])->group(function () {
+    Route::get('/portfolios/{portfolio}', [PortfolioController::class, 'show'])->name('portfolios.show');
+});
 Route::get('/experience', [\App\Http\Controllers\ExperienceController::class, 'index'])->name('experience.index');
 
 // Google OAuth routes

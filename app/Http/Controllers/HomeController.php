@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\PageView;
+use App\Actions\TrackPageViewAction;
 use App\Models\Portfolio;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
@@ -10,13 +10,9 @@ use Laravel\Fortify\Features;
 
 class HomeController extends Controller
 {
-    public function index(Request $request)
+    public function index(Request $request, TrackPageViewAction $trackPageView)
     {
-        // Track page view
-        PageView::create([
-            'page_type' => 'home',
-            'ip_address' => $request->ip(),
-        ]);
+        $trackPageView->handle($request, 'home');
 
         return Inertia::render('welcome', [
             'portfolios' => Portfolio::with('images')->latest()->get(),
@@ -25,4 +21,3 @@ class HomeController extends Controller
         ]);
     }
 }
-

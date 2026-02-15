@@ -2,25 +2,20 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ReorderExperiencesRequest;
+use App\Http\Requests\StoreExperienceRequest;
 use App\Models\Experience;
-use Illuminate\Http\Request;
-use Inertia\Inertia;
 use Illuminate\Support\Facades\Redirect;
+use Inertia\Inertia;
 
 class ExperienceController extends Controller
 {
     /**
      * Reorder the specified resources.
      */
-    public function reorder(Request $request)
+    public function reorder(ReorderExperiencesRequest $request)
     {
-        $request->validate([
-            'order' => 'required|array',
-            'order.*.id' => 'required|exists:experiences,id',
-            'order.*.order' => 'required|integer',
-        ]);
-
-        foreach ($request->order as $item) {
+        foreach ($request->validated()['order'] as $item) {
             Experience::where('id', $item['id'])->update(['order' => $item['order']]);
         }
 
@@ -50,17 +45,9 @@ class ExperienceController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreExperienceRequest $request)
     {
-        $validated = $request->validate([
-            'role' => 'required|string|max:255',
-            'company' => 'required|string|max:255',
-            'period' => 'required|string|max:255',
-            'description' => 'required|string',
-            'order' => 'nullable|integer',
-        ]);
-
-        Experience::create($validated);
+        Experience::create($request->validated());
 
         return Redirect::route('dashboard.experiences.index');
     }
@@ -68,17 +55,9 @@ class ExperienceController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Experience $experience)
+    public function update(StoreExperienceRequest $request, Experience $experience)
     {
-        $validated = $request->validate([
-            'role' => 'required|string|max:255',
-            'company' => 'required|string|max:255',
-            'period' => 'required|string|max:255',
-            'description' => 'required|string',
-            'order' => 'nullable|integer',
-        ]);
-
-        $experience->update($validated);
+        $experience->update($request->validated());
 
         return Redirect::route('dashboard.experiences.index');
     }

@@ -24,7 +24,7 @@ export default function FrontNavbar() {
                 return
             }
 
-            const sections = ['hero', 'services', 'portfolio', 'about']
+            const sections = ['hero', 'services', 'portfolio', 'skills', 'about', 'contact']
             let current = ''
 
             for (const section of sections) {
@@ -80,17 +80,20 @@ export default function FrontNavbar() {
 
                 {/* Desktop Navigation */}
                 <nav className="hidden items-center gap-8 md:flex text-sm">
-                    <a href="/#portfolio" className={getNavLinkClasses('portfolio')}>
-                        ./portfolio
-                    </a>
                     <a href="/#services" className={getNavLinkClasses('services')}>
                         ./services
+                    </a>
+                    <a href="/#skills" className={getNavLinkClasses('skills')}>
+                        ./skills
                     </a>
                     <Link href="/experience" className={getNavLinkClasses('experience')}>
                         ./experience
                     </Link>
                     <a href="/#about" className={getNavLinkClasses('about')}>
                         ./about
+                    </a>
+                    <a href="/#contact" className={getNavLinkClasses('contact')}>
+                        ./contact
                     </a>
                 </nav>
 
@@ -140,6 +143,13 @@ export default function FrontNavbar() {
                                 ./services
                             </a>
                             <a
+                                href="/#skills"
+                                onClick={handleNavClick}
+                                className={`text-lg py-2 border-b border-gray-800 ${activeSection === 'skills' ? 'text-cyan-400 font-bold' : 'text-gray-300 hover:text-cyan-400'}`}
+                            >
+                                ./skills
+                            </a>
+                            <a
                                 href="/#portfolio"
                                 onClick={handleNavClick}
                                 className={`text-lg py-2 border-b border-gray-800 ${activeSection === 'portfolio' ? 'text-cyan-400 font-bold' : 'text-gray-300 hover:text-cyan-400'}`}
@@ -154,18 +164,18 @@ export default function FrontNavbar() {
                                 ./experience
                             </Link>
                             <a
-                                href="/#contact"
-                                onClick={handleNavClick}
-                                className={`text-lg py-2 ${activeSection === 'contact' ? 'text-cyan-400 font-bold' : 'text-gray-300 hover:text-cyan-400'}`}
-                            >
-                                ./contact
-                            </a>
-                            <a
                                 href="/#about"
                                 onClick={handleNavClick}
                                 className={`text-lg py-2 border-b border-gray-800 ${activeSection === 'about' ? 'text-cyan-400 font-bold' : 'text-gray-300 hover:text-cyan-400'}`}
                             >
                                 ./about
+                            </a>
+                            <a
+                                href="/#contact"
+                                onClick={handleNavClick}
+                                className={`text-lg py-2 ${activeSection === 'contact' ? 'text-cyan-400 font-bold' : 'text-gray-300 hover:text-cyan-400'}`}
+                            >
+                                ./contact
                             </a>
                             {!auth.user && (
                                 <Link
