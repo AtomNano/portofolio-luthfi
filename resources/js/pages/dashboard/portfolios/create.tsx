@@ -1,247 +1,351 @@
-import { Head, Form } from '@inertiajs/react'
-import { X } from 'lucide-react'
-import { useState } from 'react'
-import InputError from '@/components/input-error'
-import { Button } from '@/components/ui/button'
-import { Input } from '@/components/ui/input'
-import { Label } from '@/components/ui/label'
-import { Textarea } from '@/components/ui/textarea'
-import { PORTFOLIO_CATEGORIES } from '@/constants/portfolio'
-import AppLayout from '@/layouts/app-layout'
-import { store } from '@/routes/dashboard/portfolios'
-import { parseCommaSeparated } from '@/utils/format'
+import { Head, useForm } from '@inertiajs/react';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Input } from '@/components/ui/input';
+import InputError from '@/components/input-error';
+import { Label } from '@/components/ui/label';
+import { Textarea } from '@/components/ui/textarea';
+import AppLayout from '@/layouts/app-layout';
+import type { BreadcrumbItem } from '@/types';
+import { Briefcase, Image as ImageIcon, Loader2, X } from 'lucide-react';
+import { type FormEvent, useState } from 'react';
 
-export default function PortfolioCreate() {
-    const [imagePreviews, setImagePreviews] = useState<string[]>([])
+// Define strict interface for Form Data
+interface PortfolioFormData {
+    title: string;
+    description: string;
+    category: string;
+    url: string;
+    start_date: string;
+    end_date: string;
+    tools: string;
+    images: File[];
+}
 
-    const initialData = {
+const breadcrumbs: BreadcrumbItem[] = [
+    {
+        title: 'Dashboard',
+        href: '/dashboard',
+    },
+    {
+        title: 'Portfolios',
+        href: '/dashboard/portfolios',
+    },
+    {
+        title: 'Create',
+        href: '/dashboard/portfolios/create',
+    },
+];
+
+export default function Create() {
+    const [imagePreviews, setImagePreviews] = useState<string[]>([]);
+    
+    // Initial data with strict typing
+    const { data, setData, post, processing, errors, transform } = useForm<PortfolioFormData>({
         title: '',
-        category: PORTFOLIO_CATEGORIES[0] as string,
         description: '',
-        project_url: '',
-        development_time: '',
+        category: '',
+        url: '',
+        start_date: '',
+        end_date: '',
         tools: '',
-        github_url: '',
-        video_url: '',
-        image: null as File | null,
-        images: [] as File[],
+        images: [],
+    });
+
+    const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const files = Array.from(e.target.files || []);
+        if (files.length === 0) return;
+
+        // Revoke old object URLs to avoid memory leaks
+        imagePreviews.forEach((url) => URL.revokeObjectURL(url));
+
+        const newPreviews = files.map((file) => URL.createObjectURL(file));
+        setImagePreviews(newPreviews);
+        setData('images', files);
+    };
+
+    const removeImage = (index: number) => {
+        const newImages = data.images.filter((_, i) => i !== index);
+        const newPreviews = imagePreviews.filter((_, i) => i !== index);
+        
+        setData('images', newImages);
+        setImagePreviews(newPreviews);
+    };
+
+    // Helper to parse comma separated tools
+    const parseCommaSeparated = (value: string): string[] => {
+        if (!value) return [];
+        return value.split(',').map((item) => item.trim()).filter(Boolean);
+    };
+
+    const submit = (e: FormEvent) => {
+        e.preventDefault();
+        
+        transform((data) => ({
+            ...data,
+            tools: parseCommaSeparated(data.tools),
+        }));
+
+        post('/dashboard/portfolios');
     };
 
     return (
-        <AppLayout>
-            <Head title="Tambah Portofolio Baru" />
+        <AppLayout breadcrumbs={breadcrumbs}>
+            <Head title="Create Portfolio" />
 
-            <div className="container max-w-2xl mx-auto py-10">
-                <h1 className="text-2xl font-bold">Tambah Portofolio Baru</h1>
+            <div className="flex h-full flex-1 flex-col gap-4 rounded-xl p-4">
+                <div className="mx-auto w-full max-w-4xl">
+                    <Card className="border-border bg-card">
+                        <CardHeader>
+                            <CardTitle className="flex items-center gap-2 text-2xl">
+                                <Briefcase className="h-6 w-6 text-cyan-500" />
+                                Create New Project
+                            </CardTitle>
+                        </CardHeader>
+                        <CardContent>
+                            <form onSubmit={submit} className="mt-8 space-y-6">
+                                <div className="grid gap-6 md:grid-cols-2">
+                                    {/* Left Column */}
+                                    <div className="space-y-6">
+                                        <div>
+                                            <Label htmlFor="title">
+                                                Project Title
+                                            </Label>
+                                            <Input
+                                                id="title"
+                                                value={data.title}
+                                                onChange={(e) =>
+                                                    setData(
+                                                        'title',
+                                                        e.target.value,
+                                                    )
+                                                }
+                                                placeholder="e.g. E-Commerce Platform"
+                                                required
+                                            />
+                                            <InputError
+                                                message={errors.title}
+                                                className="mt-2"
+                                            />
+                                        </div>
 
-                <Form
-                    action={store.url()}
-                    method="post"
-                    data={initialData as any}
-                    transform={(data: any) => ({
-                        ...data,
-                        tools: parseCommaSeparated(data.tools),
-                    })}
-                    className="mt-8 space-y-6"
-                    onSubmit={(e) => {
-                        // Optional
-                    }}
-                >
-                    {({ data, setData, processing, errors }: any) => {
-                         // Helper for handling multiple images
-                        function handleImagesChange(e: React.ChangeEvent<HTMLInputElement>) {
-                            const files = Array.from(e.target.files || [])
-                            setData('images', files)
+                                        <div>
+                                            <Label htmlFor="category">
+                                                Category
+                                            </Label>
+                                            <Input
+                                                id="category"
+                                                value={data.category}
+                                                onChange={(e) =>
+                                                    setData(
+                                                        'category',
+                                                        e.target.value,
+                                                    )
+                                                }
+                                                placeholder="e.g. Web Development"
+                                                required
+                                            />
+                                            <InputError
+                                                message={errors.category}
+                                                className="mt-2"
+                                            />
+                                        </div>
 
-                            // Create previews
-                            const previews = files.map(file => URL.createObjectURL(file))
-                            setImagePreviews(previews)
-                        }
-
-                        function removeImage(index: number) {
-                            const newImages = (data.images as File[]).filter((_: File, i: number) => i !== index)
-                            const newPreviews = imagePreviews.filter((_: string, i: number) => i !== index)
-                            setData('images', newImages)
-                            setImagePreviews(newPreviews)
-                        }
-
-                        return (
-                        <>
-                            <div>
-                                <Label htmlFor="title">Judul</Label>
-                                <Input
-                                    id="title"
-                                    name="title"
-                                    value={data.title}
-                                    onChange={(e) => setData('title', e.target.value)}
-                                    required
-                                />
-                                <InputError message={errors.title} className="mt-2" />
-                            </div>
-
-                            <div>
-                                <Label htmlFor="category">Kategori</Label>
-                                <select
-                                    id="category"
-                                    name="category"
-                                    value={data.category}
-                                    onChange={(e) => setData('category', e.target.value)}
-                                    className="mt-1 block w-full rounded-md border border-gray-700 bg-gray-800 py-2 pl-3 pr-10 text-base text-white focus:border-cyan-500 focus:outline-none focus:ring-1 focus:ring-cyan-500 sm:text-sm"
-                                >
-                                    {PORTFOLIO_CATEGORIES.map((category) => (
-                                        <option key={category} className="bg-gray-800">{category}</option>
-                                    ))}
-                                </select>
-                                <InputError message={errors.category} className="mt-2" />
-                            </div>
-
-                            <div>
-                                <Label htmlFor="description">Deskripsi</Label>
-                                <Textarea
-                                    id="description"
-                                    name="description"
-                                    value={data.description}
-                                    onChange={(e) => setData('description', e.target.value)}
-                                    rows={4}
-                                    required
-                                />
-                                <InputError message={errors.description} className="mt-2" />
-                            </div>
-
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                <div>
-                                    <Label htmlFor="development_time">Waktu Pengerjaan</Label>
-                                    <Input
-                                        id="development_time"
-                                        name="development_time"
-                                        placeholder="Contoh: 2 Minggu"
-                                        value={data.development_time}
-                                        onChange={(e) => setData('development_time', e.target.value)}
-                                    />
-                                    <InputError message={errors.development_time} className="mt-2" />
-                                </div>
-
-                                <div>
-                                    <Label htmlFor="tools">Tools (Pisahkan dengan koma)</Label>
-                                    <Input
-                                        id="tools"
-                                        name="tools"
-                                        placeholder="React, Laravel, Tailwind"
-                                        value={data.tools}
-                                        onChange={(e) => setData('tools', e.target.value)}
-                                    />
-                                    <InputError message={errors.tools} className="mt-2" />
-                                </div>
-                            </div>
-
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                <div>
-                                    <Label htmlFor="project_url">URL Domain (Opsional)</Label>
-                                    <Input
-                                        id="project_url"
-                                        name="project_url"
-                                        type="url"
-                                        value={data.project_url}
-                                        onChange={(e) => setData('project_url', e.target.value)}
-                                    />
-                                    <InputError message={errors.project_url} className="mt-2" />
-                                </div>
-
-                                <div>
-                                    <Label htmlFor="github_url">URL GitHub (Opsional)</Label>
-                                    <Input
-                                        id="github_url"
-                                        name="github_url"
-                                        type="url"
-                                        value={data.github_url}
-                                        onChange={(e) => setData('github_url', e.target.value)}
-                                    />
-                                    <InputError message={errors.github_url} className="mt-2" />
-                                </div>
-                            </div>
-
-                            <div>
-                                <Label htmlFor="video_url">URL Video (Opsional)</Label>
-                                <Input
-                                    id="video_url"
-                                    name="video_url"
-                                    placeholder="Contoh: https://youtube.com/watch?v=..."
-                                    value={data.video_url}
-                                    onChange={(e) => setData('video_url', e.target.value)}
-                                />
-                                <InputError message={errors.video_url} className="mt-2" />
-                            </div>
-
-                            <div>
-                                <Label htmlFor="image">Gambar Utama Proyek</Label>
-                                <input
-                                    id="image"
-                                    name="image"
-                                    type="file"
-                                    accept="image/*"
-                                    onChange={(e) => setData('image', e.target.files ? e.target.files[0] : null)}
-                                    className="mt-1 block w-full text-sm text-gray-400
-                                        file:mr-4 file:py-2 file:px-4
-                                        file:rounded-md file:border-0
-                                        file:text-sm file:font-semibold
-                                        file:bg-cyan-600 file:text-white
-                                        hover:file:bg-cyan-500
-                                        cursor-pointer"
-                                />
-                                <InputError message={errors.image} className="mt-2" />
-                            </div>
-
-                            <div>
-                                <Label htmlFor="images">Gambar Tambahan (Multiple)</Label>
-                                <input
-                                    id="images"
-                                    name="images"
-                                    type="file"
-                                    accept="image/*"
-                                    multiple
-                                    onChange={handleImagesChange}
-                                    className="mt-1 block w-full text-sm text-gray-400
-                                        file:mr-4 file:py-2 file:px-4
-                                        file:rounded-md file:border-0
-                                        file:text-sm file:font-semibold
-                                        file:bg-cyan-600 file:text-white
-                                        hover:file:bg-cyan-500
-                                        cursor-pointer"
-                                />
-                                <InputError message={errors.images} className="mt-2" />
-
-                                {/* Image Previews */}
-                                {imagePreviews.length > 0 && (
-                                    <div className="mt-4 grid grid-cols-2 md:grid-cols-4 gap-4">
-                                        {imagePreviews.map((preview, index) => (
-                                            <div key={index} className="relative group">
-                                                <img
-                                                    src={preview}
-                                                    alt={`Preview ${index + 1}`}
-                                                    className="w-full h-24 object-cover rounded-lg border border-gray-700"
+                                        <div className="grid grid-cols-2 gap-4">
+                                            <div>
+                                                <Label htmlFor="start_date">
+                                                    Start Date
+                                                </Label>
+                                                <Input
+                                                    id="start_date"
+                                                    type="date"
+                                                    value={data.start_date}
+                                                    onChange={(e) =>
+                                                        setData(
+                                                            'start_date',
+                                                            e.target.value,
+                                                        )
+                                                    }
+                                                    required
                                                 />
-                                                <button
-                                                    type="button"
-                                                    onClick={() => removeImage(index)}
-                                                    className="absolute top-1 right-1 bg-red-500 text-white rounded-full p-1 opacity-0 group-hover:opacity-100 transition-opacity"
-                                                >
-                                                    <X className="h-4 w-4" />
-                                                </button>
+                                                <InputError
+                                                    message={errors.start_date}
+                                                    className="mt-2"
+                                                />
                                             </div>
-                                        ))}
-                                    </div>
-                                )}
-                            </div>
+                                            <div>
+                                                <Label htmlFor="end_date">
+                                                    End Date
+                                                </Label>
+                                                <Input
+                                                    id="end_date"
+                                                    type="date"
+                                                    value={data.end_date}
+                                                    onChange={(e) =>
+                                                        setData(
+                                                            'end_date',
+                                                            e.target.value,
+                                                        )
+                                                    }
+                                                />
+                                                <InputError
+                                                    message={errors.end_date}
+                                                    className="mt-2"
+                                                />
+                                            </div>
+                                        </div>
 
-                            <div className="flex items-center justify-end">
-                                <Button type="submit" disabled={processing}>
-                                    {processing ? 'Menyimpan...' : 'Simpan Portofolio'}
-                                </Button>
-                            </div>
-                        </>
-                    )}}
-                </Form>
+                                        <div>
+                                            <Label htmlFor="url">
+                                                Project URL
+                                            </Label>
+                                            <Input
+                                                id="url"
+                                                type="url"
+                                                value={data.url}
+                                                onChange={(e) =>
+                                                    setData(
+                                                        'url',
+                                                        e.target.value,
+                                                    )
+                                                }
+                                                placeholder="https://example.com"
+                                            />
+                                            <InputError
+                                                message={errors.url}
+                                                className="mt-2"
+                                            />
+                                        </div>
+                                    </div>
+
+                                    {/* Right Column */}
+                                    <div className="space-y-6">
+                                        <div>
+                                            <Label htmlFor="tools">
+                                                Technologies (comma
+                                                separated)
+                                            </Label>
+                                            <Input
+                                                id="tools"
+                                                value={data.tools}
+                                                onChange={(e) =>
+                                                    setData(
+                                                        'tools',
+                                                        e.target.value,
+                                                    )
+                                                }
+                                                placeholder="React, Laravel, Tailwind CSS"
+                                                required
+                                            />
+                                            <InputError
+                                                message={errors.tools}
+                                                className="mt-2"
+                                            />
+                                        </div>
+
+                                        <div>
+                                            <Label htmlFor="description">
+                                                Description
+                                            </Label>
+                                            <Textarea
+                                                id="description"
+                                                value={data.description}
+                                                onChange={(e) =>
+                                                    setData(
+                                                        'description',
+                                                        e.target.value,
+                                                    )
+                                                }
+                                                className="min-h-[120px]"
+                                                placeholder="Describe the project details..."
+                                                required
+                                            />
+                                            <InputError
+                                                message={errors.description}
+                                                className="mt-2"
+                                            />
+                                        </div>
+
+                                        <div>
+                                            <Label>Project Images</Label>
+                                                    <div className="mt-2 flex flex-col gap-4">
+                                                        <div className="flex flex-wrap gap-2">
+                                                            {imagePreviews.map(
+                                                                (
+                                                                    preview,
+                                                                    index,
+                                                                ) => (
+                                                                    <div
+                                                                        key={
+                                                                            index
+                                                                        }
+                                                                        className="relative h-20 w-20 overflow-hidden rounded-lg border border-border"
+                                                                    >
+                                                                        <img
+                                                                            src={
+                                                                                preview
+                                                                            }
+                                                                            alt={`Preview ${index}`}
+                                                                            className="h-full w-full object-cover"
+                                                                        />
+                                                                        <button
+                                                                            type="button"
+                                                                            onClick={() => removeImage(index)}
+                                                                            className="absolute top-0 right-0 rounded-bl-lg bg-red-500/80 p-1 text-white hover:bg-red-600"
+                                                                        >
+                                                                            <X className="h-3 w-3" />
+                                                                        </button>
+                                                                    </div>
+                                                                ),
+                                                            )}
+                                                        </div>
+                                                <label className="flex cursor-pointer items-center justify-center rounded-lg border-2 border-dashed border-border p-8 transition-colors hover:border-cyan-500/50 hover:bg-secondary/50">
+                                                    <div className="flex flex-col items-center gap-2 text-center">
+                                                        <ImageIcon className="h-8 w-8 text-muted-foreground" />
+                                                        <span className="text-sm font-medium text-muted-foreground">
+                                                            Click to
+                                                            upload
+                                                            images
+                                                        </span>
+                                                        <span className="text-xs text-muted-foreground/60">
+                                                            PNG, JPG up
+                                                            to 5MB
+                                                        </span>
+                                                    </div>
+                                                    <input
+                                                        type="file"
+                                                        multiple
+                                                        accept="image/*"
+                                                        className="hidden"
+                                                        onChange={handleImageChange}
+                                                    />
+                                                </label>
+                                            </div>
+                                            <InputError
+                                                message={errors.images}
+                                                className="mt-2"
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div className="flex justify-end pt-4">
+                                    <Button
+                                        type="submit"
+                                        className="bg-cyan-500 text-white hover:bg-cyan-600"
+                                        disabled={processing}
+                                    >
+                                        {processing && (
+                                            <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                                        )}
+                                        Create Project
+                                    </Button>
+                                </div>
+                            </form>
+                        </CardContent>
+                    </Card>
+                </div>
             </div>
         </AppLayout>
-    )
+    );
 }

@@ -25,23 +25,45 @@ class User extends Authenticatable
         'avatar',
         'job_title',
         'phone',
-        'instagram',
-        'linkedin',
-        'github',
-        'about_me',
-        'years_experience',
-        'projects_completed',
+        'address',
+        'bio',
+        'skills',
+        'soft_skills',
+        'social_links',
     ];
 
     /**
      * The attributes that should be hidden for serialization.
      *
-     * @var list<string>
+     * @var array<int, string>
      */
     protected $hidden = [
         'password',
         'remember_token',
+        'two_factor_recovery_codes',
+        'two_factor_secret',
     ];
+
+    /**
+     * The accessors to append to the model's array form.
+     *
+     * @var array<int, string>
+     */
+    protected $appends = [
+        'profile_photo_url',
+    ];
+
+    /**
+     * Get the URL to the user's profile photo.
+     *
+     * @return string
+     */
+    public function getProfilePhotoUrlAttribute(): string
+    {
+        return $this->avatar
+            ? \Illuminate\Support\Facades\Storage::disk('public')->url($this->avatar)
+            : 'https://ui-avatars.com/api/?name=' . urlencode($this->name) . '&color=7F9CF5&background=EBF4FF';
+    }
 
     /**
      * Get the attributes that should be cast.
@@ -53,6 +75,9 @@ class User extends Authenticatable
         return [
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
+            'skills' => 'array',
+            'soft_skills' => 'array',
+            'social_links' => 'array',
         ];
     }
 }

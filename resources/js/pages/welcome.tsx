@@ -6,7 +6,8 @@ import {
     DialogTitle,
 } from '@/components/ui/dialog';
 import { SERVICES } from '@/constants/services';
-import type { Portfolio, User } from '@/types';
+import type { Portfolio } from '@/types';
+import type { UserProfile, Skill } from '@/types/profile';
 import { Head } from '@inertiajs/react';
 import { AnimatePresence, motion, useInView } from 'framer-motion';
 import {
@@ -62,7 +63,7 @@ const AnimatedSection = ({
 );
 
 // Hero Section
-const HeroSection = ({ owner }: { owner?: User }) => (
+const HeroSection = ({ owner }: { owner?: UserProfile }) => (
     <section
         id="hero"
         className="relative flex min-h-screen w-full items-center justify-center overflow-hidden bg-background pt-5"
@@ -106,8 +107,6 @@ const HeroSection = ({ owner }: { owner?: User }) => (
                             2000,
                             'IT Support',
                             2000,
-                            '3D Artist',
-                            2000,
                         ]}
                         wrapper="span"
                         speed={50}
@@ -122,7 +121,7 @@ const HeroSection = ({ owner }: { owner?: User }) => (
                     animate={{ opacity: 1 }}
                     transition={{ delay: 0.2 }}
                 >
-                    {owner?.about_me ||
+                    {owner?.bio ||
                         'I craft robust digital solutions with a focus on performance, aesthetics, and user experience. Merging code and design to build the future.'}
                 </motion.p>
 
@@ -543,7 +542,7 @@ const PortfolioSection = ({ portfolios }: { portfolios: Portfolio[] }) => {
 };
 
 // About Section
-const AboutSection = ({ owner }: { owner?: User }) => (
+const AboutSection = ({ owner }: { owner?: UserProfile }) => (
     <AnimatedSection className="bg-card">
         <div
             id="about"
@@ -560,7 +559,7 @@ const AboutSection = ({ owner }: { owner?: User }) => (
                     Coding with passion, Designing with purpose.
                 </h3>
                 <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
-                    {owner?.about_me ||
+                    {owner?.bio ||
                         'I am a multi-talented professional navigating the intersection of technology and creativity. From architecting complex backend systems with modern frameworks to crafting pixel-perfect interfaces, I view every project as an opportunity to solve problems elegantly.'}
                 </p>
                 <div className="mt-8 grid grid-cols-2 gap-4">
@@ -612,82 +611,54 @@ const AboutSection = ({ owner }: { owner?: User }) => (
 );
 
 // Skills Section
-const skillCategories = [
-    {
-        name: 'Backend',
-        color: 'from-purple-500 to-pink-500',
-        skills: [
-            { name: 'Laravel', level: 95 },
-            { name: 'PHP', level: 90 },
-            { name: 'Node.js', level: 85 },
-            { name: 'PostgreSQL', level: 88 },
-            { name: 'MySQL', level: 90 },
-            { name: 'Redis', level: 75 },
-        ],
-    },
-    {
-        name: 'Frontend',
-        color: 'from-cyan-500 to-blue-500',
-        skills: [
-            { name: 'React', level: 92 },
-            { name: 'TypeScript', level: 88 },
-            { name: 'Tailwind CSS', level: 95 },
-            { name: 'Vue.js', level: 80 },
-            { name: 'Next.js', level: 85 },
-            { name: 'JavaScript', level: 95 },
-        ],
-    },
-    {
-        name: 'DevOps & Tools',
-        color: 'from-emerald-500 to-teal-500',
-        skills: [
-            { name: 'Docker', level: 82 },
-            { name: 'AWS', level: 78 },
-            { name: 'Git', level: 90 },
-            { name: 'CI/CD', level: 80 },
-            { name: 'Linux', level: 85 },
-            { name: 'Nginx', level: 75 },
-        ],
-    },
-];
-
-const techStack = [
-    'Laravel',
-    'React',
-    'TypeScript',
-    'Tailwind CSS',
-    'PostgreSQL',
-    'MySQL',
-    'Redis',
-    'Docker',
-    'AWS',
-    'Git',
-    'Node.js',
-    'Vue.js',
-    'Next.js',
-    'Vite',
-    'Inertia.js',
-    'Flutter',
-    'MongoDB',
-    'Nginx',
-    'Linux',
-    'Figma',
-];
-
-const softSkills = [
-    { name: 'Problem Solving', icon: '🧩' },
-    { name: 'Team Leadership', icon: '👥' },
-    { name: 'Communication', icon: '💬' },
-    { name: 'Time Management', icon: '⏰' },
-    { name: 'Adaptability', icon: '🔄' },
-    { name: 'Critical Thinking', icon: '🤔' },
-    { name: 'Attention to Detail', icon: '🔍' },
-    { name: 'Continuous Learning', icon: '📚' },
-];
-
-const SkillsSection = () => {
+const SkillsSection = ({ owner }: { owner?: UserProfile }) => {
     const ref = useRef(null);
     const isInView = useInView(ref, { once: true, margin: '-100px' });
+
+    // Helper to group skills by category
+    const getSkillsByCategory = (category: string) => {
+        return owner?.skills?.filter((s) => s.category === category) || [];
+    };
+
+    const categories = [
+        { name: 'Backend', color: 'from-purple-500 to-pink-500' },
+        { name: 'Frontend', color: 'from-cyan-500 to-blue-500' },
+        { name: 'DevOps', color: 'from-emerald-500 to-teal-500' },
+    ];
+
+    const softSkills = owner?.soft_skills || [
+        { name: 'Problem Solving', icon: '🧩' },
+        { name: 'Team Leadership', icon: '👥' },
+        { name: 'Communication', icon: '💬' },
+        { name: 'Time Management', icon: '⏰' },
+        { name: 'Adaptability', icon: '🔄' },
+        { name: 'Critical Thinking', icon: '🤔' },
+        { name: 'Attention to Detail', icon: '🔍' },
+        { name: 'Continuous Learning', icon: '📚' },
+    ];
+
+    const techStack = [
+        'Laravel',
+        'React',
+        'TypeScript',
+        'Tailwind CSS',
+        'PostgreSQL',
+        'MySQL',
+        'Redis',
+        'Docker',
+        'AWS',
+        'Git',
+        'Node.js',
+        'Vue.js',
+        'Next.js',
+        'Vite',
+        'Inertia.js',
+        'Flutter',
+        'MongoDB',
+        'Nginx',
+        'Linux',
+        'Figma',
+    ];
 
     return (
         <AnimatedSection className="bg-muted/30">
@@ -707,7 +678,7 @@ const SkillsSection = () => {
 
                 {/* Skills Progress Bars */}
                 <div className="mb-16 grid gap-8 md:grid-cols-3">
-                    {skillCategories.map((category, categoryIndex) => (
+                    {categories.map((category, categoryIndex) => (
                         <motion.div
                             key={category.name}
                             initial={{ opacity: 0, y: 30 }}
@@ -724,7 +695,7 @@ const SkillsSection = () => {
                                     {category.name}
                                 </h3>
                                 <div className="space-y-5">
-                                    {category.skills.map(
+                                    {getSkillsByCategory(category.name).map(
                                         (skill, skillIndex) => (
                                             <div key={skillIndex}>
                                                 <div className="mb-2 flex justify-between">
@@ -815,7 +786,7 @@ const SkillsSection = () => {
                                 }}
                                 className="flex items-center gap-3 rounded-xl border border-border bg-card/50 p-4 transition-colors hover:border-purple-500/30"
                             >
-                                <span className="text-2xl">{skill.icon}</span>
+                                <span className="text-2xl">{skill.icon || '✨'}</span>
                                 <span className="text-sm font-medium text-foreground">
                                     {skill.name}
                                 </span>
@@ -829,7 +800,7 @@ const SkillsSection = () => {
 };
 
 // Contact Section
-const ContactSection = ({ owner }: { owner?: User }) => {
+const ContactSection = ({ owner }: { owner?: UserProfile }) => {
     const contactInfo = [
         {
             icon: Mail,
@@ -846,37 +817,29 @@ const ContactSection = ({ owner }: { owner?: User }) => {
         {
             icon: MapPin,
             label: 'Location',
-            value: 'Batam, Indonesia',
+            value: owner?.address || 'Batam, Indonesia',
             href: undefined,
         },
     ];
 
-    const socialLinks = [
-        {
-            icon: Github,
-            label: 'GitHub',
-            href: owner?.github,
-            color: 'hover:text-white hover:border-white/30',
-        },
-        {
-            icon: Linkedin,
-            label: 'LinkedIn',
-            href: owner?.linkedin,
-            color: 'hover:text-blue-400 hover:border-blue-400/30',
-        },
-        {
-            icon: Instagram,
-            label: 'Instagram',
-            href: owner?.instagram,
-            color: 'hover:text-pink-400 hover:border-pink-400/30',
-        },
-        {
-            icon: Twitter,
-            label: 'Twitter',
-            href: owner?.twitter,
-            color: 'hover:text-sky-400 hover:border-sky-400/30',
-        },
-    ].filter((link) => link.href) as { icon: any; label: string; href: string; color: string }[];
+    // Map social links from DB to icons
+    // Note: We need a mapping helper or simple if/else for icons if dynamic
+    const getSocialIcon = (platform: string) => {
+        const lower = platform.toLowerCase();
+        if (lower.includes('github')) return Github;
+        if (lower.includes('linkedin')) return Linkedin;
+        if (lower.includes('instagram')) return Instagram;
+        if (lower.includes('twitter') || lower.includes('x')) return Twitter;
+        return Globe; // Fallback
+    };
+    
+    // Use dynamic social links if available, else fallback (though DB should have them now)
+    const socialLinks = owner?.social_links?.map(link => ({
+        icon: getSocialIcon(link.platform),
+        label: link.platform,
+        href: link.url,
+        color: link.color || 'hover:text-cyan-400',
+    })) || [];
 
     return (
         <AnimatedSection className="bg-card">
@@ -902,30 +865,25 @@ const ContactSection = ({ owner }: { owner?: User }) => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.5, delay: index * 0.1 }}
+                            className="flex flex-col items-center justify-center rounded-xl border border-border bg-background p-6 text-center transition-colors hover:border-cyan-500/30"
                         >
+                            <div className="mb-4 rounded-full bg-secondary p-3 text-cyan-400">
+                                <info.icon className="h-6 w-6" />
+                            </div>
+                            <h3 className="mb-2 font-semibold text-foreground">
+                                {info.label}
+                            </h3>
                             {info.href ? (
                                 <a
                                     href={info.href}
-                                    className="group block rounded-xl border border-border bg-background p-6 text-center transition-all hover:border-cyan-500/50"
+                                    className="text-sm text-muted-foreground transition-colors hover:text-cyan-400"
                                 >
-                                    <info.icon className="mx-auto mb-3 h-8 w-8 text-cyan-400 transition-transform group-hover:scale-110" />
-                                    <p className="mb-1 text-sm text-muted-foreground">
-                                        {info.label}
-                                    </p>
-                                    <p className="font-medium text-foreground transition-colors group-hover:text-cyan-400">
-                                        {info.value}
-                                    </p>
+                                    {info.value}
                                 </a>
                             ) : (
-                                <div className="rounded-xl border border-border bg-background p-6 text-center">
-                                    <info.icon className="mx-auto mb-3 h-8 w-8 text-cyan-400" />
-                                    <p className="mb-1 text-sm text-muted-foreground">
-                                        {info.label}
-                                    </p>
-                                    <p className="font-medium text-foreground">
-                                        {info.value}
-                                    </p>
-                                </div>
+                                <p className="text-sm text-muted-foreground">
+                                    {info.value}
+                                </p>
                             )}
                         </motion.div>
                     ))}
@@ -943,7 +901,7 @@ const ContactSection = ({ owner }: { owner?: User }) => {
                         {socialLinks.map((social) => (
                             <a
                                 key={social.label}
-                                href={social.href || '#'}
+                                href={social.href}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className={`flex h-14 w-14 items-center justify-center rounded-xl border border-border bg-background text-muted-foreground transition-all ${social.color}`}
@@ -1011,7 +969,7 @@ const ScrollProgress = () => {
 };
 
 // Enhanced Footer Component
-const Footer = ({ owner }: { owner?: User }) => {
+const Footer = ({ owner }: { owner?: UserProfile }) => {
     const footerLinks = [
         {
             title: 'Navigation',
@@ -1136,9 +1094,13 @@ const Footer = ({ owner }: { owner?: User }) => {
 export default function Welcome({
     portfolios,
     owner,
+    canLogin,
+    canRegister,
 }: {
     portfolios: Portfolio[];
-    owner?: User;
+    owner?: UserProfile;
+    canLogin: boolean;
+    canRegister: boolean;
 }) {
     const [showScrollTop, setShowScrollTop] = useState(false);
     const [scrollY, setScrollY] = useState(0);
@@ -1167,7 +1129,7 @@ export default function Welcome({
                 
                 {/* Open Graph */}
                 <meta property="og:title" content={`${owner?.name || 'Luthfi Naldi'} - ${owner?.job_title || 'Full Stack Developer'}`} />
-                <meta property="og:description" content={owner?.about_me || `Portfolio website of ${owner?.name || 'Luthfi Naldi'}. View my projects and get in touch.`} />
+                <meta property="og:description" content={owner?.bio || `Portfolio website of ${owner?.name || 'Luthfi Naldi'}. View my projects and get in touch.`} />
                 <meta property="og:image" content={owner?.avatar ? `/storage/${owner.avatar}` : '/default-og.jpg'} />
                 <meta property="og:url" content={window.location.href} />
                 <meta property="og:type" content="website" />
@@ -1175,7 +1137,7 @@ export default function Welcome({
                 {/* Twitter */}
                 <meta name="twitter:card" content="summary_large_image" />
                 <meta name="twitter:title" content={`${owner?.name || 'Luthfi Naldi'} - ${owner?.job_title || 'Full Stack Developer'}`} />
-                <meta name="twitter:description" content={owner?.about_me || `Portfolio website of ${owner?.name || 'Luthfi Naldi'}. View my projects and get in touch.`} />
+                <meta name="twitter:description" content={owner?.bio || `Portfolio website of ${owner?.name || 'Luthfi Naldi'}. View my projects and get in touch.`} />
                 <meta name="twitter:image" content={owner?.avatar ? `/storage/${owner.avatar}` : '/default-og.jpg'} />
 
                 <style>{`

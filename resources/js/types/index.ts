@@ -11,6 +11,8 @@ export type SharedData = {
     [key: string]: unknown;
 };
 
+export type PageProps<T = Record<string, unknown>> = T & SharedData;
+
 export type Portfolio = {
     id: number;
     title: string;

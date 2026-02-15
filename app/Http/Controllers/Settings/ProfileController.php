@@ -3,43 +3,38 @@
 namespace App\Http\Controllers\Settings;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Settings\ProfileDeleteRequest;
-use App\Http\Requests\Settings\ProfileUpdateRequest;
-use Illuminate\Contracts\Auth\MustVerifyEmail;
-use Illuminate\Http\RedirectResponse;
+use App\Http\Requests\UpdateProfileRequest;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use Inertia\Inertia;
-use Inertia\Response;
+use Illuminate\Support\Facades\Redirect;
 
 class ProfileController extends Controller
 {
     /**
-     * Show the user's profile settings page.
+     * Display the user's profile form.
      */
-    public function edit(Request $request): Response
+    public function edit(Request $request)
     {
         return Inertia::render('settings/profile', [
-            'mustVerifyEmail' => $request->user() instanceof MustVerifyEmail,
-            'status' => $request->session()->get('status'),
+            'mustVerifyEmail' => $request->user() instanceof \Illuminate\Contracts\Auth\MustVerifyEmail,
+            'status' => session('status'),
+            'profile' => $request->user(),
         ]);
     }
 
     /**
-     * Update the user's profile settings.
+     * Update the user's profile information.
      */
-    public function update(ProfileUpdateRequest $request): RedirectResponse
+    public function update(UpdateProfileRequest $request)
     {
-        $validated = $request->validated();
         $user = $request->user();
+        $validated = $request->validated();
 
         if ($request->hasFile('avatar')) {
-            // Delete old avatar if exists
             if ($user->avatar) {
                 \Illuminate\Support\Facades\Storage::disk('public')->delete($user->avatar);
             }
-            $path = $request->file('avatar')->store('avatars', 'public');
-            $validated['avatar'] = $path;
+            $validated['avatar'] = $request->file('avatar')->store('avatars', 'public');
         }
 
         $user->fill($validated);
@@ -48,25 +43,29 @@ class ProfileController extends Controller
             $user->email_verified_at = null;
         }
 
-        $user->save();
+        $request->user()->save();
 
-        return to_route('profile.edit');
+        return Redirect::route('profile.edit');
     }
 
     /**
      * Delete the user's account.
      */
-    public function destroy(ProfileDeleteRequest $request): RedirectResponse
+    public function destroy(Request $request)
     {
+        $request->validate([
+            'password' => ['required', 'current_password'],
+        ]);
+
         $user = $request->user();
 
-        Auth::logout();
+        \Illuminate\Support\Facades\Auth::logout();
 
         $user->delete();
 
         $request->session()->invalidate();
         $request->session()->regenerateToken();
 
-        return redirect('/');
+        return Redirect::to('/');
     }
 }
