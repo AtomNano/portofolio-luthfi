@@ -54,11 +54,11 @@ const mainNavItems: NavItem[] = [
 
 export function AppSidebar() {
     return (
-        <Sidebar collapsible="icon" variant="inset" className="border-r border-gray-800 bg-gray-900 font-mono text-gray-200">
-            <SidebarHeader className="border-b border-gray-800 bg-gray-900">
+        <Sidebar collapsible="icon" variant="inset" className="border-r border-white/10 bg-black/40 backdrop-blur-md font-mono text-gray-200 [&>[data-sidebar=sidebar]]:bg-transparent">
+            <SidebarHeader className="border-b border-white/10 bg-transparent">
                 <SidebarMenu>
                     <SidebarMenuItem>
-                        <SidebarMenuButton size="lg" asChild className="hover:bg-gray-800 hover:text-cyan-400">
+                        <SidebarMenuButton size="lg" asChild className="hover:bg-white/10 hover:text-cyan-400">
                             <Link href={dashboard.index.url()} prefetch>
                                 <AppLogo />
                             </Link>
@@ -67,11 +67,11 @@ export function AppSidebar() {
                 </SidebarMenu>
             </SidebarHeader>
 
-            <SidebarContent className="bg-gray-900">
+            <SidebarContent className="bg-transparent">
                 <NavMain items={mainNavItems} />
             </SidebarContent>
 
-            <SidebarFooter className="border-t border-gray-800 bg-gray-900">
+            <SidebarFooter className="border-t border-white/10 bg-transparent">
                 {/* <NavFooter items={footerNavItems} className="mt-auto" /> */}
                 <NavUser />
             </SidebarFooter>

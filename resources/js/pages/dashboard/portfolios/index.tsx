@@ -10,6 +10,12 @@ import Swal from 'sweetalert2';
 import { Button, buttonVariants } from '@/components/ui/button';
 import AppLayout from '@/layouts/app-layout';
 import { index, create, show, edit, destroy } from '@/routes/dashboard/portfolios';
+import type { BreadcrumbItem } from '@/types';
+
+const breadcrumbs: BreadcrumbItem[] = [
+    { title: 'Dashboard', href: '/dashboard' },
+    { title: 'Portfolios', href: '/dashboard/portfolios' },
+];
 
 type PortfolioImage = {
     id: number;
@@ -197,13 +203,24 @@ export default function PortfolioIndex({ portfolios: initialPortfolios }: Props)
                             confirmButtonColor: '#06b6d4',
                         });
                     },
+                    onError: (errors) => {
+                        Swal.fire({
+                            title: 'Gagal!',
+                            text: 'Terjadi kesalahan saat menghapus portfolio.',
+                            icon: 'error',
+                            background: '#1f2937',
+                            color: '#fff',
+                            confirmButtonColor: '#ef4444',
+                        });
+                        console.error('Delete error:', errors);
+                    },
                 });
             }
         });
     };
 
     return (
-        <AppLayout>
+        <AppLayout breadcrumbs={breadcrumbs}>
             <Head title="Manajemen Portofolio" />
 
             <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-10">
