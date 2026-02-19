@@ -1,4 +1,5 @@
-import { Head, useForm } from '@inertiajs/react'
+import { Head, Link, useForm } from '@inertiajs/react'
+import { ArrowLeft } from 'lucide-react'
 import InputError from '@/components/input-error'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
@@ -8,6 +9,7 @@ import { PORTFOLIO_CATEGORIES } from '@/constants/portfolio'
 import AppLayout from '@/layouts/app-layout'
 import { update } from '@/routes/dashboard/portfolios';
 import { parseCommaSeparated, joinWithComma } from '@/utils/format'
+import type { BreadcrumbItem } from '@/types'
 
 type Portfolio = {
     id: number;
@@ -27,6 +29,12 @@ type Props = {
 };
 
 export default function PortfolioEdit({ portfolio }: Props) {
+    const breadcrumbs: BreadcrumbItem[] = [
+        { title: 'Dashboard', href: '/dashboard' },
+        { title: 'Portfolios', href: '/dashboard/portfolios' },
+        { title: portfolio.title, href: '#' },
+    ];
+
     const { data, setData, post, processing, errors, transform } = useForm({
         title: portfolio.title,
         category: portfolio.category,
@@ -51,10 +59,20 @@ export default function PortfolioEdit({ portfolio }: Props) {
     }
 
     return (
-        <AppLayout>
+        <AppLayout breadcrumbs={breadcrumbs}>
             <Head title={`Edit Portofolio: ${portfolio.title}`} />
 
             <div className="container max-w-2xl mx-auto py-10">
+                <div className="mb-6">
+                    <Link
+                        href="/dashboard/portfolios"
+                        className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
+                    >
+                        <ArrowLeft className="h-4 w-4" />
+                        Back to Portfolios
+                    </Link>
+                </div>
+
                 <h1 className="text-2xl font-bold">Edit Portofolio</h1>
 
                 <form onSubmit={handleSubmit} className="mt-8 space-y-6">

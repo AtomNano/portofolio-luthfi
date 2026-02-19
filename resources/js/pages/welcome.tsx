@@ -71,7 +71,7 @@ const HeroSection = ({ owner }: { owner?: UserProfile }) => (
         className="relative flex min-h-[calc(100vh-4rem)] w-full items-center justify-center overflow-hidden bg-background pt-20 lg:min-h-screen lg:pt-0"
     >
         {/* Background Grid */}
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#0f172a_1px,transparent_1px),linear-gradient(to_bottom,#0f172a_1px,transparent_1px)] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] bg-[size:4rem_4rem] opacity-20" />
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#64748b_1px,transparent_1px),linear-gradient(to_bottom,#64748b_1px,transparent_1px)] dark:bg-[linear-gradient(to_right,#475569_1px,transparent_1px),linear-gradient(to_bottom,#475569_1px,transparent_1px)] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] bg-[size:4rem_4rem] opacity-10 dark:opacity-20" />
 
         <div className="relative container mx-auto flex flex-col-reverse gap-10 px-6 md:px-12 lg:flex-row lg:items-center lg:px-20">
             <div className="flex flex-1 flex-col items-center text-center lg:items-start lg:text-left">

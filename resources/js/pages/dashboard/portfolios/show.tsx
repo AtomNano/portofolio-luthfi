@@ -5,6 +5,7 @@ import { Button, buttonVariants } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import AppLayout from '@/layouts/app-layout';
 import { index, edit } from '@/routes/dashboard/portfolios';
+import type { BreadcrumbItem } from '@/types';
 
 type PortfolioImage = {
     id: number;
@@ -31,6 +32,12 @@ type Props = {
 };
 
 export default function PortfolioShow({ portfolio }: Props) {
+    const breadcrumbs: BreadcrumbItem[] = [
+        { title: 'Dashboard', href: '/dashboard' },
+        { title: 'Portfolios', href: '/dashboard/portfolios' },
+        { title: portfolio.title, href: '#' },
+    ];
+
     const [currentSlide, setCurrentSlide] = useState(0);
     const [isPaused, setIsPaused] = useState(false);
     const [selectedFiles, setSelectedFiles] = useState<FileList | null>(null);
@@ -93,7 +100,7 @@ export default function PortfolioShow({ portfolio }: Props) {
     };
 
     return (
-        <AppLayout>
+        <AppLayout breadcrumbs={breadcrumbs}>
             <Head title={`Detail: ${portfolio.title}`} />
 
             <div className="container max-w-6xl mx-auto py-10 px-4">
