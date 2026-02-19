@@ -17,7 +17,7 @@ class HomeController extends Controller
         return Inertia::render('welcome', [
             'portfolios' => Portfolio::with('images')->latest()->get(),
             'canRegister' => Features::enabled(Features::registration()),
-            'owner' => \App\Models\User::where('email', 'luthfi@example.com')->first() ?? \App\Models\User::first(),
+            'owner' => $request->user() ?? \App\Models\User::latest('updated_at')->first(),
         ]);
     }
 }

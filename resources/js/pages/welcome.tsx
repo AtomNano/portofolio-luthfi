@@ -25,6 +25,8 @@ import {
     Send,
     Terminal,
     Twitter,
+    Facebook,
+    Youtube,
 } from 'lucide-react';
 import React, { useEffect, useRef, useState } from 'react';
 import {
@@ -66,25 +68,25 @@ const AnimatedSection = ({
 const HeroSection = ({ owner }: { owner?: UserProfile }) => (
     <section
         id="hero"
-        className="relative flex min-h-screen w-full items-center justify-center overflow-hidden bg-background pt-5"
+        className="relative flex min-h-[calc(100vh-4rem)] w-full items-center justify-center overflow-hidden bg-background pt-20 lg:min-h-screen lg:pt-0"
     >
         {/* Background Grid */}
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#0f172a_1px,transparent_1px),linear-gradient(to_bottom,#0f172a_1px,transparent_1px)] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] bg-[size:4rem_4rem] opacity-20" />
 
-        <div className="relative container mx-auto flex flex-col-reverse gap-10 px-20 lg:flex-row lg:items-center">
-            <div className="flex flex-1 flex-col items-start text-left lg:items-start">
+        <div className="relative container mx-auto flex flex-col-reverse gap-10 px-6 md:px-12 lg:flex-row lg:items-center lg:px-20">
+            <div className="flex flex-1 flex-col items-center text-center lg:items-start lg:text-left">
                 <motion.div
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.5 }}
-                    className="mb-4 inline-flex items-center rounded border border-cyan-500/30 bg-cyan-500/10 px-3 py-1 text-sm text-cyan-400"
+                    className="mb-6 inline-flex items-center rounded-full border border-cyan-500/30 bg-cyan-500/10 px-4 py-1.5 text-sm text-cyan-400 backdrop-blur-sm lg:mb-4 lg:rounded lg:px-3 lg:py-1"
                 >
                     <span className="mr-2 h-2 w-2 animate-pulse rounded-full bg-cyan-400"></span>
                     Available for hire
                 </motion.div>
 
                 <motion.h1
-                    className="font-mono text-4xl font-bold tracking-tight text-foreground sm:text-6xl lg:text-7xl"
+                    className="font-mono text-4xl font-bold tracking-tight text-foreground sm:text-5xl md:text-6xl lg:text-7xl"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8 }}
@@ -95,7 +97,7 @@ const HeroSection = ({ owner }: { owner?: UserProfile }) => (
                     </span>
                 </motion.h1>
 
-                <div className="mt-6 h-8 font-mono text-xl text-muted-foreground sm:text-2xl">
+                <div className="mt-4 h-8 font-mono text-lg text-muted-foreground sm:mt-6 sm:text-l md:text-2xl">
                     <span>&gt; </span>
                     <TypeAnimation
                         sequence={[
@@ -129,7 +131,7 @@ const HeroSection = ({ owner }: { owner?: UserProfile }) => (
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.4 }}
-                    className="mt-10 flex gap-4"
+                    className="mt-8 flex flex-col gap-4 sm:flex-row sm:justify-center lg:mt-10 lg:justify-start"
                 >
                     <a
                         href="#portfolio"
@@ -140,7 +142,7 @@ const HeroSection = ({ owner }: { owner?: UserProfile }) => (
                     </a>
                     <a
                         href="#contact"
-                        className="rounded border border-border bg-secondary/50 px-6 py-3 text-lg font-semibold text-foreground transition-all hover:border-gray-500 hover:bg-secondary"
+                        className="rounded border border-border bg-secondary/50 px-6 py-3 text-lg font-semibold text-foreground transition-all hover:border-gray-500 hover:bg-secondary text-center"
                     >
                         Contact Me
                     </a>
@@ -154,7 +156,7 @@ const HeroSection = ({ owner }: { owner?: UserProfile }) => (
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.8 }}
             >
-                <div className="relative h-80 w-80 lg:h-96 lg:w-96">
+                <div className="relative h-64 w-64 sm:h-80 sm:w-80 lg:h-96 lg:w-96">
                     <div className="absolute inset-0 rotate-6 rounded-2xl bg-gradient-to-br from-cyan-500 to-blue-600 opacity-20 blur-2xl filter" />
                     <div className="relative h-full w-full overflow-hidden rounded-2xl border border-border bg-card shadow-2xl">
                         {/* Fake Terminal Header */}
@@ -199,18 +201,18 @@ const ServicesSection = () => (
                 </h2>
             </div>
 
-            <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
+            <div className="mt-8 grid grid-cols-2 gap-4 md:mt-12 md:gap-6 lg:grid-cols-4">
                 {SERVICES.map((service, index) => (
                     <div
                         key={index}
-                        className="group relative overflow-hidden rounded-xl border border-border bg-card/50 p-8 transition-all hover:border-cyan-500/50 hover:bg-card"
+                        className="group relative overflow-hidden rounded-xl border border-border bg-card/50 p-5 transition-all hover:border-cyan-500/50 hover:bg-card md:p-8"
                     >
                         <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
-                        <service.icon className="mb-6 h-10 w-10 text-cyan-400" />
-                        <h3 className="mb-3 text-xl font-bold text-foreground">
+                        <service.icon className="mb-4 h-8 w-8 text-cyan-400 md:mb-6 md:h-10 md:w-10" />
+                        <h3 className="mb-2 text-lg font-bold text-foreground md:mb-3 md:text-xl">
                             {service.title}
                         </h3>
-                        <p className="text-sm leading-relaxed text-muted-foreground">
+                        <p className="text-xs leading-relaxed text-muted-foreground md:text-sm">
                             {service.description}
                         </p>
                     </div>
@@ -352,13 +354,13 @@ const PortfolioSection = ({ portfolios }: { portfolios: Portfolio[] }) => {
                     </a> */}
                 </div>
 
-                <div className="grid grid-cols-2 gap-4 md:grid-cols-2 lg:grid-cols-3 md:gap-8">
+                <div className="flex snap-x snap-mandatory gap-4 overflow-x-auto pb-4 md:grid md:overflow-visible md:grid-cols-2 md:gap-6 lg:grid-cols-3 lg:gap-8">
                     {portfolios.length > 0 ? (
                         portfolios.map((item) => (
                             <div
                                 key={item.id}
                                 onClick={() => setSelectedPortfolio(item)}
-                                className="group relative block h-full cursor-pointer overflow-hidden rounded-xl border border-border bg-card/30 backdrop-blur-md transition-all hover:-translate-y-2 hover:border-cyan-500/50 hover:shadow-2xl hover:shadow-cyan-500/10"
+                                className="group relative block h-full min-w-[85vw] snap-center cursor-pointer overflow-hidden rounded-xl border border-border bg-card/30 backdrop-blur-md transition-all hover:-translate-y-2 hover:border-cyan-500/50 hover:shadow-2xl hover:shadow-cyan-500/10 sm:min-w-[60vw] md:min-w-0"
                             >
                                 <div className="aspect-[16/10] w-full overflow-hidden">
                                     <img
@@ -620,11 +622,31 @@ const SkillsSection = ({ owner }: { owner?: UserProfile }) => {
         return owner?.skills?.filter((s) => s.category === category) || [];
     };
 
-    const categories = [
-        { name: 'Backend', color: 'from-purple-500 to-pink-500' },
-        { name: 'Frontend', color: 'from-cyan-500 to-blue-500' },
-        { name: 'DevOps', color: 'from-emerald-500 to-teal-500' },
+    // Dynamic categories from owner skills
+    const uniqueCategories = Array.from(new Set(owner?.skills?.map(s => s.category) || []));
+    
+    const categoryColors = [
+        'from-purple-500 to-pink-500', // Index 0
+        'from-cyan-500 to-blue-500',   // Index 1
+        'from-emerald-500 to-teal-500', // Index 2
+        'from-orange-500 to-red-500',   // Index 3
+        'from-blue-600 to-indigo-600',  // Index 4
+        'from-yellow-400 to-orange-500', // Index 5
     ];
+
+    const categories = uniqueCategories.map((category, index) => ({
+        name: category,
+        color: categoryColors[index % categoryColors.length]
+    }));
+
+    // Fallback if no skills
+    if (categories.length === 0) {
+        categories.push(
+             { name: 'Backend', color: 'from-purple-500 to-pink-500' },
+             { name: 'Frontend', color: 'from-cyan-500 to-blue-500' },
+             { name: 'DevOps', color: 'from-emerald-500 to-teal-500' },
+        );
+    }
 
     const softSkills = owner?.soft_skills?.length ? owner.soft_skills : [
         { name: 'Problem Solving', icon: '🧩' },
@@ -785,6 +807,18 @@ const SkillsSection = ({ owner }: { owner?: UserProfile }) => {
     );
 };
 
+// Helper to get social icon
+const getSocialIcon = (platform: string) => {
+    const lower = platform.toLowerCase();
+    if (lower.includes('github')) return Github;
+    if (lower.includes('linkedin')) return Linkedin;
+    if (lower.includes('instagram')) return Instagram;
+    if (lower.includes('twitter') || lower.includes('x')) return Twitter;
+    if (lower.includes('facebook')) return Facebook;
+    if (lower.includes('youtube')) return Youtube;
+    return Globe; // Fallback
+};
+
 // Contact Section
 const ContactSection = ({ owner }: { owner?: UserProfile }) => {
     const contactInfo = [
@@ -808,24 +842,16 @@ const ContactSection = ({ owner }: { owner?: UserProfile }) => {
         },
     ];
 
-    // Map social links from DB to icons
-    // Note: We need a mapping helper or simple if/else for icons if dynamic
-    const getSocialIcon = (platform: string) => {
-        const lower = platform.toLowerCase();
-        if (lower.includes('github')) return Github;
-        if (lower.includes('linkedin')) return Linkedin;
-        if (lower.includes('instagram')) return Instagram;
-        if (lower.includes('twitter') || lower.includes('x')) return Twitter;
-        return Globe; // Fallback
-    };
-    
     // Use dynamic social links if available, else fallback (though DB should have them now)
-    const socialLinks = owner?.social_links?.map(link => ({
-        icon: getSocialIcon(link.platform),
-        label: link.platform,
-        href: link.url,
-        color: link.color || 'hover:text-cyan-400',
-    })) || [];
+    // Use dynamic social links if available, else fallback
+    const socialLinks = owner?.social_links?.map(link => {
+        return {
+            icon: getSocialIcon(link.platform),
+            label: link.platform,
+            href: link.url,
+            color: link.color || 'hover:text-cyan-400',
+        };
+    }) || [];
 
     return (
         <AnimatedSection className="bg-card">
@@ -999,41 +1025,23 @@ const Footer = ({ owner }: { owner?: UserProfile }) => {
                             modern web applications with Laravel, React, and
                             cutting-edge technologies.
                         </p>
-                        <div className="flex gap-3">
-                            {owner?.github && (
-                                <a
-                                    href={owner.github}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="flex h-10 w-10 items-center justify-center rounded-lg border border-border bg-background text-muted-foreground transition-colors hover:border-white/30 hover:text-white"
-                                    aria-label="GitHub"
-                                >
-                                    <Github className="h-5 w-5" />
-                                </a>
-                            )}
-                            {owner?.linkedin && (
-                                <a
-                                    href={owner.linkedin}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="flex h-10 w-10 items-center justify-center rounded-lg border border-border bg-background text-muted-foreground transition-colors hover:border-blue-400/30 hover:text-blue-400"
-                                    aria-label="LinkedIn"
-                                >
-                                    <Linkedin className="h-5 w-5" />
-                                </a>
-                            )}
-                            {owner?.instagram && (
-                                <a
-                                    href={owner.instagram}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="flex h-10 w-10 items-center justify-center rounded-lg border border-border bg-background text-muted-foreground transition-colors hover:border-pink-400/30 hover:text-pink-400"
-                                    aria-label="Instagram"
-                                >
-                                    <Instagram className="h-5 w-5" />
-                                </a>
-                            )}
-                        </div>
+                            <div className="flex gap-3">
+                                {owner?.social_links?.map((link, index) => {
+                                    const Icon = getSocialIcon(link.platform);
+                                    return (
+                                        <a
+                                            key={index}
+                                            href={link.url}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="flex h-10 w-10 items-center justify-center rounded-lg border border-border bg-background text-muted-foreground transition-colors hover:border-cyan-500/30 hover:text-cyan-400"
+                                            aria-label={link.platform}
+                                        >
+                                            <Icon className="h-5 w-5" />
+                                        </a>
+                                    );
+                                })}
+                            </div>
                     </div>
 
                     {/* Links */}
@@ -1157,7 +1165,7 @@ export default function Welcome({
                     <HeroSection owner={owner} />
                     <PortfolioSection portfolios={portfolios} />
                     <ServicesSection />
-                    <SkillsSection />
+                    <SkillsSection owner={owner} />
                     <AboutSection owner={owner} />
                     <ContactSection owner={owner} />
                 </main>

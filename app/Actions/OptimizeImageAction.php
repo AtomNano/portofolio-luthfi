@@ -23,22 +23,48 @@ class OptimizeImageAction
      */
     public function handle(UploadedFile $file, string $directory = 'portfolios'): array
     {
-        $filename = uniqid().'_'.time();
+        $filename = uniqid() . '_' . time();
 
-        // Process main image: resize to max 1920x1080, convert to WebP
+        // Determine available driver
+        $useWebp = function_exists('imagewebp');
+        $useJpeg = function_exists('imagejpeg');
+        $usePng = function_exists('imagepng');
+
+        if ($useWebp) {
+            $extension = 'webp';
+            $encoder = fn($image) => $image->toWebp(quality: 80);
+            $thumbEncoder = fn($image) => $image->toWebp(quality: 75);
+        } elseif ($useJpeg) {
+            $extension = 'jpg';
+            $encoder = fn($image) => $image->toJpeg(quality: 80);
+            $thumbEncoder = fn($image) => $image->toJpeg(quality: 75);
+        } elseif ($usePng) {
+            $extension = 'png';
+            $encoder = fn($image) => $image->toPng();
+            $thumbEncoder = fn($image) => $image->toPng();
+        } else {
+            // Last resort: assume PNG or just let Intervention try its best with default save?
+            // But we need strict return types from encoders usually.
+            // Let's fallback to PNG as it's most likely supported if GD is on.
+            $extension = 'png';
+            $encoder = fn($image) => $image->toPng();
+            $thumbEncoder = fn($image) => $image->toPng();
+        }
+
+        // Process main image
         $mainImage = $this->manager->read($file->getPathname());
         $mainImage->scaleDown(width: 1920, height: 1080);
-        $mainEncoded = $mainImage->toWebp(quality: 80);
+        $mainEncoded = $encoder($mainImage);
 
-        $mainPath = "{$directory}/{$filename}.webp";
+        $mainPath = "{$directory}/{$filename}.{$extension}";
         Storage::disk('public')->put($mainPath, (string) $mainEncoded);
 
-        // Generate thumbnail: 400x300, WebP
+        // Generate thumbnail
         $thumbnail = $this->manager->read($file->getPathname());
         $thumbnail->cover(400, 300);
-        $thumbEncoded = $thumbnail->toWebp(quality: 75);
+        $thumbEncoded = $thumbEncoder($thumbnail);
 
-        $thumbPath = "{$directory}/thumbnails/{$filename}_thumb.webp";
+        $thumbPath = "{$directory}/thumbnails/{$filename}_thumb.{$extension}";
         Storage::disk('public')->put($thumbPath, (string) $thumbEncoded);
 
         return [
