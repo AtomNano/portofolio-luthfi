@@ -35,7 +35,7 @@ export default function Dashboard({ statistics }: DashboardProps) {
     return (
         <AppLayout breadcrumbs={breadcrumbs}>
             <Head title="Dashboard" />
-            <div className="flex h-full flex-1 flex-col gap-4 overflow-x-auto rounded-xl p-4">
+            <div className="flex h-full flex-1 flex-col gap-4 overflow-x-hidden rounded-xl p-4 md:p-8 lg:p-12">
                 {/* Welcome Card */}
                 <Card className="glass text-foreground hover:scale-[1.02] transition-all duration-300">
                     <CardHeader>
@@ -46,14 +46,14 @@ export default function Dashboard({ statistics }: DashboardProps) {
                     </CardHeader>
                     <CardContent>
                         <p>Mulai kelola Portofolio Anda.</p>
-                        <div className="mt-4 flex gap-3">
-                            <Button asChild className="bg-primary hover:bg-primary/90 text-primary-foreground border-0">
+                        <div className="mt-4 flex flex-col gap-3 sm:flex-row">
+                            <Button asChild className="w-full bg-primary hover:bg-primary/90 text-primary-foreground border-0 sm:w-auto">
                                 <Link href={dashboard.portfolios.index.url()}>
                                     <PlusCircle className="mr-2 h-4 w-4" />
                                     Kelola Portofolio
                                 </Link>
                             </Button>
-                            <Button asChild variant="outline" className="border-border hover:bg-accent hover:text-accent-foreground">
+                            <Button asChild variant="outline" className="w-full border-border hover:bg-accent hover:text-accent-foreground sm:w-auto">
                                 <a href="/" target="_blank" rel="noopener noreferrer">
                                     <ExternalLink className="mr-2 h-4 w-4" />
                                     Lihat Landing Page
@@ -65,15 +65,15 @@ export default function Dashboard({ statistics }: DashboardProps) {
 
                 {/* Statistics Section using Deferred Props */}
                 <Deferred data="statistics" fallback={
-                   <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                   <div className="grid grid-cols-2 gap-4 md:grid-cols-2 lg:grid-cols-3">
                         {[1, 2, 3].map((i) => (
-                             <Card key={i} className="glass animate-pulse h-32" />
+                             <Card key={i} className={`glass h-32 animate-pulse ${i === 3 ? 'col-span-2 md:col-span-1' : ''}`} />
                         ))}
                    </div>
                 }>
                     {statistics && (
                         <>
-                            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                            <div className="grid grid-cols-2 gap-4 md:grid-cols-2 lg:grid-cols-3">
                                 {/* Total Website Visitors */}
                                 <Card className="glass text-foreground hover:scale-105 transition-all duration-300">
                                     <CardHeader className="flex flex-row items-center justify-between pb-2">
@@ -111,7 +111,7 @@ export default function Dashboard({ statistics }: DashboardProps) {
                                 </Card>
 
                                 {/* Engagement Rate */}
-                                <Card className="glass text-gray-200 hover:scale-105 transition-all duration-300">
+                                <Card className="glass col-span-2 text-gray-200 hover:scale-105 transition-all duration-300 md:col-span-1">
                                     <CardHeader className="flex flex-row items-center justify-between pb-2">
                                         <CardTitle className="text-sm font-medium text-gray-400">
                                             Tingkat Interaksi

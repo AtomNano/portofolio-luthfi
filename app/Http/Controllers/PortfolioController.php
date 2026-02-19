@@ -66,10 +66,19 @@ class PortfolioController extends Controller
      */
     public function store(StorePortfolioRequest $request, StorePortfolioAction $action)
     {
+        $validated = $request->validated();
+        $mainImage = $request->file('image');
+        $additionalImages = $request->file('images', []) ?? [];
+
+        // Fallback: If no dedicated main image, use the first one from the gallery
+        if (!$mainImage && !empty($additionalImages)) {
+            $mainImage = array_shift($additionalImages);
+        }
+
         $action->handle(
-            $request->validated(),
-            $request->file('image'),
-            $request->file('images', []),
+            $validated,
+            $mainImage,
+            $additionalImages,
         );
 
         return Redirect::route('dashboard.portfolios.index');

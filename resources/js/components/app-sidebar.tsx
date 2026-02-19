@@ -1,5 +1,5 @@
 import { Link } from '@inertiajs/react';
-import { BookOpen, Folder, Layers, LayoutGrid, Briefcase } from 'lucide-react';
+import { BookOpen, Folder, Layers, LayoutGrid, Briefcase, Wrench } from 'lucide-react';
 import { NavFooter } from '@/components/nav-footer';
 import { NavMain } from '@/components/nav-main';
 import { NavUser } from '@/components/nav-user';
@@ -31,6 +31,11 @@ const mainNavItems: NavItem[] = [
         title: 'Experiences',
         href: dashboard.experiences.index.url(),
         icon: Briefcase,
+    },
+    {
+        title: 'Skills & Tools',
+        href: dashboard.skills ? dashboard.skills.index.url() : '/dashboard/skills', // Fallback if type not updated yet
+        icon: Wrench,
     },
 ];
 
