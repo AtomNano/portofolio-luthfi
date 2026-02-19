@@ -352,7 +352,7 @@ const PortfolioSection = ({ portfolios }: { portfolios: Portfolio[] }) => {
                     </a> */}
                 </div>
 
-                <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+                <div className="grid grid-cols-2 gap-4 md:grid-cols-2 lg:grid-cols-3 md:gap-8">
                     {portfolios.length > 0 ? (
                         portfolios.map((item) => (
                             <div
@@ -626,7 +626,7 @@ const SkillsSection = ({ owner }: { owner?: UserProfile }) => {
         { name: 'DevOps', color: 'from-emerald-500 to-teal-500' },
     ];
 
-    const softSkills = owner?.soft_skills || [
+    const softSkills = owner?.soft_skills?.length ? owner.soft_skills : [
         { name: 'Problem Solving', icon: '🧩' },
         { name: 'Team Leadership', icon: '👥' },
         { name: 'Communication', icon: '💬' },
@@ -637,27 +637,9 @@ const SkillsSection = ({ owner }: { owner?: UserProfile }) => {
         { name: 'Continuous Learning', icon: '📚' },
     ];
 
-    const techStack = [
-        'Laravel',
-        'React',
-        'TypeScript',
-        'Tailwind CSS',
-        'PostgreSQL',
-        'MySQL',
-        'Redis',
-        'Docker',
-        'AWS',
-        'Git',
-        'Node.js',
-        'Vue.js',
-        'Next.js',
-        'Vite',
-        'Inertia.js',
-        'Flutter',
-        'MongoDB',
-        'Nginx',
-        'Linux',
-        'Figma',
+    // Use dynamic skills for tech stack cloud, or fallback if empty
+    const techStack = owner?.skills?.map(s => s.name) || [
+        'Laravel', 'React', 'TypeScript', 'Tailwind CSS', 'PostgreSQL'
     ];
 
     return (
@@ -688,46 +670,50 @@ const SkillsSection = ({ owner }: { owner?: UserProfile }) => {
                                 delay: 0.1 + categoryIndex * 0.1,
                             }}
                         >
-                            <div className="h-full rounded-xl border border-border bg-card/50 p-6">
+                            <div className="h-full rounded-xl border border-border bg-card/50 p-6 shadow-sm hover:border-cyan-500/30 transition-colors">
                                 <h3
                                     className={`mb-6 bg-gradient-to-r text-xl font-bold ${category.color} bg-clip-text text-transparent`}
                                 >
                                     {category.name}
                                 </h3>
                                 <div className="space-y-5">
-                                    {getSkillsByCategory(category.name).map(
-                                        (skill, skillIndex) => (
-                                            <div key={skillIndex}>
-                                                <div className="mb-2 flex justify-between">
-                                                    <span className="text-sm font-medium text-foreground">
-                                                        {skill.name}
-                                                    </span>
-                                                    <span className="text-sm text-muted-foreground">
-                                                        {skill.level}%
-                                                    </span>
+                                    {getSkillsByCategory(category.name).length > 0 ? (
+                                        getSkillsByCategory(category.name).map(
+                                            (skill, skillIndex) => (
+                                                <div key={skillIndex}>
+                                                    <div className="mb-2 flex justify-between">
+                                                        <span className="text-sm font-medium text-foreground">
+                                                            {skill.name}
+                                                        </span>
+                                                        <span className="text-sm text-muted-foreground">
+                                                            {skill.level}%
+                                                        </span>
+                                                    </div>
+                                                    <div className="h-2 overflow-hidden rounded-full bg-secondary">
+                                                        <motion.div
+                                                            initial={{ width: 0 }}
+                                                            animate={
+                                                                isInView
+                                                                    ? {
+                                                                          width: `${skill.level}%`,
+                                                                      }
+                                                                    : {}
+                                                            }
+                                                            transition={{
+                                                                duration: 1,
+                                                                delay:
+                                                                    0.3 +
+                                                                    skillIndex *
+                                                                        0.1,
+                                                            }}
+                                                            className={`h-full bg-gradient-to-r ${category.color} rounded-full`}
+                                                        />
+                                                    </div>
                                                 </div>
-                                                <div className="h-2 overflow-hidden rounded-full bg-secondary">
-                                                    <motion.div
-                                                        initial={{ width: 0 }}
-                                                        animate={
-                                                            isInView
-                                                                ? {
-                                                                      width: `${skill.level}%`,
-                                                                  }
-                                                                : {}
-                                                        }
-                                                        transition={{
-                                                            duration: 1,
-                                                            delay:
-                                                                0.3 +
-                                                                skillIndex *
-                                                                    0.1,
-                                                        }}
-                                                        className={`h-full bg-gradient-to-r ${category.color} rounded-full`}
-                                                    />
-                                                </div>
-                                            </div>
-                                        ),
+                                            ),
+                                        )
+                                    ) : (
+                                        <p className="text-sm text-muted-foreground italic">No skills listed for this category.</p>
                                     )}
                                 </div>
                             </div>
@@ -748,7 +734,7 @@ const SkillsSection = ({ owner }: { owner?: UserProfile }) => {
                     <div className="flex flex-wrap justify-center gap-3">
                         {techStack.map((tech, index) => (
                             <motion.span
-                                key={tech}
+                                key={index}
                                 initial={{ opacity: 0, scale: 0.8 }}
                                 animate={
                                     isInView ? { opacity: 1, scale: 1 } : {}
@@ -757,7 +743,7 @@ const SkillsSection = ({ owner }: { owner?: UserProfile }) => {
                                     duration: 0.4,
                                     delay: 0.5 + index * 0.03,
                                 }}
-                                className="cursor-default rounded-lg border border-border bg-card/50 px-4 py-2 text-sm text-foreground transition-colors hover:border-cyan-500/50 hover:text-cyan-400"
+                                className="cursor-default rounded-lg border border-border bg-card/50 px-4 py-2 text-sm text-foreground transition-colors hover:border-cyan-500/50 hover:text-cyan-400 backdrop-blur-sm"
                             >
                                 {tech}
                             </motion.span>
@@ -777,14 +763,14 @@ const SkillsSection = ({ owner }: { owner?: UserProfile }) => {
                     <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
                         {softSkills.map((skill, index) => (
                             <motion.div
-                                key={skill.name}
+                                key={index}
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                                 transition={{
                                     duration: 0.4,
                                     delay: 0.7 + index * 0.05,
                                 }}
-                                className="flex items-center gap-3 rounded-xl border border-border bg-card/50 p-4 transition-colors hover:border-purple-500/30"
+                                className="flex items-center gap-3 rounded-xl border border-border bg-card/50 p-4 transition-colors hover:border-purple-500/30 backdrop-blur-sm"
                             >
                                 <span className="text-2xl">{skill.icon || '✨'}</span>
                                 <span className="text-sm font-medium text-foreground">

@@ -57,6 +57,12 @@ Route::middleware(['auth', 'verified'])
             ->only(['store', 'update', 'destroy']);
         Route::get('experiences', [\App\Http\Controllers\ExperienceController::class, 'dashboardIndex'])
             ->name('experiences.index');
+
+        // Skills Management
+        Route::get('skills', [\App\Http\Controllers\Dashboard\SkillController::class, 'index'])
+            ->name('skills.index');
+        Route::patch('skills', [\App\Http\Controllers\Dashboard\SkillController::class, 'update'])
+            ->name('skills.update');
     });
 
 // Public portfolio route
