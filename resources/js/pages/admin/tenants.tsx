@@ -1,25 +1,26 @@
 import { Head, router, useForm } from '@inertiajs/react';
-import { Card } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
-import AppLayout from '@/layouts/app-layout';
-import type { BreadcrumbItem } from '@/types';
-import Swal from 'sweetalert2';
-import { useState } from 'react';
 import { MoreVertical, UserPlus, Pencil, Trash, Lock } from 'lucide-react';
+import { useState } from 'react';
+import Swal from 'sweetalert2';
+import { Button } from '@/components/ui/button';
+import { Card } from '@/components/ui/card';
 import {
     DropdownMenu,
     DropdownMenuContent,
     DropdownMenuItem,
     DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
+import AppLayout from '@/layouts/app-layout';
+import type { BreadcrumbItem } from '@/types';
 
 const breadcrumbs: BreadcrumbItem[] = [
     { title: 'Superadmin', href: '/admin/dashboard' },
     { title: 'Tenants & Subscriptions', href: '/admin/tenants' },
 ];
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 function Modal({ isOpen, onClose, title, children }: any) {
     if (!isOpen) return null;
     return (
@@ -37,9 +38,11 @@ function Modal({ isOpen, onClose, title, children }: any) {
     );
 }
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export default function AdminTenants({ users }: any) {
     const [isCreateModalOpen, setIsCreateModalOpen] = useState(false);
     const [isEditModalOpen, setIsEditModalOpen] = useState(false);
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const [editingUser, setEditingUser] = useState<any>(null);
 
     const createForm = useForm({
@@ -71,6 +74,7 @@ export default function AdminTenants({ users }: any) {
         });
     };
 
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const openEditModal = (user: any) => {
         setEditingUser(user);
         editForm.setData({ name: user.name, email: user.email, password: '' });
@@ -166,6 +170,7 @@ export default function AdminTenants({ users }: any) {
                                 </tr>
                             </thead>
                             <tbody className="divide-y divide-white/10">
+                                {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
                                 {users?.data?.map((user: any) => user ? (
                                     <tr key={user.id} className="hover:bg-white/5">
                                         <td className="px-6 py-4">

@@ -74,6 +74,7 @@ const adminNavItems: NavItem[] = [
 
 export function AppSidebar() {
     const tenant = useTenant();
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const { auth } = usePage<any>().props;
     const isAdmin = auth?.user?.is_admin;
     const portfolioUrl = tenant?.slug ? `/${tenant.slug}` : '/';

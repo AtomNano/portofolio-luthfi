@@ -1,4 +1,4 @@
-import { head } from '@inertiajs/react'; // This import is cleaner but usePage is safer usually. Let's stick to standard hooks if possible or just the useEffect.
+
 import { useEffect } from 'react';
 
 export function usePageEffects(title: string) {

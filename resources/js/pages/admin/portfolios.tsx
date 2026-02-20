@@ -1,18 +1,19 @@
 import { Head, router, Link } from '@inertiajs/react';
-import { Card } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import AppLayout from '@/layouts/app-layout';
-import type { BreadcrumbItem } from '@/types';
 import { Search, Trash, FilterX, Layers, ExternalLink } from 'lucide-react';
 import { useState } from 'react';
 import Swal from 'sweetalert2';
+import { Button } from '@/components/ui/button';
+import { Card } from '@/components/ui/card';
+import { Input } from '@/components/ui/input';
+import AppLayout from '@/layouts/app-layout';
+import type { BreadcrumbItem } from '@/types';
 
 const breadcrumbs: BreadcrumbItem[] = [
     { title: 'Superadmin', href: '/admin/dashboard' },
     { title: 'Global Portfolios', href: '/admin/portfolios' },
 ];
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export default function AdminPortfolios({ portfolios, filters, tenants }: any) {
     const [search, setSearch] = useState(filters.search || '');
     const [tenantId, setTenantId] = useState(filters.tenant_id || '');
@@ -83,6 +84,7 @@ export default function AdminPortfolios({ portfolios, filters, tenants }: any) {
                             className="w-full md:w-64 h-9 rounded-md border border-white/10 bg-black/40 px-3 py-1 text-sm text-gray-300 focus:outline-none focus:ring-1 focus:ring-cyan-500"
                         >
                             <option value="">Semua User / Tenant</option>
+                            {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
                             {tenants.map((t: any) => (
                                 <option key={t.id} value={t.id}>{t.name} ({t.owner})</option>
                             ))}
@@ -111,6 +113,7 @@ export default function AdminPortfolios({ portfolios, filters, tenants }: any) {
                                 </tr>
                             </thead>
                             <tbody className="divide-y divide-white/10">
+                                {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
                                 {portfolios.data.length > 0 ? portfolios.data.map((p: any) => (
                                     <tr key={p.id} className="hover:bg-white/5 group">
                                         <td className="px-6 py-4">
@@ -170,6 +173,7 @@ export default function AdminPortfolios({ portfolios, filters, tenants }: any) {
                 {portfolios.links && portfolios.data.length > 0 && (
                     <div className="flex justify-center mt-4 pb-8">
                         <div className="flex gap-1">
+                            {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
                             {portfolios.links.map((link: any, i: number) => (
                                 <Link
                                     key={i}

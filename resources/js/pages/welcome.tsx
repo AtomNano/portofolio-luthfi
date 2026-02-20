@@ -1,13 +1,3 @@
-import FrontNavbar from '@/components/front-navbar';
-import {
-    Dialog,
-    DialogContent,
-    DialogDescription,
-    DialogTitle,
-} from '@/components/ui/dialog';
-import { SERVICES } from '@/constants/services';
-import type { Portfolio } from '@/types';
-import type { UserProfile, Skill } from '@/types/profile';
 import { Head } from '@inertiajs/react';
 import { AnimatePresence, motion, useInView } from 'framer-motion';
 import {
@@ -29,22 +19,19 @@ import {
     Youtube,
 } from 'lucide-react';
 import React, { useEffect, useRef, useState } from 'react';
-import {
-    DiAndroid,
-    DiCode,
-    DiCss3,
-    DiDatabase,
-    DiDocker,
-    DiGithubBadge,
-    DiHtml5,
-    DiLaravel,
-    DiLinux,
-    DiPhp,
-    DiUbuntu,
-} from 'react-icons/di';
-import { SiFlutter } from 'react-icons/si';
+
 import { TypeAnimation } from 'react-type-animation';
+import FrontNavbar from '@/components/front-navbar';
 import { AVAILABLE_ICONS } from '@/components/icon-selector';
+import {
+    Dialog,
+    DialogContent,
+    DialogDescription,
+    DialogTitle,
+} from '@/components/ui/dialog';
+import { SERVICES } from '@/constants/services';
+import type { Portfolio } from '@/types';
+import type { UserProfile } from '@/types/profile';
 
 // Helper component for animating sections on scroll
 const AnimatedSection = ({
@@ -236,6 +223,7 @@ const ImageCarousel = ({ portfolio }: { portfolio: Portfolio }) => {
 
     // Reset index when portfolio changes
     useEffect(() => {
+        // eslint-disable-next-line
         setCurrentImageIndex(0);
     }, [portfolio.id]);
 
@@ -1084,13 +1072,9 @@ const Footer = ({ owner }: { owner?: UserProfile }) => {
 export default function Welcome({
     portfolios,
     owner,
-    canLogin,
-    canRegister,
 }: {
     portfolios: Portfolio[];
     owner?: UserProfile;
-    canLogin: boolean;
-    canRegister: boolean;
 }) {
     const [showScrollTop, setShowScrollTop] = useState(false);
     const [scrollY, setScrollY] = useState(0);

@@ -9,7 +9,7 @@ import { useState } from 'react';
 import Swal from 'sweetalert2';
 import { Button, buttonVariants } from '@/components/ui/button';
 import AppLayout from '@/layouts/app-layout';
-import { index, create, show, edit, destroy } from '@/routes/dashboard/portfolios';
+import { create, show, edit, destroy } from '@/routes/dashboard/portfolios';
 import type { BreadcrumbItem } from '@/types';
 
 const breadcrumbs: BreadcrumbItem[] = [

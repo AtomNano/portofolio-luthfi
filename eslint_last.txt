@@ -1,0 +1,2 @@
+D:\github\Portofolio\portofolio-luthfi\resources\js\pages\dashboard\skills\index.tsx:1:@typescript-eslint/no-unused-vars
+D:\github\Portofolio\portofolio-luthfi\resources\js\pages\settings\profile.tsx:31:no-empty-pattern

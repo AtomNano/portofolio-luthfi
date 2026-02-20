@@ -1,4 +1,3 @@
-import { Button } from '@/components/ui/button';
 import {
     DiAndroid,
     DiCode,
@@ -20,6 +19,7 @@ import {
     DiUbuntu,
 } from 'react-icons/di';
 import { SiFlutter, SiTypescript, SiVuedotjs, SiTailwindcss, SiNextdotjs } from 'react-icons/si';
+import { Button } from '@/components/ui/button';
 
 export const AVAILABLE_ICONS = [
     { id: 'php', name: 'PHP', icon: DiPhp },

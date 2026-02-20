@@ -1,11 +1,11 @@
 import { Head, router } from '@inertiajs/react';
+import { Check, X, CreditCard, Zap } from 'lucide-react';
+import { useState } from 'react';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import AppLayout from '@/layouts/app-layout';
 import { type BreadcrumbItem } from '@/types';
-import { Plan, Tenant } from '@/types';
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
-import { Check, X, CreditCard, Zap } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { useState } from 'react';
+import type { Plan, Tenant } from '@/types';
 
 const breadcrumbs: BreadcrumbItem[] = [
     {

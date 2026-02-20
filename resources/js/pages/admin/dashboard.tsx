@@ -8,6 +8,7 @@ const breadcrumbs: BreadcrumbItem[] = [
     { title: 'Superadmin', href: '/admin/dashboard' },
 ];
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export default function AdminDashboard({ stats, recent_users }: any) {
     return (
         <AppLayout breadcrumbs={breadcrumbs}>
@@ -77,6 +78,7 @@ export default function AdminDashboard({ stats, recent_users }: any) {
                                     </tr>
                                 </thead>
                                 <tbody className="divide-y divide-white/10">
+                                    {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
                                     {recent_users.map((user: any) => (
                                         <tr key={user.id} className="hover:bg-white/5">
                                             <td className="px-6 py-4 font-medium text-white">{user.name}</td>

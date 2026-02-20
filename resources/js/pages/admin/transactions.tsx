@@ -1,14 +1,15 @@
 import { Head } from '@inertiajs/react';
+import { CreditCard, ArrowUpRight } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 import AppLayout from '@/layouts/app-layout';
 import type { BreadcrumbItem } from '@/types';
-import { CreditCard, ArrowUpRight } from 'lucide-react';
 
 const breadcrumbs: BreadcrumbItem[] = [
     { title: 'Superadmin', href: '/admin/dashboard' },
     { title: 'Transactions Ledger', href: '/admin/transactions' },
 ];
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export default function AdminTransactions({ transactions }: any) {
     return (
         <AppLayout breadcrumbs={breadcrumbs}>
@@ -39,6 +40,7 @@ export default function AdminTransactions({ transactions }: any) {
                             </thead>
                             <tbody className="divide-y divide-white/10">
                                 {transactions?.data?.length > 0 ? (
+                                    // eslint-disable-next-line @typescript-eslint/no-explicit-any
                                     transactions.data.map((tx: any) => (
                                         <tr key={tx.id} className="hover:bg-white/5">
                                             <td className="px-6 py-4">

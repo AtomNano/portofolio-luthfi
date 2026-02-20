@@ -1,5 +1,5 @@
 import { usePage } from '@inertiajs/react';
-import type { SharedData, Tenant, Plan } from '@/types';
+import type { SharedData, Tenant } from '@/types';
 
 /**
  * Returns the current authenticated user's tenant data from Inertia shared props.

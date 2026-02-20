@@ -1,0 +1,68 @@
+D:\github\Portofolio\portofolio-luthfi\resources\js\hooks\use-page-effects.ts
+Line 1: 'head' is defined but never used.
+
+D:\github\Portofolio\portofolio-luthfi\resources\js\hooks\use-tenant.ts
+Line 2: 'Plan' is defined but never used.
+
+D:\github\Portofolio\portofolio-luthfi\resources\js\pages\dashboard\experiences\index.tsx
+Line 16: 'DialogTrigger' is defined but never used.
+
+D:\github\Portofolio\portofolio-luthfi\resources\js\pages\dashboard\portfolios\index.tsx
+Line 12: 'index' is defined but never used.
+
+D:\github\Portofolio\portofolio-luthfi\resources\js\pages\dashboard\skills\index.tsx
+Line 16: 'UserProfile' is defined but never used.
+Line 52: 'flash' is assigned a value but never used.
+Line 505: Include a description after the "@ts-expect-error" directive to explain why the @ts-expect-error is necessary. The description must be 3 characters or longer.
+
+D:\github\Portofolio\portofolio-luthfi\resources\js\pages\dashboard.tsx
+Line 2: 'ExternalLink' is defined but never used.
+
+D:\github\Portofolio\portofolio-luthfi\resources\js\pages\experience.tsx
+Line 1: 'Link' is defined but never used.
+Line 3: 'ArrowLeft' is defined but never used.
+
+D:\github\Portofolio\portofolio-luthfi\resources\js\pages\landing.tsx
+Line 2: 'AnimatePresence' is defined but never used.
+
+D:\github\Portofolio\portofolio-luthfi\resources\js\pages\settings\profile.tsx
+Line 3: 'Loader2' is defined but never used.
+Line 3: 'Plus' is defined but never used.
+Line 3: 'Trash2' is defined but never used.
+Line 17: 'Skill' is defined but never used.
+Line 17: 'SocialLink' is defined but never used.
+Line 32: 'mustVerifyEmail' is defined but never used.
+Line 33: 'status' is defined but never used.
+
+D:\github\Portofolio\portofolio-luthfi\resources\js\pages\welcome.tsx
+Line 23: 'DiAndroid' is defined but never used.
+Line 24: 'DiCode' is defined but never used.
+Line 25: 'DiCss3' is defined but never used.
+Line 26: 'DiDatabase' is defined but never used.
+Line 27: 'DiDocker' is defined but never used.
+Line 28: 'DiGithubBadge' is defined but never used.
+Line 29: 'DiHtml5' is defined but never used.
+Line 30: 'DiLaravel' is defined but never used.
+Line 31: 'DiLinux' is defined but never used.
+Line 32: 'DiPhp' is defined but never used.
+Line 33: 'DiUbuntu' is defined but never used.
+Line 35: 'SiFlutter' is defined but never used.
+Line 47: 'Skill' is defined but never used.
+Line 239: Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+D:\github\Portofolio\portofolio-luthfi\resources\js\pages\welcome.tsx:239:9
+  237 |     // Reset index when portfolio changes
+  238 |     useEffect(() => {
+> 239 |         setCurrentImageIndex(0);
+      |         ^^^^^^^^^^^^^^^^^^^^ Avoid calling setState() directly within an effect
+  240 |     }, [portfolio.id]);
+  241 |
+  242 |     const nextImage = (e?: React.MouseEvent) => {
+Line 1087: 'canLogin' is defined but never used.
+Line 1088: 'canRegister' is defined but never used.

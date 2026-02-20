@@ -1,6 +1,5 @@
 import { Head, Link, usePage } from '@inertiajs/react';
-import { Portfolio } from '@/types';
-import { AnimatePresence, motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { 
     Check, 
     ChevronRight, 
@@ -14,9 +13,11 @@ import {
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
-import { SharedData } from '@/types';
 import { login, register } from '@/routes';
+import type { SharedData } from '@/types';
+import type { Portfolio } from '@/types';
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const FeatureCard = ({ icon: Icon, title, description }: { icon: any, title: string, description: string }) => (
     <motion.div 
         whileHover={{ y: -5 }}

@@ -1,0 +1,2789 @@
+[
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\actions\\App\\Http\\Controllers\\Admin\\DashboardController.ts",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\actions\\App\\Http\\Controllers\\Admin\\index.ts",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\actions\\App\\Http\\Controllers\\Admin\\PortfolioController.ts",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\actions\\App\\Http\\Controllers\\Admin\\TenantController.ts",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\actions\\App\\Http\\Controllers\\Admin\\TransactionController.ts",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\actions\\App\\Http\\Controllers\\Dashboard\\BillingController.ts",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\actions\\App\\Http\\Controllers\\Dashboard\\index.ts",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\actions\\App\\Http\\Controllers\\Dashboard\\SettingsController.ts",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\actions\\App\\Http\\Controllers\\Dashboard\\SkillController.ts",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\actions\\App\\Http\\Controllers\\ExperienceController.ts",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\actions\\App\\Http\\Controllers\\HomeController.ts",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\actions\\App\\Http\\Controllers\\index.ts",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\actions\\App\\Http\\Controllers\\PortfolioController.ts",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\actions\\App\\Http\\Controllers\\PortfolioImageController.ts",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\actions\\App\\Http\\Controllers\\PublicPortfolioController.ts",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\actions\\App\\Http\\Controllers\\Settings\\index.ts",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\actions\\App\\Http\\Controllers\\Settings\\PasswordController.ts",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\actions\\App\\Http\\Controllers\\Settings\\ProfileController.ts",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\actions\\App\\Http\\Controllers\\SocialAuthController.ts",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\actions\\App\\Http\\Controllers\\Webhook\\index.ts",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\actions\\App\\Http\\Controllers\\Webhook\\PaymentWebhookController.ts",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\actions\\App\\Http\\index.ts",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\actions\\App\\index.ts",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\actions\\Illuminate\\index.ts",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\actions\\Illuminate\\Routing\\index.ts",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\actions\\Illuminate\\Routing\\RedirectController.ts",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\actions\\Laravel\\Fortify\\Http\\Controllers\\AuthenticatedSessionController.ts",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\actions\\Laravel\\Fortify\\Http\\Controllers\\ConfirmablePasswordController.ts",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\actions\\Laravel\\Fortify\\Http\\Controllers\\ConfirmedPasswordStatusController.ts",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\actions\\Laravel\\Fortify\\Http\\Controllers\\EmailVerificationNotificationController.ts",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\actions\\Laravel\\Fortify\\Http\\Controllers\\EmailVerificationPromptController.ts",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\actions\\Laravel\\Fortify\\Http\\Controllers\\index.ts",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\actions\\Laravel\\Fortify\\Http\\Controllers\\NewPasswordController.ts",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\actions\\Laravel\\Fortify\\Http\\Controllers\\PasswordResetLinkController.ts",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\actions\\Laravel\\Fortify\\Http\\Controllers\\RegisteredUserController.ts",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\actions\\Laravel\\Fortify\\Http\\Controllers\\VerifyEmailController.ts",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\actions\\Laravel\\Fortify\\Http\\index.ts",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\actions\\Laravel\\Fortify\\index.ts",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\actions\\Laravel\\index.ts",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\app.tsx",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\components\\alert-error.tsx",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\components\\app-content.tsx",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\components\\app-header.tsx",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\components\\app-logo-icon.tsx",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\components\\app-logo.tsx",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\components\\app-shell.tsx",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\components\\app-sidebar-header.tsx",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\components\\app-sidebar.tsx",
+    "messages": [],
+    "suppressedMessages": [
+      {
+        "ruleId": "@typescript-eslint/no-explicit-any",
+        "severity": 2,
+        "message": "Unexpected any. Specify a different type.",
+        "line": 78,
+        "column": 30,
+        "nodeType": "TSAnyKeyword",
+        "messageId": "unexpectedAny",
+        "endLine": 78,
+        "endColumn": 33,
+        "suggestions": [
+          {
+            "messageId": "suggestUnknown",
+            "fix": {
+              "range": [
+                1951,
+                1954
+              ],
+              "text": "unknown"
+            },
+            "desc": "Use `unknown` instead, this will force you to explicitly, and safely assert the type is correct."
+          },
+          {
+            "messageId": "suggestNever",
+            "fix": {
+              "range": [
+                1951,
+                1954
+              ],
+              "text": "never"
+            },
+            "desc": "Use `never` instead, this is useful when instantiating generic type parameters that you don't need to know the type of."
+          }
+        ],
+        "suppressions": [
+          {
+            "kind": "directive",
+            "justification": ""
+          }
+        ]
+      }
+    ],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\components\\appearance-tabs.tsx",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\components\\breadcrumbs.tsx",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\components\\delete-user.tsx",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\components\\front-navbar.tsx",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\components\\heading.tsx",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\components\\icon-selector.tsx",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\components\\input-error.tsx",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\components\\mode-toggle.tsx",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\components\\nav-footer.tsx",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\components\\nav-main.tsx",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\components\\nav-user.tsx",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\components\\text-link.tsx",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\components\\ui\\alert.tsx",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\components\\ui\\avatar.tsx",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\components\\ui\\badge.tsx",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\components\\ui\\breadcrumb.tsx",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\components\\ui\\button.tsx",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\components\\ui\\card.tsx",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\components\\ui\\checkbox.tsx",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\components\\ui\\collapsible.tsx",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\components\\ui\\dialog.tsx",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\components\\ui\\dropdown-menu.tsx",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\components\\ui\\icon.tsx",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\components\\ui\\input-otp.tsx",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\components\\ui\\input.tsx",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\components\\ui\\label.tsx",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\components\\ui\\navigation-menu.tsx",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\components\\ui\\placeholder-pattern.tsx",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\components\\ui\\select.tsx",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\components\\ui\\separator.tsx",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\components\\ui\\sheet.tsx",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\components\\ui\\sidebar.tsx",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\components\\ui\\skeleton.tsx",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\components\\ui\\spinner.tsx",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\components\\ui\\textarea.tsx",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\components\\ui\\toggle-group.tsx",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\components\\ui\\toggle.tsx",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\components\\ui\\tooltip.tsx",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\components\\user-info.tsx",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\components\\user-menu-content.tsx",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\constants\\index.ts",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\constants\\portfolio.ts",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\constants\\services.ts",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\constants\\theme.ts",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\hooks\\use-appearance.tsx",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\hooks\\use-clipboard.ts",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\hooks\\use-current-url.ts",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\hooks\\use-initials.tsx",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\hooks\\use-mobile-navigation.ts",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\hooks\\use-mobile.tsx",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\hooks\\use-page-effects.ts",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\hooks\\use-tenant.ts",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\layouts\\app\\app-header-layout.tsx",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\layouts\\app\\app-sidebar-layout.tsx",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\layouts\\app-layout.tsx",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\layouts\\auth\\auth-card-layout.tsx",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\layouts\\auth\\auth-simple-layout.tsx",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\layouts\\auth\\auth-split-layout.tsx",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\layouts\\auth-layout.tsx",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\layouts\\settings\\layout.tsx",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\lib\\utils.ts",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\pages\\admin\\dashboard.tsx",
+    "messages": [],
+    "suppressedMessages": [
+      {
+        "ruleId": "@typescript-eslint/no-explicit-any",
+        "severity": 2,
+        "message": "Unexpected any. Specify a different type.",
+        "line": 12,
+        "column": 65,
+        "nodeType": "TSAnyKeyword",
+        "messageId": "unexpectedAny",
+        "endLine": 12,
+        "endColumn": 68,
+        "suggestions": [
+          {
+            "messageId": "suggestUnknown",
+            "fix": {
+              "range": [
+                522,
+                525
+              ],
+              "text": "unknown"
+            },
+            "desc": "Use `unknown` instead, this will force you to explicitly, and safely assert the type is correct."
+          },
+          {
+            "messageId": "suggestNever",
+            "fix": {
+              "range": [
+                522,
+                525
+              ],
+              "text": "never"
+            },
+            "desc": "Use `never` instead, this is useful when instantiating generic type parameters that you don't need to know the type of."
+          }
+        ],
+        "suppressions": [
+          {
+            "kind": "directive",
+            "justification": ""
+          }
+        ]
+      },
+      {
+        "ruleId": "@typescript-eslint/no-explicit-any",
+        "severity": 2,
+        "message": "Unexpected any. Specify a different type.",
+        "line": 82,
+        "column": 62,
+        "nodeType": "TSAnyKeyword",
+        "messageId": "unexpectedAny",
+        "endLine": 82,
+        "endColumn": 65,
+        "suggestions": [
+          {
+            "messageId": "suggestUnknown",
+            "fix": {
+              "range": [
+                4912,
+                4915
+              ],
+              "text": "unknown"
+            },
+            "desc": "Use `unknown` instead, this will force you to explicitly, and safely assert the type is correct."
+          },
+          {
+            "messageId": "suggestNever",
+            "fix": {
+              "range": [
+                4912,
+                4915
+              ],
+              "text": "never"
+            },
+            "desc": "Use `never` instead, this is useful when instantiating generic type parameters that you don't need to know the type of."
+          }
+        ],
+        "suppressions": [
+          {
+            "kind": "directive",
+            "justification": ""
+          }
+        ]
+      }
+    ],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\pages\\admin\\portfolios.tsx",
+    "messages": [],
+    "suppressedMessages": [
+      {
+        "ruleId": "@typescript-eslint/no-explicit-any",
+        "severity": 2,
+        "message": "Unexpected any. Specify a different type.",
+        "line": 17,
+        "column": 75,
+        "nodeType": "TSAnyKeyword",
+        "messageId": "unexpectedAny",
+        "endLine": 17,
+        "endColumn": 78,
+        "suggestions": [
+          {
+            "messageId": "suggestUnknown",
+            "fix": {
+              "range": [
+                748,
+                751
+              ],
+              "text": "unknown"
+            },
+            "desc": "Use `unknown` instead, this will force you to explicitly, and safely assert the type is correct."
+          },
+          {
+            "messageId": "suggestNever",
+            "fix": {
+              "range": [
+                748,
+                751
+              ],
+              "text": "never"
+            },
+            "desc": "Use `never` instead, this is useful when instantiating generic type parameters that you don't need to know the type of."
+          }
+        ],
+        "suppressions": [
+          {
+            "kind": "directive",
+            "justification": ""
+          }
+        ]
+      },
+      {
+        "ruleId": "@typescript-eslint/no-explicit-any",
+        "severity": 2,
+        "message": "Unexpected any. Specify a different type.",
+        "line": 88,
+        "column": 46,
+        "nodeType": "TSAnyKeyword",
+        "messageId": "unexpectedAny",
+        "endLine": 88,
+        "endColumn": 49,
+        "suggestions": [
+          {
+            "messageId": "suggestUnknown",
+            "fix": {
+              "range": [
+                4258,
+                4261
+              ],
+              "text": "unknown"
+            },
+            "desc": "Use `unknown` instead, this will force you to explicitly, and safely assert the type is correct."
+          },
+          {
+            "messageId": "suggestNever",
+            "fix": {
+              "range": [
+                4258,
+                4261
+              ],
+              "text": "never"
+            },
+            "desc": "Use `never` instead, this is useful when instantiating generic type parameters that you don't need to know the type of."
+          }
+        ],
+        "suppressions": [
+          {
+            "kind": "directive",
+            "justification": ""
+          }
+        ]
+      },
+      {
+        "ruleId": "@typescript-eslint/no-explicit-any",
+        "severity": 2,
+        "message": "Unexpected any. Specify a different type.",
+        "line": 117,
+        "column": 87,
+        "nodeType": "TSAnyKeyword",
+        "messageId": "unexpectedAny",
+        "endLine": 117,
+        "endColumn": 90,
+        "suggestions": [
+          {
+            "messageId": "suggestUnknown",
+            "fix": {
+              "range": [
+                6106,
+                6109
+              ],
+              "text": "unknown"
+            },
+            "desc": "Use `unknown` instead, this will force you to explicitly, and safely assert the type is correct."
+          },
+          {
+            "messageId": "suggestNever",
+            "fix": {
+              "range": [
+                6106,
+                6109
+              ],
+              "text": "never"
+            },
+            "desc": "Use `never` instead, this is useful when instantiating generic type parameters that you don't need to know the type of."
+          }
+        ],
+        "suppressions": [
+          {
+            "kind": "directive",
+            "justification": ""
+          }
+        ]
+      },
+      {
+        "ruleId": "@typescript-eslint/no-explicit-any",
+        "severity": 2,
+        "message": "Unexpected any. Specify a different type.",
+        "line": 177,
+        "column": 58,
+        "nodeType": "TSAnyKeyword",
+        "messageId": "unexpectedAny",
+        "endLine": 177,
+        "endColumn": 61,
+        "suggestions": [
+          {
+            "messageId": "suggestUnknown",
+            "fix": {
+              "range": [
+                10730,
+                10733
+              ],
+              "text": "unknown"
+            },
+            "desc": "Use `unknown` instead, this will force you to explicitly, and safely assert the type is correct."
+          },
+          {
+            "messageId": "suggestNever",
+            "fix": {
+              "range": [
+                10730,
+                10733
+              ],
+              "text": "never"
+            },
+            "desc": "Use `never` instead, this is useful when instantiating generic type parameters that you don't need to know the type of."
+          }
+        ],
+        "suppressions": [
+          {
+            "kind": "directive",
+            "justification": ""
+          }
+        ]
+      }
+    ],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\pages\\admin\\tenants.tsx",
+    "messages": [],
+    "suppressedMessages": [
+      {
+        "ruleId": "@typescript-eslint/no-explicit-any",
+        "severity": 2,
+        "message": "Unexpected any. Specify a different type.",
+        "line": 24,
+        "column": 54,
+        "nodeType": "TSAnyKeyword",
+        "messageId": "unexpectedAny",
+        "endLine": 24,
+        "endColumn": 57,
+        "suggestions": [
+          {
+            "messageId": "suggestUnknown",
+            "fix": {
+              "range": [
+                925,
+                928
+              ],
+              "text": "unknown"
+            },
+            "desc": "Use `unknown` instead, this will force you to explicitly, and safely assert the type is correct."
+          },
+          {
+            "messageId": "suggestNever",
+            "fix": {
+              "range": [
+                925,
+                928
+              ],
+              "text": "never"
+            },
+            "desc": "Use `never` instead, this is useful when instantiating generic type parameters that you don't need to know the type of."
+          }
+        ],
+        "suppressions": [
+          {
+            "kind": "directive",
+            "justification": ""
+          }
+        ]
+      },
+      {
+        "ruleId": "@typescript-eslint/no-explicit-any",
+        "severity": 2,
+        "message": "Unexpected any. Specify a different type.",
+        "line": 42,
+        "column": 49,
+        "nodeType": "TSAnyKeyword",
+        "messageId": "unexpectedAny",
+        "endLine": 42,
+        "endColumn": 52,
+        "suggestions": [
+          {
+            "messageId": "suggestUnknown",
+            "fix": {
+              "range": [
+                1797,
+                1800
+              ],
+              "text": "unknown"
+            },
+            "desc": "Use `unknown` instead, this will force you to explicitly, and safely assert the type is correct."
+          },
+          {
+            "messageId": "suggestNever",
+            "fix": {
+              "range": [
+                1797,
+                1800
+              ],
+              "text": "never"
+            },
+            "desc": "Use `never` instead, this is useful when instantiating generic type parameters that you don't need to know the type of."
+          }
+        ],
+        "suppressions": [
+          {
+            "kind": "directive",
+            "justification": ""
+          }
+        ]
+      },
+      {
+        "ruleId": "@typescript-eslint/no-explicit-any",
+        "severity": 2,
+        "message": "Unexpected any. Specify a different type.",
+        "line": 46,
+        "column": 52,
+        "nodeType": "TSAnyKeyword",
+        "messageId": "unexpectedAny",
+        "endLine": 46,
+        "endColumn": 55,
+        "suggestions": [
+          {
+            "messageId": "suggestUnknown",
+            "fix": {
+              "range": [
+                2064,
+                2067
+              ],
+              "text": "unknown"
+            },
+            "desc": "Use `unknown` instead, this will force you to explicitly, and safely assert the type is correct."
+          },
+          {
+            "messageId": "suggestNever",
+            "fix": {
+              "range": [
+                2064,
+                2067
+              ],
+              "text": "never"
+            },
+            "desc": "Use `never` instead, this is useful when instantiating generic type parameters that you don't need to know the type of."
+          }
+        ],
+        "suppressions": [
+          {
+            "kind": "directive",
+            "justification": ""
+          }
+        ]
+      },
+      {
+        "ruleId": "@typescript-eslint/no-explicit-any",
+        "severity": 2,
+        "message": "Unexpected any. Specify a different type.",
+        "line": 78,
+        "column": 34,
+        "nodeType": "TSAnyKeyword",
+        "messageId": "unexpectedAny",
+        "endLine": 78,
+        "endColumn": 37,
+        "suggestions": [
+          {
+            "messageId": "suggestUnknown",
+            "fix": {
+              "range": [
+                2950,
+                2953
+              ],
+              "text": "unknown"
+            },
+            "desc": "Use `unknown` instead, this will force you to explicitly, and safely assert the type is correct."
+          },
+          {
+            "messageId": "suggestNever",
+            "fix": {
+              "range": [
+                2950,
+                2953
+              ],
+              "text": "never"
+            },
+            "desc": "Use `never` instead, this is useful when instantiating generic type parameters that you don't need to know the type of."
+          }
+        ],
+        "suppressions": [
+          {
+            "kind": "directive",
+            "justification": ""
+          }
+        ]
+      },
+      {
+        "ruleId": "@typescript-eslint/no-explicit-any",
+        "severity": 2,
+        "message": "Unexpected any. Specify a different type.",
+        "line": 174,
+        "column": 58,
+        "nodeType": "TSAnyKeyword",
+        "messageId": "unexpectedAny",
+        "endLine": 174,
+        "endColumn": 61,
+        "suggestions": [
+          {
+            "messageId": "suggestUnknown",
+            "fix": {
+              "range": [
+                7304,
+                7307
+              ],
+              "text": "unknown"
+            },
+            "desc": "Use `unknown` instead, this will force you to explicitly, and safely assert the type is correct."
+          },
+          {
+            "messageId": "suggestNever",
+            "fix": {
+              "range": [
+                7304,
+                7307
+              ],
+              "text": "never"
+            },
+            "desc": "Use `never` instead, this is useful when instantiating generic type parameters that you don't need to know the type of."
+          }
+        ],
+        "suppressions": [
+          {
+            "kind": "directive",
+            "justification": ""
+          }
+        ]
+      }
+    ],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\pages\\admin\\transactions.tsx",
+    "messages": [],
+    "suppressedMessages": [
+      {
+        "ruleId": "@typescript-eslint/no-explicit-any",
+        "severity": 2,
+        "message": "Unexpected any. Specify a different type.",
+        "line": 13,
+        "column": 61,
+        "nodeType": "TSAnyKeyword",
+        "messageId": "unexpectedAny",
+        "endLine": 13,
+        "endColumn": 64,
+        "suggestions": [
+          {
+            "messageId": "suggestUnknown",
+            "fix": {
+              "range": [
+                538,
+                541
+              ],
+              "text": "unknown"
+            },
+            "desc": "Use `unknown` instead, this will force you to explicitly, and safely assert the type is correct."
+          },
+          {
+            "messageId": "suggestNever",
+            "fix": {
+              "range": [
+                538,
+                541
+              ],
+              "text": "never"
+            },
+            "desc": "Use `never` instead, this is useful when instantiating generic type parameters that you don't need to know the type of."
+          }
+        ],
+        "suppressions": [
+          {
+            "kind": "directive",
+            "justification": ""
+          }
+        ]
+      },
+      {
+        "ruleId": "@typescript-eslint/no-explicit-any",
+        "severity": 2,
+        "message": "Unexpected any. Specify a different type.",
+        "line": 44,
+        "column": 64,
+        "nodeType": "TSAnyKeyword",
+        "messageId": "unexpectedAny",
+        "endLine": 44,
+        "endColumn": 67,
+        "suggestions": [
+          {
+            "messageId": "suggestUnknown",
+            "fix": {
+              "range": [
+                2386,
+                2389
+              ],
+              "text": "unknown"
+            },
+            "desc": "Use `unknown` instead, this will force you to explicitly, and safely assert the type is correct."
+          },
+          {
+            "messageId": "suggestNever",
+            "fix": {
+              "range": [
+                2386,
+                2389
+              ],
+              "text": "never"
+            },
+            "desc": "Use `never` instead, this is useful when instantiating generic type parameters that you don't need to know the type of."
+          }
+        ],
+        "suppressions": [
+          {
+            "kind": "directive",
+            "justification": ""
+          }
+        ]
+      }
+    ],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\pages\\auth\\confirm-password.tsx",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\pages\\auth\\forgot-password.tsx",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\pages\\auth\\login.tsx",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\pages\\auth\\register.tsx",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\pages\\auth\\reset-password.tsx",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\pages\\auth\\verify-email.tsx",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\pages\\dashboard\\billing.tsx",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\pages\\dashboard\\experiences\\index.tsx",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\pages\\dashboard\\portfolios\\create.tsx",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\pages\\dashboard\\portfolios\\edit.tsx",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\pages\\dashboard\\portfolios\\index.tsx",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\pages\\dashboard\\portfolios\\show.tsx",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\pages\\dashboard\\settings.tsx",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\pages\\dashboard\\skills\\index.tsx",
+    "messages": [
+      {
+        "ruleId": "@typescript-eslint/no-unused-vars",
+        "severity": 2,
+        "message": "'usePage' is defined but never used.",
+        "line": 1,
+        "column": 25,
+        "nodeType": "Identifier",
+        "messageId": "unusedVar",
+        "endLine": 1,
+        "endColumn": 32,
+        "suggestions": [
+          {
+            "messageId": "removeUnusedVar",
+            "data": {
+              "varName": "usePage"
+            },
+            "fix": {
+              "range": [
+                22,
+                31
+              ],
+              "text": ""
+            },
+            "desc": "Remove unused variable \"usePage\"."
+          }
+        ]
+      }
+    ],
+    "suppressedMessages": [
+      {
+        "ruleId": "@typescript-eslint/no-explicit-any",
+        "severity": 2,
+        "message": "Unexpected any. Specify a different type.",
+        "line": 19,
+        "column": 20,
+        "nodeType": "TSAnyKeyword",
+        "messageId": "unexpectedAny",
+        "endLine": 19,
+        "endColumn": 23,
+        "suggestions": [
+          {
+            "messageId": "suggestUnknown",
+            "fix": {
+              "range": [
+                851,
+                854
+              ],
+              "text": "unknown"
+            },
+            "desc": "Use `unknown` instead, this will force you to explicitly, and safely assert the type is correct."
+          },
+          {
+            "messageId": "suggestNever",
+            "fix": {
+              "range": [
+                851,
+                854
+              ],
+              "text": "never"
+            },
+            "desc": "Use `never` instead, this is useful when instantiating generic type parameters that you don't need to know the type of."
+          }
+        ],
+        "suppressions": [
+          {
+            "kind": "directive",
+            "justification": ""
+          }
+        ]
+      },
+      {
+        "ruleId": "@typescript-eslint/no-explicit-any",
+        "severity": 2,
+        "message": "Unexpected any. Specify a different type.",
+        "line": 121,
+        "column": 66,
+        "nodeType": "TSAnyKeyword",
+        "messageId": "unexpectedAny",
+        "endLine": 121,
+        "endColumn": 69,
+        "suggestions": [
+          {
+            "messageId": "suggestUnknown",
+            "fix": {
+              "range": [
+                3833,
+                3836
+              ],
+              "text": "unknown"
+            },
+            "desc": "Use `unknown` instead, this will force you to explicitly, and safely assert the type is correct."
+          },
+          {
+            "messageId": "suggestNever",
+            "fix": {
+              "range": [
+                3833,
+                3836
+              ],
+              "text": "never"
+            },
+            "desc": "Use `never` instead, this is useful when instantiating generic type parameters that you don't need to know the type of."
+          }
+        ],
+        "suppressions": [
+          {
+            "kind": "directive",
+            "justification": ""
+          }
+        ]
+      }
+    ],
+    "errorCount": 1,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "source": "import { Head, useForm, usePage } from '@inertiajs/react';\nimport { motion } from 'framer-motion';\nimport { Plus, Trash2, Save, Wrench, Share2, Loader2, Code } from 'lucide-react';\nimport type { FormEvent} from 'react';\nimport { useEffect } from 'react';\nimport Swal from 'sweetalert2';\nimport InputError from '@/components/input-error';\nimport { Button } from '@/components/ui/button';\nimport { Card, CardHeader, CardContent } from '@/components/ui/card';\nimport { Input } from '@/components/ui/input';\nimport { Label } from '@/components/ui/label';\nimport { Separator } from '@/components/ui/separator';\nimport AppLayout from '@/layouts/app-layout';\nimport type { PageProps, BreadcrumbItem } from '@/types';\nimport type { Skill, SocialLink} from '@/types/profile';\n\n\n// eslint-disable-next-line @typescript-eslint/no-explicit-any\ndeclare let route: any;\n\nconst breadcrumbs: BreadcrumbItem[] = [\n    {\n        title: 'Skills & Tools',\n        href: '/dashboard/skills',\n    },\n];\n\ninterface SkillsPageProps extends PageProps {\n    skills: Skill[];\n    soft_skills: SoftSkill[];\n    social_links: SocialLink[];\n}\n\ninterface SoftSkill {\n    name: string;\n    icon?: string;\n}\n\nexport default function SkillsManager({ skills, soft_skills, social_links }: SkillsPageProps) {\n    const { data, setData, patch, processing, errors, recentlySuccessful, transform } = useForm({\n        skills: skills || [],\n        soft_skills: soft_skills || [],\n        social_links: social_links || [],\n    });\n\n    // Clean empty social links before submission\n    transform((data) => ({\n        ...data,\n        social_links: data.social_links.filter(link => link.url && link.url.trim() !== '')\n    }));\n    \n\n\n    useEffect(() => {\n        if (recentlySuccessful) {\n            const Toast = Swal.mixin({\n                toast: true,\n                position: 'top-end',\n                showConfirmButton: false,\n                timer: 3000,\n                timerProgressBar: true,\n                didOpen: (toast) => {\n                    toast.onmouseenter = Swal.stopTimer;\n                    toast.onmouseleave = Swal.resumeTimer;\n                }\n            });\n            \n            Toast.fire({\n                icon: 'success',\n                title: 'Skills & Social Links saved successfully'\n            });\n        }\n    }, [recentlySuccessful]);\n\n    // Helper for success toasts\n    const showSuccessToast = (message: string) => {\n        Swal.mixin({\n            toast: true,\n            position: 'top-end',\n            showConfirmButton: false,\n            timer: 3000,\n            timerProgressBar: true,\n            didOpen: (toast) => {\n                toast.onmouseenter = Swal.stopTimer;\n                toast.onmouseleave = Swal.resumeTimer;\n            }\n        }).fire({\n            icon: 'success',\n            title: message\n        });\n    };\n\n    const submit = (e: FormEvent) => {\n        e.preventDefault();\n        \n        // Data transformation is handled by the `transform` callback above\n        patch(route('dashboard.skills.update'), {\n            preserveScroll: true,\n            onError: (errors) => {\n                const errorMessages = Object.values(errors).flat().join('\\n');\n                Swal.fire({\n                    icon: 'error',\n                    title: 'Submission Failed',\n                    text: errorMessages || 'Please check the form for errors.',\n                    confirmButtonColor: '#ef4444',\n                });\n            }\n        });\n    };\n\n    // Skills Handlers\n\n\n    const removeSkill = (index: number) => {\n        const newSkills = [...data.skills];\n        newSkills.splice(index, 1);\n        setData('skills', newSkills);\n    };\n\n    // eslint-disable-next-line @typescript-eslint/no-explicit-any\n    const updateSkill = (index: number, key: keyof Skill, value: any) => {\n        const newSkills = [...data.skills];\n        newSkills[index] = { ...newSkills[index], [key]: value };\n        setData('skills', newSkills);\n    };\n    // Soft Skills Handlers\n    const addSoftSkill = () => {\n        setData('soft_skills', [\n            ...data.soft_skills,\n            { name: '', icon: '' } // Default empty soft skill\n        ]);\n    };\n\n    const removeSoftSkill = (index: number) => {\n        const newSoftSkills = data.soft_skills.filter((_, i) => i !== index);\n        setData('soft_skills', newSoftSkills);\n    };\n\n    const updateSoftSkill = (index: number, field: keyof SoftSkill, value: string) => {\n        const newSoftSkills = [...data.soft_skills];\n        newSoftSkills[index] = { ...newSoftSkills[index], [field]: value };\n        setData('soft_skills', newSoftSkills);\n    };\n\n    // Social Links Handlers\n    const addSocialLink = () => {\n        setData('social_links', [\n            ...data.social_links,\n            { platform: 'GitHub', url: '' },\n        ]);\n    };\n\n    const removeSocialLink = (index: number) => {\n        const newLinks = [...data.social_links];\n        newLinks.splice(index, 1);\n        setData('social_links', newLinks);\n    };\n\n    const updateSocialLink = (index: number, key: keyof SocialLink, value: string) => {\n        const newLinks = [...data.social_links];\n        newLinks[index] = { ...newLinks[index], [key]: value };\n        setData('social_links', newLinks);\n    };\n\n    return (\n        <AppLayout breadcrumbs={breadcrumbs}>\n            <Head title=\"Skills & Tools\" />\n\n            <div className=\"p-6 max-w-7xl mx-auto pb-24\">\n                <form onSubmit={submit}>\n                    {/* Header Actions */}\n                    <div className=\"flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-10\">\n                        <div>\n                            <h1 className=\"text-3xl font-bold tracking-tight text-foreground\">Skills & Tools</h1>\n                            <p className=\"text-muted-foreground mt-1\">\n                                Manage your technical expertise, soft skills, and social presence.\n                            </p>\n                        </div>\n                        <Button \n                            type=\"submit\" \n                            disabled={processing} \n                            size=\"lg\"\n                            className=\"shadow-lg shadow-primary/20\"\n                        >\n                            {processing ? (\n                                <>\n                                    <Loader2 className=\"w-5 h-5 mr-2 animate-spin\" />\n                                    Saving...\n                                </>\n                            ) : (\n                                <>\n                                    <Save className=\"w-5 h-5 mr-2\" />\n                                    Save Changes\n                                </>\n                            )}\n                        </Button>\n                    </div>\n\n                    <div className=\"space-y-12\">\n                        {/* SECTION 1: TECHNICAL SKILLS */}\n                        <section>\n                            <div className=\"flex items-center justify-between mb-6\">\n                                <div className=\"flex items-center gap-3\">\n                                    <div className=\"p-3 bg-blue-500/10 rounded-xl\">\n                                        <Wrench className=\"w-6 h-6 text-blue-600 dark:text-blue-400\" />\n                                    </div>\n                                    <div>\n                                        <h2 className=\"text-xl font-bold\">Technical Skills</h2>\n                                        <p className=\"text-sm text-muted-foreground\">Grouped by category (e.g. Backend, Frontend)</p>\n                                    </div>\n                                </div>\n                                <Button type=\"button\" variant=\"secondary\" onClick={() => {\n                                    Swal.fire({\n                                        title: 'New Category Name',\n                                        input: 'text',\n                                        inputPlaceholder: 'e.g., Cloud Services',\n                                        showCancelButton: true,\n                                        confirmButtonText: 'Create',\n                                    }).then((result) => {\n                                        if (result.isConfirmed && result.value) {\n                                            setData('skills', [\n                                                ...data.skills,\n                                                { name: '', level: 50, category: result.value }\n                                            ]);\n                                            showSuccessToast(`Category \"${result.value}\" created`);\n                                        }\n                                    });\n                                }}>\n                                    <Plus className=\"w-4 h-4 mr-2\" />\n                                    Add Category\n                                </Button>\n                            </div>\n\n                            {data.skills.length === 0 && (\n                                <div className=\"text-center py-16 border-2 border-dashed rounded-xl bg-card/50 text-muted-foreground\">\n                                    <p>No technical skills added yet.</p>\n                                    <p className=\"text-sm mt-1\">Create a category to get started.</p>\n                                </div>\n                            )}\n\n                            <div className=\"grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6\">\n                                {Object.entries(data.skills.reduce((acc, skill, index) => {\n                                    if (!acc[skill.category]) acc[skill.category] = [];\n                                    acc[skill.category].push({ skill, index });\n                                    return acc;\n                                }, {} as Record<string, { skill: Skill; index: number }[]>)).map(([category, categoryItems]) => (\n                                    <Card key={category} className=\"shadow-sm hover:shadow-md transition-shadow\">\n                                        <CardHeader className=\"flex flex-row items-center justify-between pb-2 space-y-0\">\n                                            <h3 className=\"font-semibold text-lg truncate\" title={category}>{category}</h3>\n                                            <div className=\"flex items-center gap-1\">\n                                                <Button\n                                                    type=\"button\"\n                                                    variant=\"ghost\"\n                                                    size=\"icon\"\n                                                    className=\"h-8 w-8 text-muted-foreground hover:text-foreground\"\n                                                    onClick={() => {\n                                                         Swal.fire({\n                                                            title: 'Rename Category',\n                                                            input: 'text',\n                                                            inputValue: category,\n                                                            showCancelButton: true,\n                                                            confirmButtonText: 'Rename',\n                                                        }).then((result) => {\n                                                            if (result.isConfirmed && result.value && result.value !== category) {\n                                                                const newSkills = data.skills.map(s => \n                                                                    s.category === category ? { ...s, category: result.value } : s\n                                                                );\n                                                                setData('skills', newSkills);\n                                                                showSuccessToast(`Renamed to \"${result.value}\"`);\n                                                            }\n                                                        });\n                                                    }}\n                                                >\n                                                    <Wrench className=\"w-3.5 h-3.5\" />\n                                                </Button>\n                                                <Button\n                                                    type=\"button\"\n                                                    variant=\"ghost\"\n                                                    size=\"icon\"\n                                                    className=\"h-8 w-8 text-destructive hover:bg-destructive/10\"\n                                                    onClick={() => {\n                                                        Swal.fire({\n                                                            title: 'Delete Category?',\n                                                            text: `Remove \"${category}\" and all its skills?`,\n                                                            icon: 'warning',\n                                                            showCancelButton: true,\n                                                            confirmButtonColor: '#ef4444',\n                                                            confirmButtonText: 'Delete'\n                                                        }).then((result) => {\n                                                            if (result.isConfirmed) {\n                                                                const newSkills = data.skills.filter(s => s.category !== category);\n                                                                setData('skills', newSkills);\n                                                                showSuccessToast('Category deleted');\n                                                            }\n                                                        });\n                                                    }}\n                                                >\n                                                    <Trash2 className=\"w-3.5 h-3.5\" />\n                                                </Button>\n                                            </div>\n                                        </CardHeader>\n                                        <CardContent className=\"space-y-4\">\n                                            {categoryItems.map(({ skill, index: realIndex }) => (\n                                                <div key={realIndex} className=\"space-y-3 p-3 bg-secondary/30 rounded-lg group\">\n                                                    <div className=\"flex items-start gap-3\">\n                                                        <div className=\"flex-1 space-y-1\">\n                                                            <Input\n                                                                value={skill.name}\n                                                                onChange={(e) => updateSkill(realIndex, 'name', e.target.value)}\n                                                                placeholder=\"Skill Name (e.g. React)\"\n                                                                className=\"h-8 text-sm\"\n                                                            />\n\n                                                            <InputError message={errors[`skills.${realIndex}.name`]} />\n                                                        </div>\n                                                        <Button\n                                                            type=\"button\"\n                                                            variant=\"ghost\"\n                                                            size=\"icon\"\n                                                            className=\"h-8 w-8 text-muted-foreground opacity-50 group-hover:opacity-100 transition-opacity hover:text-destructive\"\n                                                            onClick={() => removeSkill(realIndex)}\n                                                        >\n                                                            <Trash2 className=\"w-3.5 h-3.5\" />\n                                                        </Button>\n                                                    </div>\n                                                    <div className=\"space-y-1.5\">\n                                                        <div className=\"flex justify-between text-xs text-muted-foreground\">\n                                                            <span>Proficiency</span>\n                                                            <span>{skill.level}%</span>\n                                                        </div>\n                                                        <input\n                                                            type=\"range\"\n                                                            min=\"1\"\n                                                            max=\"100\"\n                                                            className=\"w-full h-1.5 bg-secondary rounded-full appearance-none cursor-pointer accent-primary\"\n                                                            value={skill.level}\n                                                            onChange={(e) => updateSkill(realIndex, 'level', parseInt(e.target.value))}\n                                                        />\n                                                    </div>\n                                                </div>\n                                            ))}\n                                            <Button \n                                                type=\"button\" \n                                                variant=\"outline\" \n                                                size=\"sm\" \n                                                className=\"w-full border-dashed text-xs\"\n                                                onClick={() => setData('skills', [...data.skills, { name: '', level: 50, category }])}\n                                            >\n                                                <Plus className=\"w-3.5 h-3.5 mr-1.5\" />\n                                                Add Skill\n                                            </Button>\n                                        </CardContent>\n                                    </Card>\n                                ))}\n                            </div>\n                        </section>\n\n                        <Separator />\n\n                        {/* SECTION 2: SOFT SKILLS */}\n                        <section>\n                             <div className=\"flex items-center justify-between mb-6\">\n                                <div className=\"flex items-center gap-3\">\n                                    <div className=\"p-3 bg-purple-500/10 rounded-xl\">\n                                        <Code className=\"w-6 h-6 text-purple-600 dark:text-purple-400\" />\n                                    </div>\n                                    <div>\n                                        <h2 className=\"text-xl font-bold\">Soft Skills</h2>\n                                        <p className=\"text-sm text-muted-foreground\">Personal attributes & interpersonal skills</p>\n                                    </div>\n                                </div>\n                                <Button type=\"button\" variant=\"secondary\" onClick={addSoftSkill}>\n                                    <Plus className=\"w-4 h-4 mr-2\" />\n                                    Add Soft Skill\n                                </Button>\n                            </div>\n\n                            <div className=\"grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4\">\n                                {data.soft_skills.map((skill, index) => (\n                                    <motion.div\n                                        key={index}\n                                        layout\n                                        initial={{ opacity: 0, scale: 0.95 }}\n                                        animate={{ opacity: 1, scale: 1 }}\n                                        className=\"bg-card border rounded-xl p-4 shadow-sm group hover:border-purple-500/50 transition-colors\"\n                                    >\n                                        <div className=\"flex items-start justify-between gap-2 mb-3\">\n                                            <div className=\"p-2 bg-purple-50 dark:bg-purple-900/20 rounded-lg text-lg\">\n                                                {skill.icon || '✨'}\n                                            </div>\n                                            <Button\n                                                type=\"button\"\n                                                variant=\"ghost\"\n                                                size=\"icon\"\n                                                className=\"h-6 w-6 text-muted-foreground hover:text-destructive opacity-0 group-hover:opacity-100 transition-opacity\"\n                                                onClick={() => removeSoftSkill(index)}\n                                            >\n                                                <Trash2 className=\"w-3.5 h-3.5\" />\n                                            </Button>\n                                        </div>\n                                        <div className=\"space-y-3\">\n                                            <div className=\"space-y-1\">\n                                                <Label className=\"text-xs text-muted-foreground\">Skill Name</Label>\n                                                <Input\n                                                    value={skill.name}\n                                                    onChange={(e) => updateSoftSkill(index, 'name', e.target.value)}\n                                                    placeholder=\"e.g. Leadership\"\n                                                    className=\"h-8 text-sm\"\n                                                />\n                                            </div>\n                                            <div className=\"space-y-1\">\n                                                <Label className=\"text-xs text-muted-foreground\">Emoji Icon</Label>\n                                                <Input\n                                                    value={skill.icon || ''}\n                                                    onChange={(e) => updateSoftSkill(index, 'icon', e.target.value)}\n                                                    placeholder=\"e.g. 🤝\"\n                                                    className=\"h-8 text-sm\"\n                                                />\n                                            </div>\n                                        </div>\n                                    </motion.div>\n                                ))}\n                                {data.soft_skills.length === 0 && (\n                                     <div className=\"col-span-full text-center py-12 border-2 border-dashed rounded-xl bg-card/50 text-muted-foreground\">\n                                        <p>No soft skills yet.</p>\n                                    </div>\n                                )}\n                            </div>\n                        </section>\n\n                        <Separator />\n\n                        {/* SECTION 3: SOCIAL LINKS */}\n                        <section>\n                             <div className=\"flex items-center justify-between mb-6\">\n                                <div className=\"flex items-center gap-3\">\n                                    <div className=\"p-3 bg-cyan-500/10 rounded-xl\">\n                                        <Share2 className=\"w-6 h-6 text-cyan-600 dark:text-cyan-400\" />\n                                    </div>\n                                    <div>\n                                        <h2 className=\"text-xl font-bold\">Social Links</h2>\n                                        <p className=\"text-sm text-muted-foreground\">Your presence across the web</p>\n                                    </div>\n                                </div>\n                                <Button type=\"button\" variant=\"secondary\" onClick={addSocialLink}>\n                                    <Plus className=\"w-4 h-4 mr-2\" />\n                                    Add Link\n                                </Button>\n                            </div>\n\n                            <div className=\"grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4\">\n                                {data.social_links.map((link, index) => (\n                                    <div key={index} className=\"flex items-center gap-3 p-3 border rounded-xl bg-card shadow-sm group hover:border-cyan-500/50 transition-colors\">\n                                        <div className=\"cursor-move text-muted-foreground hover:text-foreground\">\n                                            {/* We could add drag handle here if using dnd, for now just an icon */}\n                                            <Share2 className=\"w-4 h-4 opacity-50\" />\n                                        </div>\n                                        <div className=\"flex-1 space-y-2\">\n                                            <div className=\"grid grid-cols-3 gap-2\">\n                                                <select\n                                                    className=\"col-span-1 h-8 rounded-md border border-input bg-background px-2 text-xs font-medium shadow-sm focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring\"\n                                                    value={link.platform}\n                                                    onChange={(e) => updateSocialLink(index, 'platform', e.target.value)}\n                                                >\n                                                    <option value=\"GitHub\">GitHub</option>\n                                                    <option value=\"LinkedIn\">LinkedIn</option>\n                                                    <option value=\"Twitter\">Twitter</option>\n                                                    <option value=\"Instagram\">Instagram</option>\n                                                    <option value=\"YouTube\">YouTube</option>\n                                                    <option value=\"Facebook\">Facebook</option>\n                                                    <option value=\"Email\">Email</option>\n                                                    <option value=\"Website\">Website</option>\n                                                </select>\n                                                <Input\n                                                    className=\"col-span-2 h-8 text-xs\"\n                                                    placeholder=\"URL / Handle\"\n                                                    value={link.url}\n                                                    onChange={(e) => updateSocialLink(index, 'url', e.target.value)}\n                                                    onBlur={(e) => {\n                                                        const val = e.target.value.trim();\n                                                        if (val && !val.match(/^(https?:\\/\\/|mailto:)/)) {\n                                                            updateSocialLink(index, 'url', 'https://' + val);\n                                                        }\n                                                    }}\n                                                />\n                                            </div>\n                                        </div>\n                                        <Button\n                                            type=\"button\"\n                                            variant=\"ghost\"\n                                            size=\"icon\"\n                                            className=\"h-8 w-8 text-muted-foreground hover:text-destructive hover:bg-destructive/10\"\n                                            onClick={() => removeSocialLink(index)}\n                                        >\n                                            <Trash2 className=\"w-4 h-4\" />\n                                        </Button>\n                                    </div>\n                                ))}\n                                {data.social_links.length === 0 && (\n                                     <div className=\"col-span-full text-center py-12 border-2 border-dashed rounded-xl bg-card/50 text-muted-foreground\">\n                                        <p>No social links added.</p>\n                                    </div>\n                                )}\n                            </div>\n\n                             {errors.social_links && <InputError message={errors.social_links} className=\"mt-4\" />}\n                        </section>\n                    </div>\n                </form>\n            </div>\n        </AppLayout>\n    );\n}\n",
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\pages\\dashboard.tsx",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\pages\\experience.tsx",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\pages\\landing.tsx",
+    "messages": [],
+    "suppressedMessages": [
+      {
+        "ruleId": "@typescript-eslint/no-explicit-any",
+        "severity": 2,
+        "message": "Unexpected any. Specify a different type.",
+        "line": 21,
+        "column": 66,
+        "nodeType": "TSAnyKeyword",
+        "messageId": "unexpectedAny",
+        "endLine": 21,
+        "endColumn": 69,
+        "suggestions": [
+          {
+            "messageId": "suggestUnknown",
+            "fix": {
+              "range": [
+                685,
+                688
+              ],
+              "text": "unknown"
+            },
+            "desc": "Use `unknown` instead, this will force you to explicitly, and safely assert the type is correct."
+          },
+          {
+            "messageId": "suggestNever",
+            "fix": {
+              "range": [
+                685,
+                688
+              ],
+              "text": "never"
+            },
+            "desc": "Use `never` instead, this is useful when instantiating generic type parameters that you don't need to know the type of."
+          }
+        ],
+        "suppressions": [
+          {
+            "kind": "directive",
+            "justification": ""
+          }
+        ]
+      }
+    ],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\pages\\portfolios\\show.tsx",
+    "messages": [
+      {
+        "ruleId": "react-hooks/exhaustive-deps",
+        "severity": 1,
+        "message": "The 'closeLightbox' function makes the dependencies of useEffect Hook (at line 98) change on every render. To fix this, wrap the definition of 'closeLightbox' in its own useCallback() Hook.",
+        "line": 76,
+        "column": 11,
+        "nodeType": "VariableDeclarator",
+        "endLine": 78,
+        "endColumn": 6,
+        "suggestions": [
+          {
+            "desc": "Wrap the definition of 'closeLightbox' in its own useCallback() Hook.",
+            "fix": {
+              "range": [
+                2563,
+                2608
+              ],
+              "text": "useCallback(() => {\n        setLightboxOpen(false);\n    })"
+            }
+          }
+        ]
+      },
+      {
+        "ruleId": "react-hooks/exhaustive-deps",
+        "severity": 1,
+        "message": "The 'nextLightbox' function makes the dependencies of useEffect Hook (at line 98) change on every render. To fix this, wrap the definition of 'nextLightbox' in its own useCallback() Hook.",
+        "line": 80,
+        "column": 11,
+        "nodeType": "VariableDeclarator",
+        "endLine": 82,
+        "endColumn": 6,
+        "suggestions": [
+          {
+            "desc": "Wrap the definition of 'nextLightbox' in its own useCallback() Hook.",
+            "fix": {
+              "range": [
+                2636,
+                2716
+              ],
+              "text": "useCallback(() => {\n        setLightboxIndex((prev) => (prev + 1) % allImages.length);\n    })"
+            }
+          }
+        ]
+      },
+      {
+        "ruleId": "react-hooks/exhaustive-deps",
+        "severity": 1,
+        "message": "The 'prevLightbox' function makes the dependencies of useEffect Hook (at line 98) change on every render. To fix this, wrap the definition of 'prevLightbox' in its own useCallback() Hook.",
+        "line": 84,
+        "column": 11,
+        "nodeType": "VariableDeclarator",
+        "endLine": 86,
+        "endColumn": 6,
+        "suggestions": [
+          {
+            "desc": "Wrap the definition of 'prevLightbox' in its own useCallback() Hook.",
+            "fix": {
+              "range": [
+                2744,
+                2843
+              ],
+              "text": "useCallback(() => {\n        setLightboxIndex((prev) => (prev - 1 + allImages.length) % allImages.length);\n    })"
+            }
+          }
+        ]
+      }
+    ],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 3,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "source": "import { Head, Link } from '@inertiajs/react';\nimport { motion } from 'framer-motion';\nimport { ArrowLeft, ExternalLink, Github, Calendar, Grid, Terminal, ChevronLeft, ChevronRight, X, ArrowUp, Layers } from 'lucide-react';\nimport React, { useState, useEffect, useCallback } from 'react';\n\ntype PortfolioImage = {\n    id: number;\n    image_path: string;\n    order: number;\n};\n\ntype Portfolio = {\n    id: number;\n    title: string;\n    category: string;\n    description: string;\n    project_url: string | null;\n    image_path: string | null;\n    development_time: string | null;\n    tools: string[] | null;\n    github_url: string | null;\n    video_url: string | null;\n    images: PortfolioImage[];\n};\n\nexport default function PortfolioShow({ portfolio, related_portfolios }: { portfolio: Portfolio, related_portfolios: Portfolio[] }) {\n    const [currentSlide, setCurrentSlide] = useState(0);\n    const [isPaused, setIsPaused] = useState(false);\n    const [lightboxOpen, setLightboxOpen] = useState(false);\n    const [lightboxIndex, setLightboxIndex] = useState(0);\n    const [showScrollTop, setShowScrollTop] = useState(false);\n\n    // Show scroll-to-top button when scrolled down\n    useEffect(() => {\n        const handleScroll = () => {\n            setShowScrollTop(window.scrollY > 400);\n        };\n        window.addEventListener('scroll', handleScroll);\n        return () => window.removeEventListener('scroll', handleScroll);\n    }, []);\n\n    const scrollToTop = () => {\n        window.scrollTo({ top: 0, behavior: 'smooth' });\n    };\n\n    // Get all images (including main image_path if exists)\n    const allImages = [\n        ...(portfolio.image_path ? [{ id: 0, image_path: portfolio.image_path, order: -1 }] : []),\n        ...(portfolio.images || []),\n    ];\n\n    // Auto-rotate carousel\n    useEffect(() => {\n        if (allImages.length <= 1 || isPaused || lightboxOpen) return;\n\n        const interval = setInterval(() => {\n            setCurrentSlide((prev) => (prev + 1) % allImages.length);\n        }, 4000);\n\n        return () => clearInterval(interval);\n    }, [allImages.length, isPaused, lightboxOpen]);\n\n    const nextSlide = useCallback(() => {\n        setCurrentSlide((prev) => (prev + 1) % allImages.length);\n    }, [allImages.length]);\n\n    const prevSlide = useCallback(() => {\n        setCurrentSlide((prev) => (prev - 1 + allImages.length) % allImages.length);\n    }, [allImages.length]);\n\n    const openLightbox = (index: number) => {\n        setLightboxIndex(index);\n        setLightboxOpen(true);\n    };\n\n    const closeLightbox = () => {\n        setLightboxOpen(false);\n    };\n\n    const nextLightbox = () => {\n        setLightboxIndex((prev) => (prev + 1) % allImages.length);\n    };\n\n    const prevLightbox = () => {\n        setLightboxIndex((prev) => (prev - 1 + allImages.length) % allImages.length);\n    };\n\n    // Keyboard navigation for lightbox\n    useEffect(() => {\n        const handleKeyDown = (e: KeyboardEvent) => {\n            if (!lightboxOpen) return;\n            if (e.key === 'Escape') closeLightbox();\n            if (e.key === 'ArrowRight') nextLightbox();\n            if (e.key === 'ArrowLeft') prevLightbox();\n        };\n        window.addEventListener('keydown', handleKeyDown);\n        return () => window.removeEventListener('keydown', handleKeyDown);\n    }, [lightboxOpen, closeLightbox, nextLightbox, prevLightbox]);\n\n    // Helper to extract YouTube ID\n    const getYoutubeId = (url: string) => {\n        const regExp = /^.*(youtu.be\\/|v\\/|u\\/\\w\\/|embed\\/|watch\\?v=|&v=)([^#&?]*).*/;\n        const match = url.match(regExp);\n        return (match && match[2].length === 11) ? match[2] : null;\n    };\n\n    const youtubeId = portfolio.video_url ? getYoutubeId(portfolio.video_url) : null;\n\n    return (\n        <div className=\"min-h-screen bg-gray-950 font-mono text-gray-200 selection:bg-cyan-500/30\">\n            <Head>\n                <title>{`${portfolio.title} - Portfolio`}</title>\n                <meta name=\"description\" content={portfolio.description} />\n\n                {/* Open Graph */}\n                <meta property=\"og:title\" content={`${portfolio.title} - Portfolio`} />\n                <meta property=\"og:description\" content={portfolio.description} />\n                <meta property=\"og:image\" content={portfolio.image_path ? `/storage/${portfolio.image_path}` : '/default-og.jpg'} />\n                <meta property=\"og:url\" content={window.location.href} />\n                <meta property=\"og:type\" content=\"article\" />\n\n                {/* Twitter */}\n                <meta name=\"twitter:card\" content=\"summary_large_image\" />\n                <meta name=\"twitter:title\" content={`${portfolio.title} - Portfolio`} />\n                <meta name=\"twitter:description\" content={portfolio.description} />\n                <meta name=\"twitter:image\" content={portfolio.image_path ? `/storage/${portfolio.image_path}` : '/default-og.jpg'} />\n            </Head>\n\n            <div className=\"container mx-auto max-w-7xl px-4 py-12 md:py-20\">\n                {/* Back Button */}\n                <Link\n                    href=\"/\"\n                    className=\"group mb-8 inline-flex items-center gap-2 text-cyan-400 transition-colors hover:text-cyan-300\"\n                >\n                    <ArrowLeft className=\"h-4 w-4 transition-transform group-hover:-translate-x-1\" />\n                    <span className=\"text-lg\">cd ..</span>\n                </Link>\n\n                <motion.div\n                    initial={{ opacity: 0, y: 20 }}\n                    animate={{ opacity: 1, y: 0 }}\n                    transition={{ duration: 0.5 }}\n                    className=\"overflow-hidden rounded-xl border border-gray-800 bg-gray-900/50 backdrop-blur-sm\"\n                >\n                    {/* Header Image Carousel */}\n                    <div\n                        className=\"relative aspect-video w-full overflow-hidden border-b border-gray-800 bg-gray-900\"\n                        onMouseEnter={() => setIsPaused(true)}\n                        onMouseLeave={() => setIsPaused(false)}\n                    >\n                        {allImages.length > 0 ? (\n                            <>\n                                <img\n                                    src={`/storage/${allImages[currentSlide]?.image_path}`}\n                                    alt={portfolio.title}\n                                    className=\"h-full w-full object-cover cursor-pointer transition-transform duration-500\"\n                                    onClick={() => openLightbox(currentSlide)}\n                                />\n\n                                {/* Navigation Arrows */}\n                                {allImages.length > 1 && (\n                                    <>\n                                        <button\n                                            onClick={prevSlide}\n                                            className=\"absolute left-4 top-1/2 -translate-y-1/2 rounded-full bg-black/50 p-2 text-white transition-all hover:bg-black/70\"\n                                        >\n                                            <ChevronLeft className=\"h-6 w-6\" />\n                                        </button>\n                                        <button\n                                            onClick={nextSlide}\n                                            className=\"absolute right-4 top-1/2 -translate-y-1/2 rounded-full bg-black/50 p-2 text-white transition-all hover:bg-black/70\"\n                                        >\n                                            <ChevronRight className=\"h-6 w-6\" />\n                                        </button>\n                                    </>\n                                )}\n\n                                {/* Slide Counter */}\n                                {allImages.length > 1 && (\n                                    <div className=\"absolute top-4 right-4 rounded bg-black/50 px-3 py-1 text-sm text-white\">\n                                        {currentSlide + 1} / {allImages.length}\n                                    </div>\n                                )}\n\n                                {/* Dots Navigation */}\n                                {allImages.length > 1 && (\n                                    <div className=\"absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2\">\n                                        {allImages.map((_, index) => (\n                                            <button\n                                                key={index}\n                                                onClick={() => setCurrentSlide(index)}\n                                                className={`h-2 rounded-full transition-all ${index === currentSlide\n                                                    ? 'bg-cyan-500 w-6'\n                                                    : 'bg-white/50 w-2 hover:bg-white/70'\n                                                    }`}\n                                            />\n                                        ))}\n                                    </div>\n                                )}\n                            </>\n                        ) : (\n                            <img\n                                src=\"https://placehold.co/1200x600/0f172a/38bdf8?text=Project+Preview\"\n                                alt={portfolio.title}\n                                className=\"h-full w-full object-cover\"\n                            />\n                        )}\n\n                        <div className=\"absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent pointer-events-none\" />\n                        <div className=\"absolute bottom-0 left-0 p-6 md:p-10\">\n                            <span className=\"mb-2 inline-block rounded border border-cyan-500/30 bg-cyan-500/10 px-3 py-1 text-sm font-medium text-cyan-400 backdrop-blur-md\">\n                                {portfolio.category}\n                            </span>\n                            <h1 className=\"mt-2 text-3xl font-bold text-white md:text-5xl lg:text-6xl text-shadow-lg\">\n                                {portfolio.title}\n                            </h1>\n                        </div>\n                    </div>\n\n                    <div className=\"grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 p-6 md:p-10\">\n                        {/* Main Content (80%) represented by 9/12 columns */}\n                        <div className=\"md:col-span-9 space-y-12\">\n                            {/* Project Description */}\n                            <div>\n                                <h2 className=\"mb-4 flex items-center gap-2 text-xl font-bold text-white\">\n                                    <Terminal className=\"h-5 w-5 text-cyan-400\" />\n                                    Project Description\n                                </h2>\n                                <div className=\"prose prose-invert max-w-none text-gray-300 leading-relaxed whitespace-pre-line text-lg\">\n                                    {portfolio.description}\n                                </div>\n                            </div>\n\n                            {/* Image Grid */}\n                            {allImages.length > 1 && (\n                                <div>\n                                    <h2 className=\"mb-4 flex items-center gap-2 text-xl font-bold text-white\">\n                                        <Grid className=\"h-5 w-5 text-cyan-400\" />\n                                        Gallery ({allImages.length} images)\n                                    </h2>\n                                    <div className=\"grid grid-cols-2 md:grid-cols-3 gap-4\">\n                                        {allImages.map((image, index) => (\n                                            <div\n                                                key={image.id}\n                                                className={`group relative aspect-square overflow-hidden rounded-lg bg-gray-800 cursor-pointer border-2 transition-all ${index === currentSlide\n                                                    ? 'border-cyan-500'\n                                                    : 'border-transparent hover:border-gray-600'\n                                                    }`}\n                                                onClick={() => openLightbox(index)}\n                                            >\n                                                <img\n                                                    src={`/storage/${image.image_path}`}\n                                                    alt={`Gallery ${index + 1}`}\n                                                    className=\"h-full w-full object-cover transition-transform group-hover:scale-105\"\n                                                />\n                                                <div className=\"absolute inset-0 bg-black/0 transition-colors group-hover:bg-black/20\" />\n                                            </div>\n                                        ))}\n                                    </div>\n                                </div>\n                            )}\n\n                            {/* Video Section */}\n                            {youtubeId && (\n                                <div>\n                                    <h2 className=\"mb-4 flex items-center gap-2 text-xl font-bold text-white\">\n                                        <div className=\"h-2 w-2 rounded-full bg-red-500 animate-pulse\" />\n                                        Demo Preview\n                                    </h2>\n                                    <div className=\"aspect-video w-full overflow-hidden rounded-lg border border-gray-800 bg-black\">\n                                        <iframe\n                                            src={`https://www.youtube.com/embed/${youtubeId}`}\n                                            title=\"YouTube video player\"\n                                            allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\"\n                                            allowFullScreen\n                                            className=\"h-full w-full\"\n                                        />\n                                    </div>\n                                </div>\n                            )}\n                        </div>\n\n                        {/* Sidebar Details (20%) represented by 3/12 columns */}\n                        <div className=\"md:col-span-3 space-y-8 md:border-l md:border-gray-800 md:pl-8\">\n                            {/* Actions */}\n                            <div className=\"flex flex-col gap-4\">\n                                {portfolio.project_url && (\n                                    <a\n                                        href={portfolio.project_url}\n                                        target=\"_blank\"\n                                        rel=\"noopener noreferrer\"\n                                        className=\"flex items-center justify-center gap-2 rounded-md bg-cyan-600 px-6 py-3 font-bold text-white shadow-lg shadow-cyan-500/20 transition-all hover:bg-cyan-500 hover:scale-105 active:scale-95\"\n                                    >\n                                        <ExternalLink className=\"h-5 w-5\" />\n                                        Visit Website\n                                    </a>\n                                )}\n                                {portfolio.github_url && (\n                                    <a\n                                        href={portfolio.github_url}\n                                        target=\"_blank\"\n                                        rel=\"noopener noreferrer\"\n                                        className=\"flex items-center justify-center gap-2 rounded-md border border-gray-700 bg-gray-800 px-6 py-3 font-bold text-white transition-all hover:bg-gray-700 hover:border-gray-600 active:scale-95\"\n                                    >\n                                        <Github className=\"h-5 w-5\" />\n                                        View Source\n                                    </a>\n                                )}\n                            </div>\n\n                            {/* Info Grid */}\n                            <div className=\"space-y-6 rounded-lg bg-gray-900/50 p-6 border border-gray-800\">\n                                <div>\n                                    <h3 className=\"mb-3 flex items-center gap-2 text-sm font-semibold text-gray-400 uppercase tracking-wider\">\n                                        <Calendar className=\"h-4 w-4\" />\n                                        Timeline\n                                    </h3>\n                                    <p className=\"font-medium text-white text-lg\">\n                                        {portfolio.development_time || 'Not specified'}\n                                    </p>\n                                </div>\n\n                                <div>\n                                    <h3 className=\"mb-3 flex items-center gap-2 text-sm font-semibold text-gray-400 uppercase tracking-wider\">\n                                        <Grid className=\"h-4 w-4\" />\n                                        Tech Stack\n                                    </h3>\n                                    <div className=\"flex flex-wrap gap-2\">\n                                        {portfolio.tools && portfolio.tools.length > 0 ? (\n                                            portfolio.tools.map((tool, index) => (\n                                                <span\n                                                    key={index}\n                                                    className=\"rounded border border-cyan-500/20 bg-cyan-900/20 px-2 py-1 text-sm text-cyan-300\"\n                                                >\n                                                    {tool}\n                                                </span>\n                                            ))\n                                        ) : (\n                                            <span className=\"text-gray-500 italic\">No tools listed</span>\n                                        )}\n                                    </div>\n                                </div>\n                            </div>\n\n                            {/* Related Portfolios */}\n                            <div>\n                                <h3 className=\"mb-4 flex items-center gap-2 text-sm font-semibold text-gray-400 uppercase tracking-wider\">\n                                    <Layers className=\"h-4 w-4\" />\n                                    Other Portfolios\n                                </h3>\n                                <div className=\"space-y-4\">\n                                    {related_portfolios.length > 0 ? (\n                                        related_portfolios.map((related) => (\n                                            <Link\n                                                key={related.id}\n                                                href={`/portfolios/${related.id}`} // Using direct URL for simplicity, ideally use route helper\n                                                className=\"block group rounded-lg border border-gray-800 bg-gray-900/50 p-3 transition-colors hover:border-cyan-500/50 hover:bg-gray-800\"\n                                            >\n                                                <div className=\"flex gap-3\">\n                                                    <div className=\"h-16 w-24 flex-shrink-0 overflow-hidden rounded bg-gray-800\">\n                                                        {related.image_path ? (\n                                                            <img\n                                                                src={`/storage/${related.image_path}`}\n                                                                alt={related.title}\n                                                                className=\"h-full w-full object-cover transition-transform group-hover:scale-110\"\n                                                            />\n                                                        ) : (\n                                                            <div className=\"h-full w-full bg-gray-800 flex items-center justify-center text-xs text-gray-500\">No Image</div>\n                                                        )}\n                                                    </div>\n                                                    <div>\n                                                        <h4 className=\"font-semibold text-white line-clamp-2 group-hover:text-cyan-400 transition-colors\">\n                                                            {related.title}\n                                                        </h4>\n                                                        <span className=\"text-xs text-cyan-500/80\">\n                                                            {related.category}\n                                                        </span>\n                                                    </div>\n                                                </div>\n                                            </Link>\n                                        ))\n                                    ) : (\n                                        <p className=\"text-sm text-gray-500 italic\">No other portfolios found.</p>\n                                    )}\n                                </div>\n                            </div>\n\n                        </div>\n                    </div>\n                </motion.div>\n\n                {/* Bottom Navigation */}\n                <div className=\"mt-8 flex items-center justify-between\">\n                    <Link\n                        href=\"/\"\n                        className=\"group inline-flex items-center gap-2 rounded-md border border-gray-700 bg-gray-800/50 px-4 py-2 text-cyan-400 transition-all hover:bg-gray-800 hover:border-gray-600\"\n                    >\n                        <ArrowLeft className=\"h-4 w-4 transition-transform group-hover:-translate-x-1\" />\n                        <span>Back to Home</span>\n                    </Link>\n                    <button\n                        onClick={scrollToTop}\n                        className=\"inline-flex items-center gap-2 rounded-md border border-gray-700 bg-gray-800/50 px-4 py-2 text-gray-300 transition-all hover:bg-gray-800 hover:border-gray-600\"\n                    >\n                        <ArrowUp className=\"h-4 w-4\" />\n                        <span>Up Top</span>\n                    </button>\n                </div>\n            </div>\n\n            {/* Lightbox Modal */}\n            {lightboxOpen && (\n                <div\n                    className=\"fixed inset-0 z-50 flex items-center justify-center bg-black/90\"\n                    onClick={closeLightbox}\n                >\n                    <button\n                        onClick={closeLightbox}\n                        className=\"absolute top-4 right-4 rounded-full bg-white/10 p-2 text-white transition-colors hover:bg-white/20\"\n                    >\n                        <X className=\"h-6 w-6\" />\n                    </button>\n\n                    {allImages.length > 1 && (\n                        <>\n                            <button\n                                onClick={(e) => { e.stopPropagation(); prevLightbox(); }}\n                                className=\"absolute left-4 top-1/2 -translate-y-1/2 rounded-full bg-white/10 p-3 text-white transition-colors hover:bg-white/20\"\n                            >\n                                <ChevronLeft className=\"h-8 w-8\" />\n                            </button>\n                            <button\n                                onClick={(e) => { e.stopPropagation(); nextLightbox(); }}\n                                className=\"absolute right-4 top-1/2 -translate-y-1/2 rounded-full bg-white/10 p-3 text-white transition-colors hover:bg-white/20\"\n                            >\n                                <ChevronRight className=\"h-8 w-8\" />\n                            </button>\n                        </>\n                    )}\n\n                    <div className=\"max-h-[90vh] max-w-[90vw]\" onClick={(e) => e.stopPropagation()}>\n                        <img\n                            src={`/storage/${allImages[lightboxIndex]?.image_path}`}\n                            alt={`Image ${lightboxIndex + 1}`}\n                            className=\"max-h-[90vh] max-w-[90vw] object-contain\"\n                        />\n                    </div>\n\n                    <div className=\"absolute bottom-4 left-1/2 -translate-x-1/2 rounded bg-black/50 px-4 py-2 text-white\">\n                        {lightboxIndex + 1} / {allImages.length}\n                    </div>\n\n                </div>\n            )}\n\n            {/* Floating Scroll to Top Button */}\n            {showScrollTop && (\n                <button\n                    onClick={scrollToTop}\n                    className=\"fixed bottom-6 right-6 z-40 rounded-full bg-cyan-600/80 p-3 text-white shadow-lg backdrop-blur-sm transition-all hover:bg-cyan-500 hover:scale-110\"\n                    aria-label=\"Scroll to top\"\n                >\n                    <ArrowUp className=\"h-5 w-5\" />\n                </button>\n            )}\n        </div>\n    );\n}\n",
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\pages\\settings\\appearance.tsx",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\pages\\settings\\password.tsx",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\pages\\settings\\profile.tsx",
+    "messages": [
+      {
+        "ruleId": "no-empty-pattern",
+        "severity": 2,
+        "message": "Unexpected empty object pattern.",
+        "line": 31,
+        "column": 33,
+        "nodeType": "ObjectPattern",
+        "messageId": "unexpected",
+        "endLine": 32,
+        "endColumn": 2
+      }
+    ],
+    "suppressedMessages": [
+      {
+        "ruleId": "@typescript-eslint/no-explicit-any",
+        "severity": 2,
+        "message": "Unexpected any. Specify a different type.",
+        "line": 22,
+        "column": 20,
+        "nodeType": "TSAnyKeyword",
+        "messageId": "unexpectedAny",
+        "endLine": 22,
+        "endColumn": 23,
+        "suggestions": [
+          {
+            "messageId": "suggestUnknown",
+            "fix": {
+              "range": [
+                876,
+                879
+              ],
+              "text": "unknown"
+            },
+            "desc": "Use `unknown` instead, this will force you to explicitly, and safely assert the type is correct."
+          },
+          {
+            "messageId": "suggestNever",
+            "fix": {
+              "range": [
+                876,
+                879
+              ],
+              "text": "never"
+            },
+            "desc": "Use `never` instead, this is useful when instantiating generic type parameters that you don't need to know the type of."
+          }
+        ],
+        "suppressions": [
+          {
+            "kind": "directive",
+            "justification": ""
+          }
+        ]
+      }
+    ],
+    "errorCount": 1,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "source": "import { Transition } from '@headlessui/react';\nimport { Head, useForm, usePage } from '@inertiajs/react';\n\nimport type { FormEvent } from 'react';\nimport DeleteUser from '@/components/delete-user';\nimport Heading from '@/components/heading';\nimport IconSelector from '@/components/icon-selector';\nimport InputError from '@/components/input-error';\nimport { Button } from '@/components/ui/button';\nimport { Input } from '@/components/ui/input';\nimport { Label } from '@/components/ui/label';\nimport { Textarea } from '@/components/ui/textarea';\nimport AppLayout from '@/layouts/app-layout';\nimport SettingsLayout from '@/layouts/settings/layout';\nimport type { PageProps } from '@/types';\nimport type { UserProfile} from '@/types/profile';\n\n\n\n// Add route definition if missing in global types\n// eslint-disable-next-line @typescript-eslint/no-explicit-any\ndeclare let route: any;\n\nconst breadcrumbs = [\n    {\n        title: 'Profile settings',\n        href: '/settings/profile',\n    },\n];\n\nexport default function Profile({\n}) {\n    const { auth } = usePage<PageProps>().props;\n    const user = auth.user as unknown as UserProfile; // Cast to UserProfile to access new fields\n\n    const { data, setData, patch, processing, errors, recentlySuccessful } = useForm({\n        name: user.name || '',\n        email: user.email || '',\n        job_title: user.job_title || '',\n        bio: user.bio || '',\n        address: user.address || '',\n        phone: user.phone || '',\n        years_experience: user.years_experience || 0,\n        projects_completed: user.projects_completed || 0,\n        tech_stack: user.tech_stack || [],\n        avatar: null as File | null,\n    });\n\n    const submit = (e: FormEvent) => {\n        e.preventDefault();\n        patch(route('settings.profile.update'), {\n            preserveScroll: true,\n        });\n    };\n\n    return (\n        <AppLayout breadcrumbs={breadcrumbs}>\n            <Head title=\"Profile settings\" />\n\n            <SettingsLayout>\n                <div className=\"space-y-6\">\n                    <Heading\n                        variant=\"small\"\n                        title=\"Profile information\"\n                        description=\"Update your profile details\"\n                    />\n\n                    <form onSubmit={submit} className=\"space-y-6\">\n                        {/* Avatar */}\n                        <div className=\"grid gap-2\">\n                            <Label htmlFor=\"avatar\">Profile Picture</Label>\n                            {user.avatar && (\n                                <div className=\"mb-2\">\n                                    <img\n                                        src={`/storage/${user.avatar}`}\n                                        alt=\"Current Avatar\"\n                                        className=\"h-20 w-20 rounded-full object-cover border border-gray-200\"\n                                    />\n                                </div>\n                            )}\n                            <Input\n                                id=\"avatar\"\n                                type=\"file\"\n                                className=\"mt-1 block w-full cursor-pointer\"\n                                onChange={(e) => setData('avatar', e.target.files ? e.target.files[0] : null)}\n                                accept=\"image/*\"\n                            />\n                            <InputError className=\"mt-2\" message={errors.avatar} />\n                        </div>\n\n                        <div className=\"grid gap-4 md:grid-cols-2\">\n                            <div className=\"space-y-2\">\n                                <Label htmlFor=\"name\">Name</Label>\n                                <Input\n                                    id=\"name\"\n                                    value={data.name}\n                                    onChange={(e) => setData('name', e.target.value)}\n                                    required\n                                    autoComplete=\"name\"\n                                />\n                                <InputError message={errors.name} />\n                            </div>\n\n                            <div className=\"space-y-2\">\n                                <Label htmlFor=\"email\">Email</Label>\n                                <Input\n                                    id=\"email\"\n                                    type=\"email\"\n                                    value={data.email}\n                                    onChange={(e) => setData('email', e.target.value)}\n                                    required\n                                    autoComplete=\"email\"\n                                />\n                                <InputError message={errors.email} />\n                            </div>\n\n                            <div className=\"space-y-2\">\n                                <Label htmlFor=\"job_title\">Job Title</Label>\n                                <Input\n                                    id=\"job_title\"\n                                    value={data.job_title}\n                                    onChange={(e) => setData('job_title', e.target.value)}\n                                    placeholder=\"e.g. Full Stack Developer\"\n                                />\n                                <InputError message={errors.job_title} />\n                            </div>\n\n                            <div className=\"space-y-2\">\n                                <Label htmlFor=\"phone\">Phone</Label>\n                                <Input\n                                    id=\"phone\"\n                                    value={data.phone}\n                                    onChange={(e) => setData('phone', e.target.value)}\n                                    placeholder=\"+62...\"\n                                />\n                                <InputError message={errors.phone} />\n                            </div>\n                        </div>\n\n                        <div className=\"space-y-2\">\n                            <Label htmlFor=\"address\">Address</Label>\n                            <Input\n                                id=\"address\"\n                                value={data.address}\n                                onChange={(e) => setData('address', e.target.value)}\n                                placeholder=\"City, Country\"\n                            />\n                            <InputError message={errors.address} />\n                        </div>\n\n                        <div className=\"space-y-2\">\n                            <Label htmlFor=\"bio\">Bio</Label>\n                            <Textarea\n                                id=\"bio\"\n                                value={data.bio}\n                                onChange={(e) => setData('bio', e.target.value)}\n                                rows={4}\n                                placeholder=\"Tell us about yourself...\"\n                            />\n                            <InputError message={errors.bio} />\n                        </div>\n\n                        <div className=\"grid gap-4 md:grid-cols-2\">\n                            <div className=\"space-y-2\">\n                                <Label htmlFor=\"years_experience\">Years Experience</Label>\n                                <Input\n                                    id=\"years_experience\"\n                                    type=\"number\"\n                                    min=\"0\"\n                                    value={data.years_experience}\n                                    onChange={(e) => setData('years_experience', parseInt(e.target.value) || 0)}\n                                    placeholder=\"e.g. 5\"\n                                />\n                                <InputError message={errors.years_experience} />\n                            </div>\n\n                            <div className=\"space-y-2\">\n                                <Label htmlFor=\"projects_completed\">Projects Completed</Label>\n                                <Input\n                                    id=\"projects_completed\"\n                                    type=\"number\"\n                                    min=\"0\"\n                                    value={data.projects_completed}\n                                    onChange={(e) => setData('projects_completed', parseInt(e.target.value) || 0)}\n                                    placeholder=\"e.g. 20\"\n                                />\n                                <InputError message={errors.projects_completed} />\n                            </div>\n                        </div>\n\n                        <div className=\"space-y-3\">\n                            <Label>Tech Stack Icons</Label>\n                            <p className=\"text-sm text-muted-foreground\">Select the technologies you use. These will be displayed in your profile's \"About Me\" section.</p>\n                            <IconSelector\n                                selected={data.tech_stack}\n                                onChange={(selected) => setData('tech_stack', selected)}\n                            />\n                            <InputError message={errors.tech_stack} />\n                        </div>\n\n                        <div className=\"flex items-center gap-4 pt-6\">\n                            <Button disabled={processing}>Save Changes</Button>\n                            <Transition\n                                show={recentlySuccessful}\n                                enter=\"transition ease-in-out\"\n                                enterFrom=\"opacity-0\"\n                                leave=\"transition ease-in-out\"\n                                leaveTo=\"opacity-0\"\n                            >\n                                <p className=\"text-sm text-neutral-600\">Saved</p>\n                            </Transition>\n                        </div>\n                    </form>\n                </div>\n\n                <DeleteUser />\n            </SettingsLayout>\n        </AppLayout>\n    );\n}\n",
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\pages\\welcome.tsx",
+    "messages": [],
+    "suppressedMessages": [
+      {
+        "ruleId": "react-hooks/set-state-in-effect",
+        "severity": 2,
+        "message": "Error: Calling setState synchronously within an effect can trigger cascading renders\n\nEffects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:\n* Update external systems with the latest state from React.\n* Subscribe for updates from some external system, calling setState in a callback function when external state changes.\n\nCalling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).\n\nD:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\pages\\welcome.tsx:227:9\n  225 |     useEffect(() => {\n  226 |         // eslint-disable-next-line\n> 227 |         setCurrentImageIndex(0);\n      |         ^^^^^^^^^^^^^^^^^^^^ Avoid calling setState() directly within an effect\n  228 |     }, [portfolio.id]);\n  229 |\n  230 |     const nextImage = (e?: React.MouseEvent) => {",
+        "line": 227,
+        "column": 9,
+        "nodeType": null,
+        "endLine": 227,
+        "endColumn": 29,
+        "suppressions": [
+          {
+            "kind": "directive",
+            "justification": ""
+          }
+        ]
+      }
+    ],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\routes\\admin\\index.ts",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\routes\\admin\\portfolios\\index.ts",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\routes\\admin\\tenants\\index.ts",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\routes\\admin\\transactions\\index.ts",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\routes\\appearance\\index.ts",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\routes\\auth\\index.ts",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\routes\\boost\\index.ts",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\routes\\dashboard\\api\\index.ts",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\routes\\dashboard\\billing\\index.ts",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\routes\\dashboard\\experiences\\index.ts",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\routes\\dashboard\\index.ts",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\routes\\dashboard\\portfolios\\images\\index.ts",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\routes\\dashboard\\portfolios\\index.ts",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\routes\\dashboard\\settings\\index.ts",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\routes\\dashboard\\skills\\index.ts",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\routes\\experience\\index.ts",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\routes\\index.ts",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\routes\\login\\index.ts",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\routes\\password\\confirm\\index.ts",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\routes\\password\\index.ts",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\routes\\portfolio\\index.ts",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\routes\\portfolios\\index.ts",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\routes\\profile\\index.ts",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\routes\\register\\index.ts",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\routes\\storage\\index.ts",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\routes\\user-password\\index.ts",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\routes\\verification\\index.ts",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\routes\\webhooks\\index.ts",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\ssr.tsx",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\types\\auth.ts",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\types\\index.ts",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\types\\navigation.ts",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\types\\profile.ts",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\types\\ui.ts",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\types\\vite-env.d.ts",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\utils\\format.ts",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\utils\\image.ts",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\utils\\index.ts",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\github\\Portofolio\\portofolio-luthfi\\resources\\js\\wayfinder\\index.ts",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  }
+]

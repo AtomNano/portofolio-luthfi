@@ -1,7 +1,10 @@
 import { Transition } from '@headlessui/react';
 import { Head, useForm, usePage } from '@inertiajs/react';
+
+import type { FormEvent } from 'react';
 import DeleteUser from '@/components/delete-user';
 import Heading from '@/components/heading';
+import IconSelector from '@/components/icon-selector';
 import InputError from '@/components/input-error';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -9,14 +12,13 @@ import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import AppLayout from '@/layouts/app-layout';
 import SettingsLayout from '@/layouts/settings/layout';
-import { UserProfile, Skill, SocialLink } from '@/types/profile';
-import { Loader2, Plus, Trash2 } from 'lucide-react';
-import { FormEvent } from 'react';
-import { PageProps } from '@/types';
+import type { PageProps } from '@/types';
+import type { UserProfile} from '@/types/profile';
 
-import IconSelector from '@/components/icon-selector';
+
 
 // Add route definition if missing in global types
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 declare let route: any;
 
 const breadcrumbs = [
@@ -26,13 +28,7 @@ const breadcrumbs = [
     },
 ];
 
-export default function Profile({
-    mustVerifyEmail,
-    status,
-}: {
-    mustVerifyEmail: boolean;
-    status?: string;
-}) {
+export default function Profile() {
     const { auth } = usePage<PageProps>().props;
     const user = auth.user as unknown as UserProfile; // Cast to UserProfile to access new fields
 

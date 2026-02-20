@@ -1,8 +1,8 @@
 import { Deferred, Head, Link, usePage } from '@inertiajs/react';
-import { PlusCircle, Eye, MousePointer, TrendingUp, ExternalLink, Zap, Globe, Sparkles } from 'lucide-react';
+import { PlusCircle, Eye, MousePointer, TrendingUp, Zap, Globe, Sparkles } from 'lucide-react';
+import { Line, LineChart, ResponsiveContainer, Tooltip as RechartsTooltip, XAxis, YAxis, CartesianGrid } from 'recharts';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Line, LineChart, ResponsiveContainer, Tooltip as RechartsTooltip, XAxis, YAxis, CartesianGrid } from 'recharts';
 import { usePageEffects } from '@/hooks/use-page-effects';
 import { useTenant, usePlanFeatures } from '@/hooks/use-tenant';
 import AppLayout from '@/layouts/app-layout';
