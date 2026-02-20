@@ -101,8 +101,13 @@ class User extends Authenticatable
 
     public function getProfilePhotoUrlAttribute(): string
     {
-        return $this->avatar
-            ? \Illuminate\Support\Facades\Storage::disk('public')->url($this->avatar)
-            : 'https://ui-avatars.com/api/?name=' . urlencode($this->name) . '&color=7F9CF5&background=EBF4FF';
+        if (!$this->avatar) {
+            return 'https://ui-avatars.com/api/?name=' . urlencode($this->name) . '&color=7F9CF5&background=EBF4FF';
+        }
+
+        /** @var \Illuminate\Filesystem\FilesystemAdapter $disk */
+        $disk = \Illuminate\Support\Facades\Storage::disk('public');
+
+        return $disk->url($this->avatar);
     }
 }
