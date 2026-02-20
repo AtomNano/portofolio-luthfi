@@ -1,6 +1,6 @@
-import { Head, Link } from '@inertiajs/react';
+import { Head } from '@inertiajs/react';
 import { motion } from 'framer-motion';
-import { ArrowLeft, Terminal } from 'lucide-react';
+import { Terminal } from 'lucide-react';
 import React from 'react';
 import FrontNavbar from '@/components/front-navbar';
 import type { Experience } from '@/types';

@@ -25,7 +25,7 @@ export default function ForgotPassword({ status }: { status?: string }) {
             )}
 
             <div className="space-y-6">
-                <Form {...email.form()}>
+                <Form action={email.url()} method="post">
                     {({ processing, errors }) => (
                         <>
                             <div className="grid gap-2">
@@ -60,7 +60,7 @@ export default function ForgotPassword({ status }: { status?: string }) {
 
                 <div className="space-x-1 text-center text-sm text-muted-foreground">
                     <span>Or, return to</span>
-                    <TextLink href={login()}>log in</TextLink>
+                    <TextLink href={login.url()}>log in</TextLink>
                 </div>
             </div>
         </AuthLayout>

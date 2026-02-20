@@ -1,7 +1,10 @@
 import { Transition } from '@headlessui/react';
 import { Head, useForm, usePage } from '@inertiajs/react';
+
+import type { FormEvent } from 'react';
 import DeleteUser from '@/components/delete-user';
 import Heading from '@/components/heading';
+import IconSelector from '@/components/icon-selector';
 import InputError from '@/components/input-error';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -9,12 +12,13 @@ import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import AppLayout from '@/layouts/app-layout';
 import SettingsLayout from '@/layouts/settings/layout';
-import { UserProfile, Skill, SocialLink } from '@/types/profile';
-import { Loader2, Plus, Trash2 } from 'lucide-react';
-import { FormEvent } from 'react';
-import { PageProps } from '@/types';
+import type { PageProps } from '@/types';
+import type { UserProfile} from '@/types/profile';
+
+
 
 // Add route definition if missing in global types
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 declare let route: any;
 
 const breadcrumbs = [
@@ -24,13 +28,7 @@ const breadcrumbs = [
     },
 ];
 
-export default function Profile({
-    mustVerifyEmail,
-    status,
-}: {
-    mustVerifyEmail: boolean;
-    status?: string;
-}) {
+export default function Profile() {
     const { auth } = usePage<PageProps>().props;
     const user = auth.user as unknown as UserProfile; // Cast to UserProfile to access new fields
 
@@ -41,6 +39,9 @@ export default function Profile({
         bio: user.bio || '',
         address: user.address || '',
         phone: user.phone || '',
+        years_experience: user.years_experience || 0,
+        projects_completed: user.projects_completed || 0,
+        tech_stack: user.tech_stack || [],
         avatar: null as File | null,
     });
 
@@ -156,6 +157,44 @@ export default function Profile({
                                 placeholder="Tell us about yourself..."
                             />
                             <InputError message={errors.bio} />
+                        </div>
+
+                        <div className="grid gap-4 md:grid-cols-2">
+                            <div className="space-y-2">
+                                <Label htmlFor="years_experience">Years Experience</Label>
+                                <Input
+                                    id="years_experience"
+                                    type="number"
+                                    min="0"
+                                    value={data.years_experience}
+                                    onChange={(e) => setData('years_experience', parseInt(e.target.value) || 0)}
+                                    placeholder="e.g. 5"
+                                />
+                                <InputError message={errors.years_experience} />
+                            </div>
+
+                            <div className="space-y-2">
+                                <Label htmlFor="projects_completed">Projects Completed</Label>
+                                <Input
+                                    id="projects_completed"
+                                    type="number"
+                                    min="0"
+                                    value={data.projects_completed}
+                                    onChange={(e) => setData('projects_completed', parseInt(e.target.value) || 0)}
+                                    placeholder="e.g. 20"
+                                />
+                                <InputError message={errors.projects_completed} />
+                            </div>
+                        </div>
+
+                        <div className="space-y-3">
+                            <Label>Tech Stack Icons</Label>
+                            <p className="text-sm text-muted-foreground">Select the technologies you use. These will be displayed in your profile's "About Me" section.</p>
+                            <IconSelector
+                                selected={data.tech_stack}
+                                onChange={(selected) => setData('tech_stack', selected)}
+                            />
+                            <InputError message={errors.tech_stack} />
                         </div>
 
                         <div className="flex items-center gap-4 pt-6">

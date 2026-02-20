@@ -47,7 +47,10 @@ class ExperienceController extends Controller
      */
     public function store(StoreExperienceRequest $request)
     {
-        Experience::create($request->validated());
+        Experience::create([
+            ...$request->validated(),
+            'user_id' => $request->user()->id,
+        ]);
 
         return Redirect::route('dashboard.experiences.index');
     }

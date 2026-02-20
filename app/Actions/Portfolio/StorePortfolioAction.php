@@ -5,6 +5,7 @@ namespace App\Actions\Portfolio;
 use App\Actions\OptimizeImageAction;
 use App\Models\Portfolio;
 use Illuminate\Http\UploadedFile;
+use Illuminate\Support\Facades\Auth;
 
 class StorePortfolioAction
 {
@@ -27,6 +28,7 @@ class StorePortfolioAction
         }
 
         $portfolio = Portfolio::create([
+            'user_id' => Auth::id(),
             'title' => $validated['title'],
             'category' => $validated['category'],
             'description' => $validated['description'],

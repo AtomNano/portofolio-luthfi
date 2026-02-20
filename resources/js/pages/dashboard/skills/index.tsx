@@ -1,18 +1,21 @@
-import { Head, useForm, usePage } from '@inertiajs/react';
+import { Head, useForm } from '@inertiajs/react';
+import { motion } from 'framer-motion';
+import { Plus, Trash2, Save, Wrench, Share2, Loader2, Code } from 'lucide-react';
+import type { FormEvent} from 'react';
+import { useEffect } from 'react';
+import Swal from 'sweetalert2';
+import InputError from '@/components/input-error';
 import { Button } from '@/components/ui/button';
+import { Card, CardHeader, CardContent } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Separator } from '@/components/ui/separator';
 import AppLayout from '@/layouts/app-layout';
-import { PageProps, BreadcrumbItem } from '@/types';
-import { Skill, SocialLink, UserProfile } from '@/types/profile';
-import { Plus, Trash2, Save, Wrench, Share2, Loader2, Code } from 'lucide-react';
-import { motion } from 'framer-motion';
-import { Card, CardHeader, CardContent } from '@/components/ui/card';
-import { FormEvent, useEffect } from 'react';
-import InputError from '@/components/input-error';
-import Swal from 'sweetalert2';
+import type { PageProps, BreadcrumbItem } from '@/types';
+import type { Skill, SocialLink} from '@/types/profile';
 
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 declare let route: any;
 
 const breadcrumbs: BreadcrumbItem[] = [
@@ -46,8 +49,7 @@ export default function SkillsManager({ skills, soft_skills, social_links }: Ski
         social_links: data.social_links.filter(link => link.url && link.url.trim() !== '')
     }));
     
-    // @ts-ignore
-    const { flash } = usePage<PageProps>().props;
+
 
     useEffect(() => {
         if (recentlySuccessful) {
@@ -115,6 +117,7 @@ export default function SkillsManager({ skills, soft_skills, social_links }: Ski
         setData('skills', newSkills);
     };
 
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const updateSkill = (index: number, key: keyof Skill, value: any) => {
         const newSkills = [...data.skills];
         newSkills[index] = { ...newSkills[index], [key]: value };
@@ -307,7 +310,7 @@ export default function SkillsManager({ skills, soft_skills, social_links }: Ski
                                                                 placeholder="Skill Name (e.g. React)"
                                                                 className="h-8 text-sm"
                                                             />
-                                                            {/* @ts-ignore */}
+
                                                             <InputError message={errors[`skills.${realIndex}.name`]} />
                                                         </div>
                                                         <Button
@@ -474,7 +477,7 @@ export default function SkillsManager({ skills, soft_skills, social_links }: Ski
                                                     value={link.url}
                                                     onChange={(e) => updateSocialLink(index, 'url', e.target.value)}
                                                     onBlur={(e) => {
-                                                        let val = e.target.value.trim();
+                                                        const val = e.target.value.trim();
                                                         if (val && !val.match(/^(https?:\/\/|mailto:)/)) {
                                                             updateSocialLink(index, 'url', 'https://' + val);
                                                         }
@@ -499,7 +502,7 @@ export default function SkillsManager({ skills, soft_skills, social_links }: Ski
                                     </div>
                                 )}
                             </div>
-                             {/* @ts-ignore */}
+
                              {errors.social_links && <InputError message={errors.social_links} className="mt-4" />}
                         </section>
                     </div>

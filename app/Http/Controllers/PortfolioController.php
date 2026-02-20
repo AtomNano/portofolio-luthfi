@@ -22,8 +22,16 @@ class PortfolioController extends Controller
      */
     public function index()
     {
+        $tenant = auth()->user()->tenant;
+        $maxPortfolios = $tenant->plan->limits['max_portfolios'] ?? null;
+        $currentCount = $tenant->portfolios()->count();
+        $canAdd = $maxPortfolios === null || $currentCount < $maxPortfolios;
+
         return Inertia::render('dashboard/portfolios/index', [
             'portfolios' => Portfolio::with('images')->orderBy('order')->get(),
+            'can_add_portfolio' => $canAdd,
+            'max_portfolios' => $maxPortfolios,
+            'current_count' => $currentCount,
         ]);
     }
 
@@ -58,6 +66,14 @@ class PortfolioController extends Controller
      */
     public function create()
     {
+        $tenant = auth()->user()->tenant;
+        $maxPortfolios = $tenant->plan->limits['max_portfolios'] ?? null;
+
+        if ($maxPortfolios !== null && $tenant->portfolios()->count() >= $maxPortfolios) {
+            return Redirect::route('dashboard.portfolios.index')
+                ->with('error', 'Limit tercapai. Silakan upgrade paket Anda untuk menambah portfolio baru.');
+        }
+
         return Inertia::render('dashboard/portfolios/create');
     }
 
@@ -66,12 +82,20 @@ class PortfolioController extends Controller
      */
     public function store(StorePortfolioRequest $request, StorePortfolioAction $action)
     {
+        $tenant = auth()->user()->tenant;
+        $maxPortfolios = $tenant->plan->limits['max_portfolios'] ?? null;
+
+        if ($maxPortfolios !== null && $tenant->portfolios()->count() >= $maxPortfolios) {
+            return Redirect::route('dashboard.portfolios.index')
+                ->with('error', 'Limit tercapai. Silakan upgrade paket Anda untuk menambah portfolio baru.');
+        }
+
         $validated = $request->validated();
         $mainImage = $request->file('image');
         $additionalImages = $request->file('images', []) ?? [];
 
         // Fallback: If no dedicated main image, use the first one from the gallery
-        if (!$mainImage && !empty($additionalImages)) {
+        if (! $mainImage && ! empty($additionalImages)) {
             $mainImage = array_shift($additionalImages);
         }
 

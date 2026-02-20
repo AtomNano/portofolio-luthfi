@@ -1,0 +1,21 @@
+{
+    "id": 1,
+    "tenant_id": 1,
+    "user_id": 1,
+    "order": 0,
+    "title": "Coding Academy Payakumbuh",
+    "category": "Web Development",
+    "description": "aadada",
+    "project_url": "http:\/\/codingacademy.my.id\/",
+    "image_path": "portfolios\/VNhjHxNXHQQjTLMkQBi6ZhDmgQPB0ggbhrLjLzQK.png",
+    "thumbnail_path": null,
+    "created_at": "2026-01-30T17:08:22.000000Z",
+    "updated_at": "2026-02-19T08:45:05.000000Z",
+    "development_time": null,
+    "tools": null,
+    "github_url": null,
+    "video_url": null,
+    "is_published": true,
+    "view_count": 0,
+    "images": []
+}

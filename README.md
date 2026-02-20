@@ -1,164 +1,139 @@
-# Portofolio Luthfi
+# OmsetHarian x Portolink 🚀
 
-> 🚀 Modern Personal Portfolio built with **Laravel 12**, **React 19**, and **Inertia.js 2.0**.
+Welcome to **OmsetHarian x Portolink**, a complete Software-as-a-Service (SaaS) platform built for modern freelancers and agencies. It combines highly customizable portfolio generation with deeply integrated sales & daily revenue (omset) tracking analytics.
 
-![Laravel](https://img.shields.io/badge/Laravel-12-FF2D20?style=flat&logo=laravel&logoColor=white)
-![React](https://img.shields.io/badge/React-19-61DAFB?style=flat&logo=react&logoColor=black)
-![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-4-06B6D4?style=flat&logo=tailwindcss&logoColor=white)
-![Inertia.js](https://img.shields.io/badge/Inertia.js-2-9553E9?style=flat&logo=inertia&logoColor=white)
-![License](https://img.shields.io/badge/license-MIT-blue.svg)
+This repository operates on a true **Multi-Tenant Architecture**, meaning a single codebase powers distinct and isolated workspaces for hundreds of different registered users natively.
 
 ---
 
-## 📋 Table of Contents
+## 🛠 Tech Stack
 
-- [Features](#-features)
-- [Tech Stack](#-tech-stack)
-- [Project Structure](#-project-structure)
-- [Installation](#-installation)
-- [Development](#-development)
-- [Deployment](#-deployment)
-- [License](#-license)
-
----
-
-## ✨ Features
-
-| Feature | Description |
-|---------|-------------|
-| 🎨 **Modern UI/UX** | **Dark/Light Mode** support with a custom "Blue Programming" theme, Glassmorphism effects, and smooth Framer Motion animations. |
-| 📱 **Responsive Design** | Mobile-first approach with a responsive sidebar and navigation. |
-| 🖼️ **Portfolio Management** | scalable CRUD system for projects with **multi-image upload**, drag-and-drop reordering, and automated image optimization. |
-| 💼 **Experience Timeline** | Professional experience management with a visual timeline layout. |
-| 📊 **Dashboard & Stats** | Admin dashboard with real-time visitor statistics (page views, portfolio clicks) and chart visualizations. |
-| 🔐 **Authentication** | Secure login system using **Laravel Fortify** and **Google OAuth** (Socialite). |
-| ⚡ **High Performance** | Built as a Single Page Application (SPA) using **Inertia.js** for seamless navigation without full page reloads. |
+- **Backend:** Laravel 12.x (PHP 8.4)
+- **Frontend:** React 19 + Inertia.js v2 + TailwindCSS v4
+- **Database:** SQLite (Local) / MySQL or PostgreSQL (Production)
+- **Testing:** Pest PHP v4
+- **UI Components:** Shadcn UI + Radix UI + Recharts
+- **Icons:** Lucide-React
 
 ---
 
-## 🛠️ Tech Stack
+## 💻 Local Development (Installation)
 
-### Backend
-- **[Laravel 12](https://laravel.com)** - The PHP Framework for Web Artisans.
-- **[Inertia.js v2](https://inertiajs.com)** - Server-driven React apps.
-- **[Laravel Fortify](https://laravel.com/docs/fortify)** - Headless authentication backend.
-- **[Laravel Socialite](https://laravel.com/docs/socialite)** - OAuth integration.
-- **[Wayfinder](https://github.com/tomschlick/wayfinder)** - Type-safe route generation for frontend.
-- **MySQL / SQLite** - Database.
+To set up this project locally on your machine for development or testing:
 
-### Frontend
-- **[React 19](https://react.dev)** - The library for web and native user interfaces.
-- **[TypeScript](https://www.typescriptlang.org/)** - Strictly typed JavaScript.
-- **[Tailwind CSS v4](https://tailwindcss.com)** - A utility-first CSS framework (Oxide engine).
-- **[Shadcn UI](https://ui.shadcn.com)** - Reusable components built with Radix UI and Tailwind.
-- **[Framer Motion](https://www.framer.com/motion/)** - Production-ready animation library.
-- **[Lucide React](https://lucide.dev)** - Beautiful & consistent icons.
-- **[Dnd Kit](https://dndkit.com)** - Lightweight, performant, accessible drag and drop.
+1.  **Clone the Repository**
 
----
-
-## 📁 Project Structure
-
-```
-portofolio-luthfi/
-├── app/
-│   ├── Http/Controllers/    # Backend logic (Portfolio, Experience, Stats)
-│   └── Models/              # Eloquent Models (User, Portfolio, PageView)
-├── database/
-│   └── migrations/          # Database schemas
-├── resources/
-│   ├── css/                 # Tailwind CSS v4 entry
-│   ├── js/
-│   │   ├── components/      # Reusable React components (UI, Forms)
-│   │   ├── hooks/           # Custom hooks (useAppearance, use-mobile)
-│   │   ├── layouts/         # App layouts (AppSidebarLayout, GuestLayout)
-│   │   └── pages/           # Inertia Pages (Welcome, Dashboard, etc.)
-│   └── views/               # Root Blade template
-├── routes/
-│   └── web.php              # Web Routes
-├── public/                  # Static assets & build output
-└── storage/                 # Uploaded files
-```
-
----
-
-## ⚙️ Installation
-
-### Prerequisites
-- PHP >= 8.2
-- Composer
-- Node.js >= 20 & npm
-- MySQL or SQLite
-
-### Quick Start
-
-1.  **Clone the repository**
     ```bash
-    git clone https://github.com/yourusername/portofolio-luthfi.git
-    cd portofolio-luthfi
+    git clone https://github.com/your-username/portolink.git
+    cd portolink
     ```
 
-2.  **Install Dependencies**
+2.  **Install PHP Dependencies**
+
     ```bash
     composer install
+    ```
+
+3.  **Install Node Dependencies**
+
+    ```bash
     npm install
     ```
 
-3.  **Environment Setup**
+4.  **Environment Configuration**
+
     ```bash
     cp .env.example .env
     php artisan key:generate
     ```
-    *Configure your database credentials in `.env`.*
 
-4.  **Database Migration**
+    _Open `.env` and set your preferred database (sqlite is recommended for local)._
+
+5.  **Run Database Migrations & Seeders**
+
     ```bash
-    php artisan migrate
+    php artisan migrate:fresh --seed
     ```
 
-5.  **Storage Link**
+    _This will create the "Free" and "Pro" SaaS Subscription Plans, and generate the default Superadmin account._
+
+6.  **Run the Development Servers**
+    Open two terminal tabs:
+
     ```bash
-    php artisan storage:link
+    # Terminal 1: Vite Frontend Server
+    npm run dev
+
+    # Terminal 2: Laravel Backend Server
+    php artisan serve
     ```
 
 ---
 
-## 🏃 Development
+## 👑 Superadmin Panel & Moderation
 
-Start the development server with a single command (runs Laravel, Vite, and Queue Worker concurrently):
+This system comes with a "God Mode" panel for the repository owner to monitor all tenants, adjust billing, and moderate content.
+
+**Login Credentials (Seeded):**
+
+- **Email:** `admin@admin.com`
+- **Password:** `password`
+
+From the Dashboard sidebar, administrators have exclusive access to:
+
+- **Global Portfolios:** View every single portfolio uploaded by any user. Admins can click the 🔗 external link to view what the public sees, or click the Trash icon to take down inappropriate content instantly.
+- **Users & Tenants:** Manually upgrade users to "Pro" plans to bypass paywalls, edit their credentials, or permanently ban/delete them from the platform.
+- **Revenue Ledger:** View all incoming international/local payment gateway webhook events.
+
+---
+
+## 🚀 Deployment Guide (Production)
+
+This repository is strictly designed to be deployed on both **Shared Hosting (cPanel)** or **Virtual Private Servers (VPS)** gracefully.
+
+### Option A: Shared Hosting / cPanel Setup
+
+1.  **Repository Upload:** Compress the entire project into a `.zip` and upload it to your domain's root folder (e.g., `public_html/portolink/`).
+2.  **The `.htaccess` Router:** We have included a bespoke `.htaccess` file at the root of the project. This script tells Apache to natively strip away `/public/` from URLs and route traffic seamlessly, protecting your `.env` variables from public exposure.
+3.  **Database:** Create a MySQL Database in cPanel, update your `.env` credentials, and run your migrations.
+
+### Option B: VPS (Nginx / DigitalOcean / AWS)
+
+If deploying to a VPS (Ubuntu), do **not** use `artisan serve` or Apache.
+
+1.  **Nginx Block:** Copy the contents of the `nginx.conf.example` file provided in this repository, and paste it into `/etc/nginx/sites-available/yourdomain.com`.
+2.  **PHP-FPM:** Ensure the `fastcgi_pass` directive points to your active PHP 8.4 FPM sock limit (`/var/run/php/php8.4-fpm.sock`).
+
+### 🔄 The Quick-Deploy CLI Script (`deploy.sh`)
+
+For VPS setups, pulling new updates from GitHub manually can cause temporary crashes or N+1 caching errors. To update your live application safely, run the provided bash script:
 
 ```bash
-composer run dev
+bash deploy.sh
 ```
 
-**Access:** http://localhost:8000
+**What `deploy.sh` does natively:**
+
+1.  Puts the live application into a beautiful `503 Maintenance Mode`.
+2.  Pulls the latest code from the `main` git branch.
+3.  Runs `composer install --optimize-auto` avoiding dev dependencies.
+4.  Compiles the newest React JSX components `npm run build`.
+5.  Triggers new structural migrations `php artisan migrate --force`.
+6.  Re-caches routes, views, and events for maximum loading speed.
+7.  Takes the application elegantly out of Maintenance Mode.
 
 ---
 
-## 🚀 Deployment
+## 🧪 Automated Testing (Pest PHP)
 
-1.  **Build Assets**
-    ```bash
-    npm run build
-    ```
+This application strictly enforces test-driven stability. Before deploying any massive structural changes, execute the Pest testing suite to verify system integrity:
 
-2.  **Optimize Laravel**
-    ```bash
-    php artisan optimize
-    php artisan config:cache
-    php artisan route:cache
-    php artisan view:cache
-    ```
+```bash
+php artisan test --compact
+```
 
-3.  **Ensure Storage Permissions**
-    ```bash
-    chmod -R 775 storage bootstrap/cache
-    ```
+_Zero failures are expected out-of-the-box. The `IdentifyTenant` middleware is explicitly designed to adapt to unseeded test environments securely._
 
 ---
 
-## 📝 License
-
-This project is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
-
-Copyright © 2026 **Muhammad Luthfi Naldi**.
+_Built with ❤️ for modern software scalability._
