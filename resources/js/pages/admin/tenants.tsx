@@ -1,5 +1,5 @@
 import { Head, router, useForm } from '@inertiajs/react';
-import { MoreVertical, UserPlus, Pencil, Trash, Lock } from 'lucide-react';
+import { MoreVertical, UserPlus, Pencil, Trash, Lock, Eye, EyeOff } from 'lucide-react';
 import { useState } from 'react';
 import Swal from 'sweetalert2';
 import { Button } from '@/components/ui/button';
@@ -41,6 +41,8 @@ function Modal({ isOpen, onClose, title, children }: any) {
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export default function AdminTenants({ users }: any) {
     const [isCreateModalOpen, setIsCreateModalOpen] = useState(false);
+    const [showCreatePassword, setShowCreatePassword] = useState(false);
+    const [showEditPassword, setShowEditPassword] = useState(false);
     const [isEditModalOpen, setIsEditModalOpen] = useState(false);
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const [editingUser, setEditingUser] = useState<any>(null);
@@ -228,7 +230,25 @@ export default function AdminTenants({ users }: any) {
                     </div>
                     <div>
                         <Label>Initial Password</Label>
-                        <Input type="password" value={createForm.data.password} onChange={e => createForm.setData('password', e.target.value)} required minLength={8} className="bg-black/40 border-white/10" />
+                        <div className="relative">
+                            <Input
+                                type={showCreatePassword ? 'text' : 'password'}
+                                value={createForm.data.password}
+                                onChange={e => createForm.setData('password', e.target.value)}
+                                required
+                                minLength={8}
+                                className="bg-black/40 border-white/10 pr-10"
+                            />
+                            <button
+                                type="button"
+                                onClick={() => setShowCreatePassword(p => !p)}
+                                className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-white"
+                                tabIndex={-1}
+                            >
+                                {showCreatePassword ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
+                            </button>
+                        </div>
+                        <p className="mt-1 text-xs text-gray-500">Min. 8 karakter</p>
                     </div>
                     <div>
                         <Label>Starting Plan</Label>
@@ -261,7 +281,25 @@ export default function AdminTenants({ users }: any) {
                     </div>
                     <div>
                         <Label>New Password (Optional)</Label>
-                        <Input type="password" placeholder="Leave blank to keep current" value={editForm.data.password} onChange={e => editForm.setData('password', e.target.value)} className="bg-black/40 border-white/10" />
+                        <div className="relative">
+                            <Input
+                                type={showEditPassword ? 'text' : 'password'}
+                                placeholder="Biarkan kosong untuk tidak mengubah"
+                                value={editForm.data.password}
+                                onChange={e => editForm.setData('password', e.target.value)}
+                                minLength={8}
+                                className="bg-black/40 border-white/10 pr-10"
+                            />
+                            <button
+                                type="button"
+                                onClick={() => setShowEditPassword(p => !p)}
+                                className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-white"
+                                tabIndex={-1}
+                            >
+                                {showEditPassword ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
+                            </button>
+                        </div>
+                        <p className="mt-1 text-xs text-gray-500">Min. 8 karakter · kosongkan jika tidak ingin mengubah</p>
                     </div>
                     <div className="pt-2 flex justify-end gap-2">
                         <Button type="button" variant="outline" onClick={() => setIsEditModalOpen(false)} className="border-white/10 hover:bg-white/5">Cancel</Button>
