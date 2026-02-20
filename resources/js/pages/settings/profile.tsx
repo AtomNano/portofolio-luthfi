@@ -49,6 +49,7 @@ export default function Profile() {
         e.preventDefault();
         patch(route('settings.profile.update'), {
             preserveScroll: true,
+            forceFormData: true,
         });
     };
 

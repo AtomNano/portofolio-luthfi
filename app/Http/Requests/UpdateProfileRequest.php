@@ -23,17 +23,21 @@ class UpdateProfileRequest extends FormRequest
     {
         return [
             'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users,email,' . $this->user()->id],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users,email,'.$this->user()->id],
             'job_title' => ['nullable', 'string', 'max:255'],
             'phone' => ['nullable', 'string', 'max:20'],
             'address' => ['nullable', 'string', 'max:500'],
             'bio' => ['nullable', 'string'],
+            'avatar' => ['nullable', 'image', 'mimes:jpg,jpeg,png,webp', 'max:2048'],
+            'years_experience' => ['nullable', 'integer', 'min:0', 'max:100'],
+            'projects_completed' => ['nullable', 'integer', 'min:0'],
+            'tech_stack' => ['nullable', 'array'],
 
             // JSON validation
             'skills' => ['nullable', 'array'],
             'skills.*.name' => ['required', 'string'],
             'skills.*.level' => ['required', 'integer', 'min:0', 'max:100'],
-            'skills.*.category' => ['required', 'string'], // Backend, Frontend, DevOps
+            'skills.*.category' => ['required', 'string'],
 
             'soft_skills' => ['nullable', 'array'],
             'soft_skills.*.name' => ['required', 'string'],
@@ -41,7 +45,7 @@ class UpdateProfileRequest extends FormRequest
             'social_links' => ['nullable', 'array'],
             'social_links.*.platform' => ['required', 'string'],
             'social_links.*.url' => ['required', 'url'],
-            'social_links.*.icon' => ['nullable', 'string'], // Could be strict about icon names if needed
+            'social_links.*.icon' => ['nullable', 'string'],
         ];
     }
 }
