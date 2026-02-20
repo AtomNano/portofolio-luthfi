@@ -36,6 +36,9 @@ type Portfolio = {
 
 type Props = {
     portfolios: Portfolio[];
+    can_add_portfolio: boolean;
+    max_portfolios: number | null;
+    current_count: number;
 };
 
 // Sortable Portfolio Card Component
@@ -142,7 +145,7 @@ function SortablePortfolioCard({ portfolio, onDelete }: { portfolio: Portfolio; 
     );
 }
 
-export default function PortfolioIndex({ portfolios: initialPortfolios }: Props) {
+export default function PortfolioIndex({ portfolios: initialPortfolios, can_add_portfolio, max_portfolios, current_count }: Props) {
     const [portfolios, setPortfolios] = useState(initialPortfolios);
 
     const sensors = useSensors(
@@ -229,10 +232,28 @@ export default function PortfolioIndex({ portfolios: initialPortfolios }: Props)
                         <h1 className="text-3xl font-bold text-white">Manajemen Portofolio</h1>
                         <p className="text-gray-400 mt-1">Kelola dan atur urutan portfolio Anda</p>
                     </div>
-                    <Link href={create.url()} className={buttonVariants()}>
-                        Tambah Baru
-                    </Link>
+                    {can_add_portfolio ? (
+                        <Link href={create.url()} className={buttonVariants()}>
+                            Tambah Baru
+                        </Link>
+                    ) : (
+                        <Button disabled className="opacity-50 cursor-not-allowed hidden sm:inline-flex">
+                            Maksimal {max_portfolios} Item
+                        </Button>
+                    )}
                 </div>
+
+                {!can_add_portfolio && max_portfolios !== null && (
+                    <div className="mb-8 p-4 bg-orange-500/10 border border-orange-500/30 rounded-lg flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                        <div>
+                            <h3 className="font-semibold text-orange-400">Batas Kuota Portofolio Tercapai ({current_count}/{max_portfolios})</h3>
+                            <p className="text-sm text-gray-300 mt-1">Anda menggunakan paket Free yang hanya mengizinkan maksimal {max_portfolios} portofolio. Upgrade ke paket Pro untuk membuat item baru.</p>
+                        </div>
+                        <Link href="/dashboard/billing" className={buttonVariants({ variant: 'default', size: 'sm', className: 'whitespace-nowrap shrink-0 bg-orange-600 hover:bg-orange-700 text-white' })}>
+                            Upgrade ke Pro
+                        </Link>
+                    </div>
+                )}
 
                 {portfolios.length > 0 ? (
                     <DndContext

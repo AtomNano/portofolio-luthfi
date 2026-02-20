@@ -1,4 +1,3 @@
-import { wayfinder } from '@laravel/vite-plugin-wayfinder';
 import tailwindcss from '@tailwindcss/vite';
 import react from '@vitejs/plugin-react';
 import laravel from 'laravel-vite-plugin';
@@ -17,11 +16,11 @@ export default defineConfig({
             },
         }),
         tailwindcss(),
-        wayfinder({
-            formVariants: true,
-        }),
+        // NOTE: Wayfinder Vite plugin disabled — it has a bug that duplicates import lines on HMR.
+        // Run `php artisan wayfinder:generate` manually after adding new routes or controllers.
     ],
     esbuild: {
         jsx: 'automatic',
     },
 });
+

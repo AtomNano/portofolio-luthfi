@@ -44,6 +44,7 @@ import {
 } from 'react-icons/di';
 import { SiFlutter } from 'react-icons/si';
 import { TypeAnimation } from 'react-type-animation';
+import { AVAILABLE_ICONS } from '@/components/icon-selector';
 
 // Helper component for animating sections on scroll
 const AnimatedSection = ({
@@ -567,7 +568,7 @@ const AboutSection = ({ owner }: { owner?: UserProfile }) => (
                 <div className="mt-8 grid grid-cols-2 gap-4">
                     <div className="rounded border border-border bg-background p-4">
                         <span className="block text-3xl font-bold text-foreground">
-                            {owner?.years_experience || 3}+
+                            {owner?.years_experience || 0}+
                         </span>
                         <span className="text-sm text-muted-foreground">
                             Years Experience
@@ -575,7 +576,7 @@ const AboutSection = ({ owner }: { owner?: UserProfile }) => (
                     </div>
                     <div className="rounded border border-border bg-background p-4">
                         <span className="block text-3xl font-bold text-foreground">
-                            {owner?.projects_completed || 20}+
+                            {owner?.projects_completed || 0}+
                         </span>
                         <span className="text-sm text-muted-foreground">
                             Projects Completed
@@ -584,29 +585,24 @@ const AboutSection = ({ owner }: { owner?: UserProfile }) => (
                 </div>
             </div>
             <div className="order-1 grid grid-cols-3 gap-4 sm:grid-cols-4 lg:order-2">
-                {[
-                    { icon: DiPhp, color: 'text-purple-400' },
-                    { icon: DiHtml5, color: 'text-orange-500' },
-                    { icon: DiCss3, color: 'text-blue-500' },
-                    { icon: DiAndroid, color: 'text-green-500' },
-                    { icon: DiLaravel, color: 'text-red-500' },
-                    { icon: SiFlutter, color: 'text-cyan-400' },
-                    { icon: DiDocker, color: 'text-blue-400' },
-                    { icon: DiUbuntu, color: 'text-orange-600' },
-                    { icon: DiLinux, color: 'text-yellow-500' },
-                    { icon: DiGithubBadge, color: 'text-white' },
-                    { icon: DiDatabase, color: 'text-gray-400' },
-                    { icon: DiCode, color: 'text-green-400' },
-                ].map((tech, index) => (
-                    <div
-                        key={index}
-                        className="group flex aspect-square items-center justify-center rounded-2xl border border-border bg-secondary p-4 transition-all duration-300 hover:border-cyan-500/50 hover:bg-secondary/80"
-                    >
-                        <tech.icon
-                            className={`h-12 w-12 ${tech.color} transition-transform duration-300 group-hover:scale-110`}
-                        />
-                    </div>
-                ))}
+                {(owner?.tech_stack && owner.tech_stack.length > 0 ? owner.tech_stack : [
+                    'php', 'html', 'css', 'android', 'laravel', 'flutter', 'docker', 'ubuntu', 'linux', 'git', 'db', 'code'
+                ]).map((techId, index) => {
+                     // Import AVAILABLE_ICONS first
+                     const iconItem = AVAILABLE_ICONS.find(i => i.id === techId);
+                     if (!iconItem) return null;
+                     
+                     return (
+                        <div
+                            key={index}
+                            className="group flex aspect-square items-center justify-center rounded-2xl border border-border bg-secondary p-4 transition-all duration-300 hover:border-cyan-500/50 hover:bg-secondary/80"
+                        >
+                            <iconItem.icon
+                                className={`h-12 w-12 transition-transform duration-300 group-hover:scale-110 text-cyan-400`}
+                            />
+                        </div>
+                    );
+                })}
             </div>
         </div>
     </AnimatedSection>

@@ -2,22 +2,24 @@
 
 namespace App\Http\Controllers;
 
-use App\Actions\TrackPageViewAction;
 use App\Models\Portfolio;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
-use Laravel\Fortify\Features;
+use Inertia\Response;
 
 class HomeController extends Controller
 {
-    public function index(Request $request, TrackPageViewAction $trackPageView)
+    public function index(Request $request): Response
     {
-        $trackPageView->handle($request, 'home');
+        // Serve the SaaS Landing Page with featured portfolios
+        $latestPortfolios = Portfolio::with(['user', 'images'])
+            ->where('is_published', true)
+            ->latest()
+            ->limit(6)
+            ->get();
 
-        return Inertia::render('welcome', [
-            'portfolios' => Portfolio::with('images')->latest()->get(),
-            'canRegister' => Features::enabled(Features::registration()),
-            'owner' => $request->user() ?? \App\Models\User::latest('updated_at')->first(),
+        return Inertia::render('landing', [
+            'portfolios' => $latestPortfolios,
         ]);
     }
 }

@@ -27,7 +27,8 @@ export default function Login({
             <Head title="Log in" />
 
             <Form
-                {...store.form()}
+                action={store.url()}
+                method="post"
                 resetOnSuccess={['password']}
                 className="flex flex-col gap-6"
             >
@@ -55,7 +56,7 @@ export default function Login({
                                     <Label htmlFor="password" className="text-gray-300">Password</Label>
                                     {canResetPassword && (
                                         <TextLink
-                                            href={request()}
+                                            href={request.url()}
                                             className="ml-auto text-sm text-cyan-400 hover:text-cyan-300"
                                             tabIndex={5}
                                         >

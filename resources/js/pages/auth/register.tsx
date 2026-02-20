@@ -6,8 +6,7 @@ import { Label } from '@/components/ui/label';
 import { Spinner } from '@/components/ui/spinner';
 import AuthLayout from '@/layouts/auth-layout';
 import { login } from '@/routes';
-// import { store } from '@/routes/register';
-const store = { form: () => ({ action: '/register', method: 'post' as const }) };
+import { store } from '@/routes/register';
 import { Form, Head } from '@inertiajs/react';
 
 export default function Register() {
@@ -18,7 +17,8 @@ export default function Register() {
         >
             <Head title="Register" />
             <Form
-                {...store.form()}
+                action={store.url()}
+                method="post"
                 resetOnSuccess={['password', 'password_confirmation']}
                 disableWhileProcessing
                 className="flex flex-col gap-6"
@@ -27,7 +27,7 @@ export default function Register() {
                     <>
                         <div className="grid gap-6">
                             <div className="grid gap-2">
-                                <Label htmlFor="name">Name</Label>
+                                <Label htmlFor="name">Full name</Label>
                                 <Input
                                     id="name"
                                     type="text"
@@ -36,12 +36,40 @@ export default function Register() {
                                     tabIndex={1}
                                     autoComplete="name"
                                     name="name"
-                                    placeholder="Full name"
+                                    placeholder="Your full name"
                                 />
-                                <InputError
-                                    message={errors.name}
-                                    className="mt-2"
-                                />
+                                <InputError message={errors.name} className="mt-2" />
+                            </div>
+
+                            <div className="grid gap-2">
+                                <Label htmlFor="username">
+                                    Username
+                                    <span className="text-muted-foreground ml-1 text-xs font-normal">
+                                        (URL portfolio Anda: portfolify.app/<strong>username</strong>)
+                                    </span>
+                                </Label>
+                                <div className="relative">
+                                    <span className="text-muted-foreground absolute top-1/2 left-3 -translate-y-1/2 text-sm">
+                                        @
+                                    </span>
+                                    <Input
+                                        id="username"
+                                        type="text"
+                                        required
+                                        tabIndex={2}
+                                        autoComplete="username"
+                                        name="username"
+                                        placeholder="username"
+                                        className="pl-7"
+                                        pattern="[a-zA-Z0-9_-]+"
+                                        minLength={3}
+                                        maxLength={30}
+                                    />
+                                </div>
+                                <InputError message={errors.username} />
+                                <p className="text-muted-foreground text-xs">
+                                    3–30 karakter, hanya huruf, angka, tanda hubung (-) dan underscore (_).
+                                </p>
                             </div>
 
                             <div className="grid gap-2">
@@ -50,7 +78,7 @@ export default function Register() {
                                     id="email"
                                     type="email"
                                     required
-                                    tabIndex={2}
+                                    tabIndex={3}
                                     autoComplete="email"
                                     name="email"
                                     placeholder="email@example.com"
@@ -64,7 +92,7 @@ export default function Register() {
                                     id="password"
                                     type="password"
                                     required
-                                    tabIndex={3}
+                                    tabIndex={4}
                                     autoComplete="new-password"
                                     name="password"
                                     placeholder="Password"
@@ -73,27 +101,23 @@ export default function Register() {
                             </div>
 
                             <div className="grid gap-2">
-                                <Label htmlFor="password_confirmation">
-                                    Confirm password
-                                </Label>
+                                <Label htmlFor="password_confirmation">Confirm password</Label>
                                 <Input
                                     id="password_confirmation"
                                     type="password"
                                     required
-                                    tabIndex={4}
+                                    tabIndex={5}
                                     autoComplete="new-password"
                                     name="password_confirmation"
                                     placeholder="Confirm password"
                                 />
-                                <InputError
-                                    message={errors.password_confirmation}
-                                />
+                                <InputError message={errors.password_confirmation} />
                             </div>
 
                             <Button
                                 type="submit"
                                 className="mt-2 w-full"
-                                tabIndex={5}
+                                tabIndex={6}
                                 data-test="register-user-button"
                             >
                                 {processing && <Spinner />}
@@ -103,7 +127,7 @@ export default function Register() {
 
                         <div className="text-center text-sm text-muted-foreground">
                             Already have an account?{' '}
-                            <TextLink href={login()} tabIndex={6}>
+                            <TextLink href={login.url()} tabIndex={7}>
                                 Log in
                             </TextLink>
                         </div>

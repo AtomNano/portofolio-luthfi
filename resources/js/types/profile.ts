@@ -30,6 +30,7 @@ export interface UserProfile {
     social_links?: SocialLink[];
     years_experience?: number;
     projects_completed?: number;
+    tech_stack?: string[];
     created_at?: string;
     updated_at?: string;
     // Optional social fields for backward compatibility/convenience

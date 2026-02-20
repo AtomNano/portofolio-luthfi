@@ -5,8 +5,8 @@ namespace App\Http\Controllers\Settings;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\UpdateProfileRequest;
 use Illuminate\Http\Request;
-use Inertia\Inertia;
 use Illuminate\Support\Facades\Redirect;
+use Inertia\Inertia;
 
 class ProfileController extends Controller
 {
@@ -35,6 +35,11 @@ class ProfileController extends Controller
                 \Illuminate\Support\Facades\Storage::disk('public')->delete($user->avatar);
             }
             $validated['avatar'] = $request->file('avatar')->store('avatars', 'public');
+        }
+
+        // Handle Tech Stack (ensure it's array if null passed)
+        if (isset($validated['tech_stack']) && is_null($validated['tech_stack'])) {
+            $validated['tech_stack'] = [];
         }
 
         $user->fill($validated);

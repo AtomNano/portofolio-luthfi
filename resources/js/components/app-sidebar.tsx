@@ -1,6 +1,5 @@
-import { Link } from '@inertiajs/react';
-import { BookOpen, Folder, Layers, LayoutGrid, Briefcase, Wrench } from 'lucide-react';
-import { NavFooter } from '@/components/nav-footer';
+import { Link, usePage } from '@inertiajs/react';
+import { Layers, LayoutGrid, Briefcase, Wrench, Globe, CreditCard, Settings, Users, ShieldAlert } from 'lucide-react';
 import { NavMain } from '@/components/nav-main';
 import { NavUser } from '@/components/nav-user';
 import {
@@ -12,6 +11,7 @@ import {
     SidebarMenuButton,
     SidebarMenuItem,
 } from '@/components/ui/sidebar';
+import { useTenant } from '@/hooks/use-tenant';
 import dashboard from '@/routes/dashboard';
 import type { NavItem } from '@/types';
 import AppLogo from './app-logo';
@@ -34,25 +34,50 @@ const mainNavItems: NavItem[] = [
     },
     {
         title: 'Skills & Tools',
-        href: dashboard.skills ? dashboard.skills.index.url() : '/dashboard/skills', // Fallback if type not updated yet
+        href: dashboard.skills ? dashboard.skills.index.url() : '/dashboard/skills',
         icon: Wrench,
+    },
+    {
+        title: 'Billing',
+        href: '/dashboard/billing',
+        icon: CreditCard,
+    },
+    {
+        title: 'Settings',
+        href: '/dashboard/settings',
+        icon: Settings,
     },
 ];
 
-// const footerNavItems: NavItem[] = [
-//     {
-//         title: 'Repository',
-//         href: 'https://github.com/laravel/react-starter-kit',
-//         icon: Folder,
-//     },
-//     {
-//         title: 'Documentation',
-//         href: 'https://laravel.com/docs/starter-kits#react',
-//         icon: BookOpen,
-//     },
-// ];
+const adminNavItems: NavItem[] = [
+    {
+        title: 'Platform KPIs',
+        href: '/admin/dashboard',
+        icon: ShieldAlert,
+    },
+    {
+        title: 'Manage Users',
+        href: '/admin/tenants',
+        icon: Users,
+    },
+    {
+        title: 'Global Portfolios',
+        href: '/admin/portfolios',
+        icon: Layers,
+    },
+    {
+        title: 'Revenue Ledger',
+        href: '/admin/transactions',
+        icon: CreditCard,
+    },
+];
 
 export function AppSidebar() {
+    const tenant = useTenant();
+    const { auth } = usePage<any>().props;
+    const isAdmin = auth?.user?.is_admin;
+    const portfolioUrl = tenant?.slug ? `/${tenant.slug}` : '/';
+
     return (
         <Sidebar collapsible="icon" variant="inset" className="border-r border-white/10 bg-black/40 backdrop-blur-md font-mono text-gray-200 [&>[data-sidebar=sidebar]]:bg-transparent">
             <SidebarHeader className="border-b border-white/10 bg-transparent">
@@ -68,11 +93,28 @@ export function AppSidebar() {
             </SidebarHeader>
 
             <SidebarContent className="bg-transparent">
-                <NavMain items={mainNavItems} />
+                {!isAdmin && <NavMain items={mainNavItems} />}
+                
+                {isAdmin && (
+                    <div className="mt-2 px-4 mb-2 text-xs font-semibold uppercase text-cyan-500 tracking-wider">
+                        Administrator
+                    </div>
+                )}
+                {isAdmin && <NavMain items={adminNavItems} />}
             </SidebarContent>
 
             <SidebarFooter className="border-t border-white/10 bg-transparent">
-                {/* <NavFooter items={footerNavItems} className="mt-auto" /> */}
+                {/* Visit Portfolio link */}
+                <SidebarMenu>
+                    <SidebarMenuItem>
+                        <SidebarMenuButton asChild className="text-gray-400 hover:bg-white/10 hover:text-cyan-400">
+                            <a href={portfolioUrl} target="_blank" rel="noopener noreferrer">
+                                <Globe className="h-4 w-4" />
+                                <span>Lihat Portfolio</span>
+                            </a>
+                        </SidebarMenuButton>
+                    </SidebarMenuItem>
+                </SidebarMenu>
                 <NavUser />
             </SidebarFooter>
         </Sidebar>

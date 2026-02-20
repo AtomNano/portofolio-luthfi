@@ -14,6 +14,8 @@ import { Loader2, Plus, Trash2 } from 'lucide-react';
 import { FormEvent } from 'react';
 import { PageProps } from '@/types';
 
+import IconSelector from '@/components/icon-selector';
+
 // Add route definition if missing in global types
 declare let route: any;
 
@@ -41,6 +43,9 @@ export default function Profile({
         bio: user.bio || '',
         address: user.address || '',
         phone: user.phone || '',
+        years_experience: user.years_experience || 0,
+        projects_completed: user.projects_completed || 0,
+        tech_stack: user.tech_stack || [],
         avatar: null as File | null,
     });
 
@@ -156,6 +161,44 @@ export default function Profile({
                                 placeholder="Tell us about yourself..."
                             />
                             <InputError message={errors.bio} />
+                        </div>
+
+                        <div className="grid gap-4 md:grid-cols-2">
+                            <div className="space-y-2">
+                                <Label htmlFor="years_experience">Years Experience</Label>
+                                <Input
+                                    id="years_experience"
+                                    type="number"
+                                    min="0"
+                                    value={data.years_experience}
+                                    onChange={(e) => setData('years_experience', parseInt(e.target.value) || 0)}
+                                    placeholder="e.g. 5"
+                                />
+                                <InputError message={errors.years_experience} />
+                            </div>
+
+                            <div className="space-y-2">
+                                <Label htmlFor="projects_completed">Projects Completed</Label>
+                                <Input
+                                    id="projects_completed"
+                                    type="number"
+                                    min="0"
+                                    value={data.projects_completed}
+                                    onChange={(e) => setData('projects_completed', parseInt(e.target.value) || 0)}
+                                    placeholder="e.g. 20"
+                                />
+                                <InputError message={errors.projects_completed} />
+                            </div>
+                        </div>
+
+                        <div className="space-y-3">
+                            <Label>Tech Stack Icons</Label>
+                            <p className="text-sm text-muted-foreground">Select the technologies you use. These will be displayed in your profile's "About Me" section.</p>
+                            <IconSelector
+                                selected={data.tech_stack}
+                                onChange={(selected) => setData('tech_stack', selected)}
+                            />
+                            <InputError message={errors.tech_stack} />
                         </div>
 
                         <div className="flex items-center gap-4 pt-6">

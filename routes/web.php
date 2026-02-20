@@ -3,11 +3,11 @@
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PortfolioController;
 use App\Http\Controllers\PortfolioImageController;
+use App\Http\Controllers\PublicPortfolioController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
-// Route for the public-facing welcome page
-// Route for the public-facing welcome page
+// Route for the public-facing welcome page (owner's own portfolio)
 Route::middleware(['throttle:page-views'])->group(function () {
     Route::get('/', [HomeController::class, 'index'])->name('home');
 });
@@ -16,14 +16,15 @@ Route::middleware(['throttle:page-views'])->group(function () {
 Route::redirect('/dashboard', '/dashboard/', 301)->name('dashboard');
 
 // Authenticated and verified routes for the dashboard
-Route::middleware(['auth', 'verified'])
+Route::middleware(['auth', 'verified', 'identify.tenant'])
     ->prefix('dashboard')
     ->name('dashboard.')
     ->group(function () {
         // Main dashboard view
+
         Route::get('/', function (\App\Actions\GetDashboardStatisticsAction $action) {
             return Inertia::render('dashboard', [
-                'statistics' => Inertia::defer(fn() => $action->handle()),
+                'statistics' => Inertia::defer(fn () => $action->handle()),
             ]);
         })->name('index');
 
@@ -63,10 +64,21 @@ Route::middleware(['auth', 'verified'])
             ->name('skills.index');
         Route::patch('skills', [\App\Http\Controllers\Dashboard\SkillController::class, 'update'])
             ->name('skills.update');
+
+        // Billing & Subscription
+        Route::get('billing', [\App\Http\Controllers\Dashboard\BillingController::class, 'index'])
+            ->name('billing.index');
+        Route::post('billing/upgrade/{plan:slug}', [\App\Http\Controllers\Dashboard\BillingController::class, 'upgrade'])
+            ->name('billing.upgrade');
+
+        // Tenant Settings (Domain & Branding)
+        Route::get('settings', [\App\Http\Controllers\Dashboard\SettingsController::class, 'index'])
+            ->name('settings.index');
+        Route::patch('settings', [\App\Http\Controllers\Dashboard\SettingsController::class, 'update'])
+            ->name('settings.update');
     });
 
-// Public portfolio route
-// Public portfolio route
+// Public portfolio route by path (existing)
 Route::middleware(['throttle:page-views'])->group(function () {
     Route::get('/portfolios/{portfolio}', [PortfolioController::class, 'show'])->name('portfolios.show');
 });
@@ -77,4 +89,30 @@ Route::get('auth/google', [\App\Http\Controllers\SocialAuthController::class, 'r
 Route::get('auth/google/callback', [\App\Http\Controllers\SocialAuthController::class, 'handleGoogleCallback']);
 
 // Include additional settings routes
-require __DIR__ . '/settings.php';
+require __DIR__.'/settings.php';
+
+// ── Webhooks (Agnostic Payment Receivers) ──
+Route::post('webhooks/payment', [\App\Http\Controllers\Webhook\PaymentWebhookController::class, 'handle'])->name('webhooks.payment');
+
+// ── Superadmin Routes ──
+Route::middleware(['auth', 'verified', 'is_admin'])
+    ->prefix('admin')
+    ->name('admin.')
+    ->group(function () {
+        Route::get('/dashboard', [\App\Http\Controllers\Admin\DashboardController::class, 'index'])->name('dashboard');
+        Route::get('/tenants', [\App\Http\Controllers\Admin\TenantController::class, 'index'])->name('tenants.index');
+        Route::get('/transactions', [\App\Http\Controllers\Admin\TransactionController::class, 'index'])->name('transactions.index');
+        Route::get('/portfolios', [\App\Http\Controllers\Admin\PortfolioController::class, 'index'])->name('portfolios.index');
+        Route::delete('/portfolios/{portfolio}', [\App\Http\Controllers\Admin\PortfolioController::class, 'destroy'])->name('portfolios.destroy');
+        Route::post('/tenants', [\App\Http\Controllers\Admin\TenantController::class, 'store'])->name('tenants.store');
+        Route::put('/tenants/{user}', [\App\Http\Controllers\Admin\TenantController::class, 'update'])->name('tenants.update');
+        Route::delete('/tenants/{user}', [\App\Http\Controllers\Admin\TenantController::class, 'destroy'])->name('tenants.destroy');
+        Route::patch('/tenants/{user}/plan', [\App\Http\Controllers\Admin\TenantController::class, 'swapPlan'])->name('tenants.plan');
+    });
+
+// ── Public portfolio by username (:username must come LAST to avoid conflicts) ──
+Route::middleware(['throttle:page-views'])->group(function () {
+    Route::get('/{username}', [PublicPortfolioController::class, 'show'])
+        ->name('portfolio.public')
+        ->where('username', '^(?!dashboard|login|register|logout|api|auth|admin|settings|up|portfolios|experience)[a-z0-9_-]+$');
+});
