@@ -56,6 +56,7 @@ class User extends Authenticatable
             'soft_skills' => 'array',
             'social_links' => 'array',
             'tech_stack' => 'array',
+            'is_admin' => 'boolean',
         ];
     }
 
@@ -85,7 +86,7 @@ class User extends Authenticatable
 
     public function isAdmin(): bool
     {
-        return $this->role === 'admin';
+        return (bool) $this->is_admin;
     }
 
     public function isOwner(): bool
@@ -102,6 +103,6 @@ class User extends Authenticatable
     {
         return $this->avatar
             ? \Illuminate\Support\Facades\Storage::disk('public')->url($this->avatar)
-            : 'https://ui-avatars.com/api/?name='.urlencode($this->name).'&color=7F9CF5&background=EBF4FF';
+            : 'https://ui-avatars.com/api/?name=' . urlencode($this->name) . '&color=7F9CF5&background=EBF4FF';
     }
 }
